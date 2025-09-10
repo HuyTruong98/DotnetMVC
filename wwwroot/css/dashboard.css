@@ -1,0 +1,43 @@
+/* dashboard.css */
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+
+.nav-link {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.nav-link:hover {
+  background-color: #e9ecef;
+  border-radius: 5px;
+}
+
+.vh-100 {
+  min-height: 100vh;
+}
+
+footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+/* Sidebar desktop */
+.sidebar-desktop {
+  width: 220px;
+  top: 56px;
+  left: 0;
+  bottom: 0;
+}
+
+.custom-mt-body {
+  margin-top: 50px;
+}
+
+@media (min-width: 768px) {
+  .navbar.with-sidebar {
+    margin-left: 220px;
+  }
+  main.with-sidebar {
+    margin-left: 220px;
+  }
+}

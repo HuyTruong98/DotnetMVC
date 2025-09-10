@@ -1,0 +1,109 @@
+@inject IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>@ViewData["Title"] - Quản trị hệ thống</title>
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/css/dashboard.css" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  @if (TempData["Success"] != null)
+  {
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+      <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1055;">
+        @if (TempData["Success"] != null)
+        {
+          <div class="toast align-items-center text-bg-success border-0 show" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body">
+                @TempData["Success"]
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+  @section Scripts {
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toastEl = document.querySelector('.toast');
+        if (toastEl) {
+          const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
+          toast.show();
+        }
+      });
+    </script>
+  }
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark px-3 with-sidebar fixed-top">
+    <div class="container-fluid">
+      <!-- Hamburger toggle for mobile -->
+      <button class="btn btn-outline-light d-md-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#mobileSidebar">
+        ☰
+      </button>
+      <a class="navbar-brand ms-2" href="/Dashboard">🛒 Admin Panel</a>
+      <div class="d-flex align-items-center ms-auto">
+        <span class="text-light me-3">
+          Xin chào, @HttpContextAccessor.HttpContext.Session.GetString("Username")
+        </span>
+        <a class="btn btn-outline-light btn-sm" href="/logout">Đăng xuất</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar for desktop -->
+  <div class="d-none d-md-block bg-light border-end position-fixed h-100 sidebar-desktop">
+    <ul class="nav flex-column pt-4 px-3">
+      <li class="nav-item"><a class="nav-link" href="/Dashboard">📊 Tổng quan</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Dashboard/User">👥 Quản lý người dùng</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Dashboard/Categories">🏷️ Quản lý loại</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Dashboard/Products">📦 Quản lý sản phẩm</a></li>
+      <li class="nav-item"><a class="nav-link" href="/Dashboard/Orders">🧾 Quản lý đơn hàng</a></li>
+    </ul>
+  </div>
+
+  <!-- Sidebar for mobile (offcanvas) -->
+  <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="mobileSidebar">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="/Dashboard">📊 Tổng quan</a></li>
+        <li class="nav-item"><a class="nav-link" href="/Dashboard/Users">👥 Quản lý người dùng</a></li>
+        <li class="nav-item"><a class="nav-link" href="/Dashboard/Categories">🏷️ Quản lý loại</a></li>
+        <li class="nav-item"><a class="nav-link" href="/Dashboard/Products">📦 Quản lý sản phẩm</a></li>
+        <li class="nav-item"><a class="nav-link" href="/Dashboard/Orders">🧾 Quản lý đơn hàng</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main class="flex-grow-1 with-sidebar p-4 custom-mt-body">
+    @RenderBody()
+
+    @RenderSection("Scripts", required: false)
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="text-center text-muted py-3 border-top with-sidebar">
+    &copy; @DateTime.Now.Year - OnlineStoreMVC Admin
+  </footer>
+
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

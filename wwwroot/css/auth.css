@@ -1,0 +1,148 @@
+/* wwwroot/css/auth.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-card-login {
+  display: flex;
+  background: #FFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 900px;
+  height: 550px;
+}
+
+.auth-card-register {
+  display: flex;
+  background: #FFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 900px;
+  height: 780px;
+}
+
+.auth-left {
+  flex: 1;
+  background: linear-gradient(135deg, #6a11cb, #f7971e);
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-left h1 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.auth-left p {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth-left a {
+  background: white;
+  color: #333;
+  padding: 10px 24px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-right {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.auth-right h2 {
+  margin: 0 0 20px;
+  text-align: center;
+  color: #333;
+}
+
+.auth-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-right label {
+  margin-top: 16px;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.auth-right input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.auth-right button {
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color .2s;
+  margin-top: 16px;
+}
+
+.auth-right button:hover {
+  background: #0056b3;
+}
+
+.auth-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.auth-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+
+  .auth-card-login,
+  .auth-card-register {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .auth-left,
+  .auth-right {
+    padding: 20px;
+  }
+}

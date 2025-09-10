@@ -1,0 +1,88 @@
+@model OnlineStoreMVC.Models.RegisterViewModel
+@{
+  Layout = "_AuthLayout";
+  ViewData["Title"] = "Đăng ký";
+}
+
+<div class="auth-card-register">
+  <div class="auth-left">
+    <h1>Kết nối để gần nhau hơn</h1>
+    <p>Bạn đã có tài khoản?</p>
+    <a href="/login">Đăng nhập</a>
+  </div>
+  <div class="auth-right">
+    <h2>Đăng ký</h2>
+
+    @Html.ValidationSummary(true, "", new { @class = "error-message" })
+
+    <form asp-action="Register" method="post">
+      <label asp-for="Username">Tên đăng nhập</label>
+      <input asp-for="Username" placeholder="Nhập tên đăng nhập" />
+
+      @if (ViewData.ModelState.ContainsKey(nameof(Model.Username)) &&
+            ViewData.ModelState[nameof(Model.Username)].Errors.Count > 0)
+      {
+        <span class="error-message">
+          @ViewData.ModelState[nameof(Model.Username)].Errors[0].ErrorMessage
+        </span>
+      }
+
+
+      <label asp-for="FullName">Họ và tên</label>
+      <input asp-for="FullName" placeholder="Nhập họ và tên" />
+      @if (ViewData.ModelState.ContainsKey(nameof(Model.FullName)) &&
+            ViewData.ModelState[nameof(Model.FullName)].Errors.Count > 0)
+      {
+        <span class="error-message">
+          @ViewData.ModelState[nameof(Model.FullName)].Errors[0].ErrorMessage
+        </span>
+      }
+
+      <label asp-for="Email">Email</label>
+      <input asp-for="Email" type="email" placeholder="Nhập email" />
+      @if (ViewData.ModelState.ContainsKey(nameof(Model.Email)) &&
+            ViewData.ModelState[nameof(Model.Email)].Errors.Count > 0)
+      {
+        <span class="error-message">
+          @ViewData.ModelState[nameof(Model.Email)].Errors[0].ErrorMessage
+        </span>
+      }
+
+      <label asp-for="Phone">Số điện thoại</label>
+      <input asp-for="Phone" placeholder="Nhập số điện thoại" />
+      @if (ViewData.ModelState.ContainsKey(nameof(Model.Phone)) &&
+            ViewData.ModelState[nameof(Model.Phone)].Errors.Count > 0)
+      {
+        <span class="error-message">
+          @ViewData.ModelState[nameof(Model.Phone)].Errors[0].ErrorMessage
+        </span>
+      }
+
+      <label asp-for="Address">Địa chỉ</label>
+      <input asp-for="Address" placeholder="Nhập địa chỉ" />
+      @if (ViewData.ModelState.ContainsKey(nameof(Model.Address)) &&
+            ViewData.ModelState[nameof(Model.Address)].Errors.Count > 0)
+      {
+        <span class="error-message">
+          @ViewData.ModelState[nameof(Model.Address)].Errors[0].ErrorMessage
+        </span>
+      }
+
+      <label asp-for="Password">Mật khẩu</label>
+      <input asp-for="Password" type="password" placeholder="Nhập mật khẩu" />
+      @if (ViewData.ModelState.ContainsKey(nameof(Model.Password)) &&
+            ViewData.ModelState[nameof(Model.Password)].Errors.Count > 0)
+      {
+        <span class="error-message">
+          @ViewData.ModelState[nameof(Model.Password)].Errors[0].ErrorMessage
+        </span>
+      }
+
+      <button type="submit">Đăng ký</button>
+    </form>
+  </div>
+</div>
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}

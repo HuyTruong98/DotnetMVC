@@ -1,0 +1,72 @@
+@model List<OnlineStoreMVC.Models.ViewModels.OrderManageViewModel>
+@{
+  Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+  ViewData["Title"] = "Quản lý đơn hàng";
+}
+
+<div class="container mt-5">
+  <h4 class="mb-4">📦 Danh sách đơn hàng</h4>
+
+  @if (Model != null && Model.Any())
+  {
+    <table class="table table-bordered table-hover">
+      <thead class="table-warning">
+        <tr>
+          <th>Mã đơn</th>
+          <th>Người đặt</th>
+          <th>Ngày đặt</th>
+          <th>Trạng thái</th>
+          <th>Tổng tiền</th>
+          <th>Chi tiết</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var order in Model)
+        {
+          <tr>
+            <td>@order.OrderID</td>
+            <td>@order.UserName</td>
+            <td>@order.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
+            <td>@order.Status</td>
+            <td>@order.TotalAmount.ToString("N0") ₫</td>
+            <td>
+              <button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse"
+                data-bs-target="#details-@order.OrderID">
+                Xem
+              </button>
+            </td>
+          </tr>
+          <tr class="collapse" id="details-@order.OrderID">
+            <td colspan="6">
+              <table class="table table-sm table-striped">
+                <thead>
+                  <tr>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th>
+                    <th>Thành tiền</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach (var item in order.Items)
+                  {
+                    <tr>
+                      <td>@item.ProductName</td>
+                      <td>@item.Quantity</td>
+                      <td>@item.UnitPrice.ToString("N0") ₫</td>
+                      <td>@(item.Quantity* item.UnitPrice).ToString("N0") ₫</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+  else
+  {
+    <div class="alert alert-info">Hiện chưa có đơn hàng nào.</div>
+  }
+</div>

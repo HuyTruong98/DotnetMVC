@@ -1,0 +1,63 @@
+@model OnlineStoreMVC.Models.RegisterViewModel
+@{
+  Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+  ViewData["Title"] = "Cập nhật người dùng";
+}
+
+<div class="d-flex justify-content-center mt-5">
+  <div class="card shadow" style="width: 600px;">
+    <div class="card-header bg-warning text-dark">
+      <h4 class="mb-0">✏️ Cập nhật thông tin người dùng</h4>
+    </div>
+    <div class="card-body">
+      @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+      <form asp-action="Edit" method="post">
+        <!-- Username: không cho sửa -->
+        <div class="mb-3">
+          <label asp-for="Username" class="form-label"></label>
+          <input asp-for="Username" class="form-control" readonly />
+        </div>
+
+        <!-- Password: có thể để trống nếu không muốn đổi -->
+        <div class="mb-3">
+          <label asp-for="Password" class="form-label">Mật khẩu</label>
+          <input asp-for="Password" type="password" class="form-control" placeholder="Để trống nếu không đổi" readonly
+            value="......" />
+          <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+          <label asp-for="FullName" class="form-label"></label>
+          <input asp-for="FullName" class="form-control" />
+          <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+          <label asp-for="Email" class="form-label"></label>
+          <input asp-for="Email" class="form-control" />
+          <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+          <label asp-for="Phone" class="form-label"></label>
+          <input asp-for="Phone" class="form-control" />
+          <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+          <label asp-for="Address" class="form-label"></label>
+          <input asp-for="Address" class="form-control" />
+          <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+        <a href="/Dashboard/User" class="btn btn-secondary ms-2">Quay lại</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}

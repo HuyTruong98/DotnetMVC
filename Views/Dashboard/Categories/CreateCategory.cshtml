@@ -1,0 +1,37 @@
+@model OnlineStoreMVC.Models.CategoryViewModel
+@{
+  Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+  ViewData["Title"] = "Tạo mới loại";
+}
+
+<div class="d-flex justify-content-center mt-5">
+  <div class="card shadow" style="width: 600px;">
+    <div class="card-header bg-success text-white">
+      <h4 class="mb-0">🏷️ Tạo mới loại</h4>
+    </div>
+    <div class="card-body">
+      @Html.ValidationSummary(true, "", new { @class = "error-message" })
+
+      <form asp-action="Create" method="post">
+        <div class="mb-3">
+          <label asp-for="CategoryName" class="form-label"></label>
+          <input asp-for="CategoryName" class="form-control" />
+          <span asp-validation-for="CategoryName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+          <label asp-for="Description" class="form-label"></label>
+          <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+          <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Lưu</button>
+        <a href="/Dashboard/Categories" class="btn btn-secondary ms-2">Quay lại</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}

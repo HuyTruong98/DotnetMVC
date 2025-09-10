@@ -1,0 +1,69 @@
+@model List<OnlineStoreMVC.Models.Product>
+@using OnlineStoreMVC.Helpers
+
+@{
+  Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+  ViewData["Title"] = "Quản lý sản phẩm";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>📦 Danh sách sản phẩm</h2>
+  <a class="btn btn-success" href="/Dashboard/Products/Create">➕ Tạo mới</a>
+</div>
+
+<table class="table table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>#</th>
+      <th>Ảnh</th>
+      <th>Tên sản phẩm</th>
+      <th>Loại</th>
+      <th>Giá</th>
+      <th>Tồn kho</th>
+      <th>Trạng thái</th>
+      <th>Ngày tạo</th>
+      <th>Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (int i = 0; i < Model.Count; i++)
+    {
+      var product = Model[i];
+      var primaryImage = product.ProductImages.FirstOrDefault(img => img.IsPrimary) ??
+      product.ProductImages.FirstOrDefault();
+
+      string badgeClass = product.Status switch
+      {
+        "Available" => "bg-success",
+        "OutOfStock" => "bg-danger",
+        "Promotion" => "bg-warning text-dark",
+        _ => "bg-secondary"
+      };
+
+      <tr>
+        <td>@(i + 1)</td>
+        <td>
+          @if (primaryImage != null)
+          {
+            <img src="@primaryImage.ImageURL" width="80" class="img-thumbnail" />
+          }
+          else
+          {
+            <span class="text-muted">Không có ảnh</span>
+          }
+        </td>
+        <td>@product.ProductName</td>
+        <td>@product.Category?.CategoryName</td>
+        <td>@FormatHelper.FormatCurrency(product.Price)</td>
+        <td>@product.Stock</td>
+        <td><span class="badge @badgeClass">@product.Status</span></td>
+        <td>@FormatHelper.FormatDate(product.CreatedAt)</td>
+        <td>
+          <a class="btn btn-sm btn-primary" href="/Dashboard/Products/Edit/@product.ProductID">Sửa</a>
+          <a class="btn btn-sm btn-danger" href="/Dashboard/Products/Delete/@product.ProductID"
+            onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?');">Xóa</a>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

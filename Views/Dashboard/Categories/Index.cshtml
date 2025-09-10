@@ -1,0 +1,36 @@
+@model List<OnlineStoreMVC.Models.Category>
+@{
+  Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+  ViewData["Title"] = "Quản lý loại";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>Danh sách loại</h2>
+  <a class="btn btn-success" href="/Dashboard/Categories/Create">➕ Tạo mới</a>
+</div>
+
+<table class="table table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>#</th>
+      <th>Tên loại</th>
+      <th>Mô tả</th>
+      <th>Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (int i = 0; i < Model.Count; i++)
+    {
+      <tr>
+        <td>@(i + 1)</td>
+        <td>@Model[i].CategoryName</td>
+        <td>@Model[i].Description</td>
+        <td>
+          <a class="btn btn-sm btn-primary" href="/Dashboard/Categories/Edit/@Model[i].CategoryID">Sửa</a>
+          <a class="btn btn-sm btn-danger" href="/Dashboard/Categories/Delete/@Model[i].CategoryID"
+            onclick="return confirm('Bạn có chắc muốn xóa loại này?');">Xóa</a>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,74 @@
+@model OnlineStoreMVC.Models.ViewModels.ProductViewModel
+@{
+  Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+  ViewData["Title"] = "Tạo sản phẩm mới";
+}
+
+<div class="d-flex justify-content-center mt-5">
+  <div class="card shadow" style="width: 800px;">
+    <div class="card-header bg-success text-white">
+      <h4 class="mb-0">🏷️ Tạo mới loại</h4>
+    </div>
+
+    <div class="card-body">
+      @Html.ValidationSummary(true, "", new { @class = "error-message" })
+
+      <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label asp-for="ProductName">Tên</label>
+          <input asp-for="ProductName" class="form-control" />
+          <span asp-validation-for="ProductName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+          <label asp-for="Price">Giá</label>
+          <input asp-for="Price" class="form-control" type="number" min="1" step="1"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+          <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+          <label asp-for="Stock">Tồn kho</label>
+          <input asp-for="Stock" class="form-control" type="number" min="1" step="1"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+          <span asp-validation-for="Stock" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+          <label asp-for="CategoryID">Loại</label>
+          <select asp-for="CategoryID" class="form-select" asp-items="ViewBag.Categories">
+            <option value="">-- Chọn danh mục --</option>
+          </select>
+          <span asp-validation-for="CategoryID" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+          <label asp-for="Status">Trạng thái</label>
+          <select asp-for="Status" class="form-select">
+            <option value="Available">Có sẵn</option>
+            <option value="OutOfStock">Hết hàng</option>
+            <option value="Promotion">Khuyến mãi</option>
+          </select>
+          <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+          <label>Ảnh sản phẩm (có thể chọn nhiều)</label>
+          <input type="file" name="Images" multiple class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label asp-for="Description">Ghi chú</label>
+          <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Tạo mới</button>
+        <a href="/Dashboard/Products" class="btn btn-secondary ms-2">Quay lại</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}

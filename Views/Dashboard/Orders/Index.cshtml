@@ -4,69 +4,68 @@
   ViewData["Title"] = "Quản lý đơn hàng";
 }
 
-<div class="container mt-5">
-  <h4 class="mb-4">📦 Danh sách đơn hàng</h4>
-
-  @if (Model != null && Model.Any())
-  {
-    <table class="table table-bordered table-hover">
-      <thead class="table-warning">
-        <tr>
-          <th>Mã đơn</th>
-          <th>Người đặt</th>
-          <th>Ngày đặt</th>
-          <th>Trạng thái</th>
-          <th>Tổng tiền</th>
-          <th>Chi tiết</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach (var order in Model)
-        {
-          <tr>
-            <td>@order.OrderID</td>
-            <td>@order.UserName</td>
-            <td>@order.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
-            <td>@order.Status</td>
-            <td>@order.TotalAmount.ToString("N0") ₫</td>
-            <td>
-              <button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse"
-                data-bs-target="#details-@order.OrderID">
-                Xem
-              </button>
-            </td>
-          </tr>
-          <tr class="collapse" id="details-@order.OrderID">
-            <td colspan="6">
-              <table class="table table-sm table-striped">
-                <thead>
-                  <tr>
-                    <th>Sản phẩm</th>
-                    <th>Số lượng</th>
-                    <th>Đơn giá</th>
-                    <th>Thành tiền</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach (var item in order.Items)
-                  {
-                    <tr>
-                      <td>@item.ProductName</td>
-                      <td>@item.Quantity</td>
-                      <td>@item.UnitPrice.ToString("N0") ₫</td>
-                      <td>@(item.Quantity* item.UnitPrice).ToString("N0") ₫</td>
-                    </tr>
-                  }
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  }
-  else
-  {
-    <div class="alert alert-info">Hiện chưa có đơn hàng nào.</div>
-  }
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>🧾 Danh sách đơn hàng</h2>
+  <a class="btn btn-success" href="/Dashboard/Orders/Create">➕ Tạo mới</a>
 </div>
+
+<table class="table table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>#</th>
+      <th>Người đặt</th>
+      <th>Ngày đặt</th>
+      <th>Trạng thái</th>
+      <th>Tổng tiền</th>
+      <th>Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (int i = 0; i < Model.Count; i++)
+    {
+      var order = Model[i];
+      <tr>
+        <td>@(i + 1)</td>
+        <td>@order.UserName</td>
+        <td>@order.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
+        <td>@order.Status</td>
+        <td>@order.TotalAmount.ToString("N0") ₫</td>
+        <td>
+          <a class="btn btn-sm btn-primary" href="/Dashboard/Orders/Edit/@order.OrderID">Sửa</a>
+          <form asp-action="Delete" asp-route-id="@order.OrderID" method="post" style="display:inline;"
+            onsubmit="return confirm('Bạn có chắc muốn xóa đơn hàng này?');">
+            <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6">
+          <div class="bg-light p-2 rounded">
+            <strong>Chi tiết đơn hàng:</strong>
+            <table class="table table-sm table-striped mt-2">
+              <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Số lượng</th>
+                  <th>Đơn giá</th>
+                  <th>Thành tiền</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach (var item in order.Items)
+                {
+                  <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.UnitPrice.ToString("N0") ₫</td>
+                    <td>@(item.Quantity* item.UnitPrice).ToString("N0") ₫</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

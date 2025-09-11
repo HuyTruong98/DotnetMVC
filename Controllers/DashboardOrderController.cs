@@ -142,7 +142,6 @@ namespace OnlineStoreMVC.Controllers
       return RedirectToAction("Index");
     }
 
-
     [HttpGet("Edit/{id}")]
     public IActionResult Edit(int id)
     {
@@ -164,7 +163,7 @@ namespace OnlineStoreMVC.Controllers
         {
           ProductID = od.ProductID,
           Quantity = od.Quantity
-        }).ToList()
+        }).ToList(),
       };
 
       ViewBag.Products = _context.Products
@@ -180,6 +179,8 @@ namespace OnlineStoreMVC.Controllers
             Value = u.UserID.ToString(),
             Text = u.FullName
           }).ToList();
+
+      ViewBag.IsEditable = !(order.Status == "Shipping" || order.Status == "Completed");
 
       return View("~/Views/Dashboard/Orders/EditOrders.cshtml", model);
     }
@@ -215,25 +216,21 @@ namespace OnlineStoreMVC.Controllers
 
       if (order == null) return NotFound();
 
-      // Lưu lại chi tiết cũ để xử lý tồn kho
       var oldDetails = order.OrderDetails.ToList();
 
-      // Cập nhật thông tin đơn hàng
       order.UserID = model.UserID;
       order.Status = model.Status;
       order.OrderDate = DateTime.Now;
 
-      // Xử lý tồn kho trước khi xóa chi tiết cũ
       foreach (var old in oldDetails)
       {
         var product = await _context.Products.FindAsync(old.ProductID);
         if (product != null)
         {
-          product.Stock += old.Quantity; // ✅ Hoàn lại tồn kho cũ
+          product.Stock += old.Quantity;
         }
       }
 
-      // Xóa chi tiết cũ
       _context.OrderDetails.RemoveRange(oldDetails);
 
       decimal total = 0;
@@ -254,7 +251,7 @@ namespace OnlineStoreMVC.Controllers
         total += product.Price * item.Quantity;
         _context.OrderDetails.Add(detail);
 
-        product.Stock -= item.Quantity; // ✅ Trừ tồn kho mới
+        product.Stock -= item.Quantity;
       }
 
       order.TotalAmount = total;

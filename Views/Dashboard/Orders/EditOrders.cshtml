@@ -1,0 +1,126 @@
+@model OnlineStoreMVC.Models.ViewModels.OrderFormViewModel
+@{
+  Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+  ViewData["Title"] = "Chỉnh sửa đơn hàng";
+}
+
+<div class="d-flex justify-content-center mt-5">
+  <div class="card shadow" style="width: 1000px;">
+    <div class="card-header bg-warning text-dark">
+      <h4 class="mb-0">✏️ Chỉnh sửa đơn hàng</h4>
+    </div>
+    <div class="card-body">
+      @Html.ValidationSummary(true, "", new { @class = "error-message" })
+
+      <form asp-action="Edit" asp-route-id="@Model.OrderID" method="post">
+        <input type="hidden" asp-for="OrderID" />
+
+        <div class="mb-3">
+          <label asp-for="UserID" class="form-label">Người đặt hàng</label>
+          <select asp-for="UserID" class="form-select" asp-items="ViewBag.Users" required>
+            <option value="">-- Vui lòng chọn người dùng --</option>
+          </select>
+          <span asp-validation-for="UserID" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+          <label asp-for="Status" class="form-label">Trạng thái đơn hàng</label>
+          <select asp-for="Status" class="form-select" required>
+            <option value="Pending">Pending</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Shipping">Shipping</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-4 mb-2">
+          <h5>🛒 Sản phẩm</h5>
+          <button type="button" class="btn btn-outline-secondary" onclick="addProductRow()">➕ Thêm sản phẩm</button>
+        </div>
+
+        <div id="product-list">
+          @for (int i = 0; i < Model.Items.Count; i++)
+          {
+            <div class="row mb-2 product-row">
+              <div class="col-md-6">
+                <select class="form-select product-select" required>
+                  <option value="">-- Chọn sản phẩm --</option>
+                  @foreach (SelectListItem item in ViewBag.Products)
+                  {
+                    <option value="@item.Value"
+                      selected="@(item.Value == Model.Items[i].ProductID.ToString() ? "selected" : null)">
+                      @item.Text
+                    </option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-4">
+                <input type="number" class="form-control quantity-input" value="@Model.Items[i].Quantity" min="1"
+                  required />
+              </div>
+              <div class="col-md-2 d-flex align-items-center">
+                <button type="button" class="btn btn-danger" onclick="removeRow(this)">➖</button>
+              </div>
+            </div>
+          }
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cập nhật</button>
+        <a href="/Dashboard/Orders" class="btn btn-secondary ms-2">Quay lại</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+  <script>
+    function reindexProductRows() {
+      const rows = document.querySelectorAll(".product-row");
+      rows.forEach((row, index) => {
+        const select = row.querySelector(".product-select");
+        const input = row.querySelector(".quantity-input");
+
+        select.name = `Items[${index}].ProductID`;
+        input.name = `Items[${index}].Quantity`;
+      });
+    }
+
+    function addProductRow() {
+      const container = document.getElementById("product-list");
+
+      const row = document.createElement("div");
+      row.className = "row mb-2 product-row";
+
+      row.innerHTML = `
+                    <div class="col-md-6">
+                      <select class="form-select product-select" required>
+                        <option value="">-- Chọn sản phẩm --</option>
+                        ${document.querySelector('select.product-select').innerHTML}
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <input type="number" class="form-control quantity-input" placeholder="Số lượng" min="1" required />
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                      <button type="button" class="btn btn-danger" onclick="removeRow(this)">➖</button>
+                    </div>
+                  `;
+
+      container.appendChild(row);
+      reindexProductRows();
+    }
+
+    function removeRow(button) {
+      const row = button.closest(".product-row");
+      if (document.querySelectorAll(".product-row").length > 1) {
+        row.remove();
+        reindexProductRows();
+      } else {
+        alert("Phải có ít nhất một sản phẩm trong đơn hàng.");
+      }
+    }
+
+    reindexProductRows();
+  </script>
+}

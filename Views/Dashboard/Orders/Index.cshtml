@@ -1,4 +1,6 @@
 @model List<OnlineStoreMVC.Models.ViewModels.OrderManageViewModel>
+@using OnlineStoreMVC.Helpers
+
 @{
   Layout = "~/Views/Shared/_DashboardLayout.cshtml";
   ViewData["Title"] = "Quản lý đơn hàng";
@@ -57,8 +59,8 @@
                   <tr>
                     <td>@item.ProductName</td>
                     <td>@item.Quantity</td>
-                    <td>@item.UnitPrice.ToString("N0") ₫</td>
-                    <td>@(item.Quantity* item.UnitPrice).ToString("N0") ₫</td>
+                    <td>@FormatHelper.FormatCurrency(item.UnitPrice)</td>
+                    <td>@FormatHelper.FormatCurrency(item.Quantity * item.UnitPrice)</td>
                   </tr>
                 }
               </tbody>

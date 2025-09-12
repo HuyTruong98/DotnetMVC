@@ -33,11 +33,12 @@
         <td>@order.Status</td>
         <td>@order.TotalAmount.ToString("N0") ₫</td>
         <td>
-          <a class="btn btn-sm btn-primary" href="/Dashboard/Orders/Edit/@order.OrderID">Sửa</a>
-          <form asp-action="Delete" asp-route-id="@order.OrderID" method="post" style="display:inline;"
-            onsubmit="return confirm('Bạn có chắc muốn xóa đơn hàng này?');">
-            <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
-          </form>
+            <a class="btn btn-sm btn-info" href="/Dashboard/Orders/Details/@order.OrderID">Chi tiết</a>
+            <a class="btn btn-sm btn-primary" href="/Dashboard/Orders/Edit/@order.OrderID">Sửa</a>
+            <form asp-action="Delete" asp-route-id="@order.OrderID" method="post" style="display:inline;"
+                  onsubmit="return confirm('Bạn có chắc muốn xóa đơn hàng này?');">
+                <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+            </form>
         </td>
       </tr>
       <tr>

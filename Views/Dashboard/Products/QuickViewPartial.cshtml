@@ -1,0 +1,26 @@
+@*@model OnlineStoreMVC.Models.Product
+@using OnlineStoreMVC.Helpers
+
+@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}*@
+@model OnlineStoreMVC.Models.Product
+
+<div class="row">
+    <div class="col-md-6">
+        <img src="@(Model.ProductImages.FirstOrDefault()?.ImageURL ?? "/images/no-image.png")"
+             alt="@Model.ProductName" class="img-fluid rounded" />
+    </div>
+    <div class="col-md-6 text-start">
+        <h4>@Model.ProductName</h4>
+        <p>@Model.Description</p>
+        <p><strong>Danh mục:</strong> @Model.Category?.CategoryName</p>
+        <div class="product-price mb-3">
+            <span class="current-price text-danger fw-bold">@Model.Price.ToString("N0") ₫</span>
+        </div>
+        <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+        </button>
+    </div>
+</div>

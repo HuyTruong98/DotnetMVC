@@ -290,5 +290,43 @@ namespace OnlineStoreMVC.Controllers
       TempData["Success"] = "Đã xóa đơn hàng và hoàn lại tồn kho.";
       return RedirectToAction("Index");
     }
-  }
+
+        [HttpGet("/Dashboard/Orders/Details/{id}")]
+        public IActionResult Details(int id)
+        {
+            var role = HttpContext.Session.GetString("Role");
+            if (role != "Admin")
+                return RedirectToAction("Login", "Auth");
+
+            var order = _context.Orders
+                .Include(o => o.User)
+                .Include(o => o.OrderDetails)
+                    .ThenInclude(od => od.Product)
+                .Select(o => new OrderManageViewModel
+                {
+                    OrderID = o.OrderID,
+                    UserID = o.UserID,
+                    UserName = o.User.FullName,
+                    OrderDate = o.OrderDate,
+                    Status = o.Status,
+                    TotalAmount = o.TotalAmount,
+                    Items = o.OrderDetails.Select(od => new OrderDetailItem
+                    {
+                        ProductID = od.ProductID,
+                        ProductName = od.Product.ProductName,
+                        Quantity = od.Quantity,
+                        UnitPrice = od.UnitPrice
+                    }).ToList()
+                })
+                .FirstOrDefault(o => o.OrderID == id);
+
+            if (order == null)
+                return NotFound();
+
+            return View("~/Views/Dashboard/Orders/Details.cshtml", order);
+        }
+
+
+    }
+
 }

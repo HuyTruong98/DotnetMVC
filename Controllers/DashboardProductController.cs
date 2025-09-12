@@ -253,5 +253,26 @@ namespace OnlineStoreMVC.Controllers
       TempData["Success"] = "Xóa sản phẩm thành công.";
       return RedirectToAction("Index");
     }
-  }
-}
+
+    [HttpGet("Details/{id}")]
+    public IActionResult Details(int id)
+    {
+        if (id <= 0)
+        {
+            return BadRequest("ID sản phẩm không hợp lệ.");
+        }
+
+        var product = _context.Products
+            .Include(p => p.Category)
+            .Include(p => p.ProductImages)
+            .FirstOrDefault(p => p.ProductID == id);
+
+        if (product == null)
+        {
+            return NotFound("Không tìm thấy sản phẩm.");
+        }
+
+        return View("~/Views/Dashboard/Products/Details.cshtml", product);
+    }
+    }
+    }

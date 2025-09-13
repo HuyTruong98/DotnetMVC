@@ -28,9 +28,9 @@ public class HomeController : Controller
           .Where(p => p.IsFeatured)
           .OrderByDescending(p => p.ProductID)
           .Include(p => p.ProductImages)
+          .Include(p => p.Category)
           .Take(4)
           .ToList();
-
         return View(featuredProducts);
     }
 

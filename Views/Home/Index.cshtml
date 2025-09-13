@@ -94,53 +94,30 @@
     </div>
 
     <div class="row g-4">
-      <div class="col-lg-4 col-md-6">
-        <div class="collection-card">
-          <div class="collection-image">
-            <img src="https://5sfashion.vn/storage/upload/images/ckeditor/yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg"
-              alt="Thời trang nam">
-            <div class="collection-overlay">
-              <div class="collection-content">
-                <h4>Thời trang nam</h4>
-                <p>Phong cách lịch lãm, hiện đại</p>
-                <a href="#" class="btn btn-light">Xem ngay</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        @foreach (var product in Model)
+      {
+          var primaryImage = product?.ProductImages?.FirstOrDefault(img => img.IsPrimary);
 
-      <div class="col-lg-4 col-md-6">
-        <div class="collection-card">
-          <div class="collection-image">
-            <img
-              src="https://lh3.googleusercontent.com/vISKpCT-ArwYbWMbSD_AOtvPnf6W00sJjNpHa60GO_Adhh4y2Ce4qYwW9dCizgM6nz6fTkpgwcV5KPfSfGAK44rf59ES4xgo8wPPMFt5i-GLxZ74AKgw2xPo0qhF_OhOE_NpL73UCEdXrByySTMv2Q"
-              alt="Thời trang nữ">
-            <div class="collection-overlay">
-              <div class="collection-content">
-                <h4>Thời trang nữ</h4>
-                <p>Thanh lịch, quyến rũ</p>
-                <a href="#" class="btn btn-light">Xem ngay</a>
-              </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="@(primaryImage?.ImageURL ?? "/images/no-image.png")">
+                    <div class="collection-overlay">
+                        <div class="collection-content">
+                            <h4>@product.Category.CategoryName</h4>
+                            <p>@product.ProductName</p>
+                            <a asp-controller="DashboardProduct"
+                               asp-action="ByCategory"
+                               asp-route-categoryId="@product.CategoryID"
+                               class="btn btn-light">
+                                Xem ngay
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="collection-card">
-          <div class="collection-image">
-            <img src="https://hmkeyewear.com/wp-content/uploads/2024/10/phu-kien-thoi-trang-8.jpg" alt="Phụ kiện">
-            <div class="collection-overlay">
-              <div class="collection-content">
-                <h4>Phụ kiện</h4>
-                <p>Hoàn thiện phong cách</p>
-                <a href="#" class="btn btn-light">Xem ngay</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      }
     </div>
   </div>
 </section>
@@ -156,13 +133,13 @@
     <div class="row g-4">
       @foreach (var product in Model)
       {
-        var primaryImage = product.ProductImages.FirstOrDefault(img => img.IsPrimary) ??
-        product.ProductImages.FirstOrDefault();
+
+    var primaryImage = product?.ProductImages?.FirstOrDefault(img => img.IsPrimary);
 
         <div class="col-lg-3 col-md-6">
           <div class="product-card">
             <div class="product-image">
-              <img src="@primaryImage.ImageURL" class="img-hot" alt="@product.ProductName" />
+              <img src="@(primaryImage?.ImageURL ?? "/images/no-image.png")" class="img-hot" alt="@product.ProductName" />
               <div class="product-badges">
                 <span class="badge bg-warning">Hot</span>
               </div>

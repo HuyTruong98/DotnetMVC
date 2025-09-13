@@ -4,7 +4,7 @@ namespace OnlineStoreMVC.Models
 {
   public class ProductImage
   {
-    [Key] // 👈 Đây là khóa chính
+    [Key]
     public int ImageID { get; set; }
 
     public int ProductID { get; set; }

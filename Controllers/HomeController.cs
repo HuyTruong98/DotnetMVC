@@ -1,21 +1,37 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using OnlineStoreMVC.Data;
 using OnlineStoreMVC.Models;
+using OnlineStoreMVC.Helpers;
+
 
 namespace OnlineStoreMVC.Controllers;
 
 public class HomeController : Controller
 {
+    private readonly OnlineStoreDBContext _context;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(OnlineStoreDBContext context, ILogger<HomeController> logger)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
     {
-        return View();
+        var cart = HttpContext.Session.GetObject<List<CartItem>>("Cart") ?? new List<CartItem>();
+        ViewBag.CartCount = cart.Sum(c => c.Quantity);
+
+        var featuredProducts = _context.Products
+          .Where(p => p.IsFeatured)
+          .OrderByDescending(p => p.ProductID)
+          .Include(p => p.ProductImages)
+          .Take(4)
+          .ToList();
+
+        return View(featuredProducts);
     }
 
     public IActionResult Privacy()

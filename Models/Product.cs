@@ -11,6 +11,7 @@ namespace OnlineStoreMVC.Models
     public decimal Price { get; set; }
     public int Stock { get; set; }
     public string Status { get; set; }
+    public bool IsFeatured { get; set; } = false;
     public DateTime? CreatedAt { get; set; }
 
     public Category Category { get; set; }

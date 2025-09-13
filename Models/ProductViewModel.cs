@@ -26,7 +26,7 @@ namespace OnlineStoreMVC.Models.ViewModels
     [Required(ErrorMessage = "Trạng thái không được bỏ trống")]
     [RegularExpression("Available|OutOfStock|Promotion", ErrorMessage = "Trạng thái không hợp lệ")]
     public string Status { get; set; }
-
+    public bool IsFeatured { get; set; }
     public DateTime CreatedAt { get; set; }
 
     // Upload nhiều ảnh

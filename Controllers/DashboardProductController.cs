@@ -76,7 +76,8 @@ namespace OnlineStoreMVC.Controllers
         Stock = model.Stock.Value,
         CategoryID = model.CategoryID.Value,
         Status = model.Status,
-        CreatedAt = DateTime.Now
+        CreatedAt = DateTime.Now,
+        IsFeatured = model.IsFeatured
       };
 
       _context.Products.Add(product);
@@ -133,6 +134,7 @@ namespace OnlineStoreMVC.Controllers
         Stock = product.Stock,
         CategoryID = product.CategoryID,
         Status = product.Status,
+        IsFeatured = product.IsFeatured
       };
 
       ViewBag.Categories = _context.Categories
@@ -179,6 +181,8 @@ namespace OnlineStoreMVC.Controllers
       product.Stock = model.Stock ?? product.Stock;
       product.CategoryID = model.CategoryID ?? product.CategoryID;
       product.Status = model.Status;
+      product.IsFeatured = model.IsFeatured;
+
 
       if (model.Images != null && model.Images.Count > 0)
       {
@@ -257,22 +261,22 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("Details/{id}")]
     public IActionResult Details(int id)
     {
-        if (id <= 0)
-        {
-            return BadRequest("ID sản phẩm không hợp lệ.");
-        }
+      if (id <= 0)
+      {
+        return BadRequest("ID sản phẩm không hợp lệ.");
+      }
 
-        var product = _context.Products
-            .Include(p => p.Category)
-            .Include(p => p.ProductImages)
-            .FirstOrDefault(p => p.ProductID == id);
+      var product = _context.Products
+          .Include(p => p.Category)
+          .Include(p => p.ProductImages)
+          .FirstOrDefault(p => p.ProductID == id);
 
-        if (product == null)
-        {
-            return NotFound("Không tìm thấy sản phẩm.");
-        }
+      if (product == null)
+      {
+        return NotFound("Không tìm thấy sản phẩm.");
+      }
 
-        return View("~/Views/Dashboard/Products/Details.cshtml", product);
+      return View("~/Views/Dashboard/Products/Details.cshtml", product);
     }
-    }
-    }
+  }
+}

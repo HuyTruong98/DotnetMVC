@@ -1,715 +1,242 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using OnlineStoreMVC.Helpers
+@model List<OnlineStoreMVC.Models.Product>
+
+@{
+  ViewData["Title"] = "Home Page";
 }
 
 @{
-    ViewData["Title"] = "Trang chủ - Cửa hàng thời trang";
+  ViewData["Title"] = "Trang chủ - Cửa hàng thời trang";
 }
-<style>
-    /* Reset và base styles */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: #333;
-    }
-
-    /* Hero Section */
-    .hero-section {
-        position: relative;
-        background-image: url('https://file.hstatic.net/1000360022/file/banner_trang_ch__pc__2048x813px_-01.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        min-height: 75vh;
-        display: flex;
-        align-items: center;
-        color: white;
-        overflow: hidden;
-    }
-
-    .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.3);
-        z-index: 1;
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 2;
-    }
-
-    .hero-title {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        opacity: 0.9;
-    }
-
-    .hero-buttons .btn {
-        padding: 12px 30px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .min-vh-80 {
-        min-height: 80vh;
-    }
-
-    /* Features Section */
-    .features-section {
-        background: #f8f9fa;
-    }
-
-    .feature-item {
-        padding: 2rem 1rem 0;
-        transition: transform 0.3s ease;
-    }
-
-        .feature-item:hover {
-            transform: translateY(-5px);
-        }
-
-    .feature-icon {
-        width: 80px;
-        height: 80px;
-        background: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1rem;
-        color: white;
-        font-size: 2rem;
-    }
-
-    .feature-item h5 {
-        color: #333;
-        margin-bottom: 1rem;
-        font-weight: 600;
-    }
-
-    .feature-item p {
-        color: #666;
-        margin-bottom: 0;
-    }
-
-    /* Section Headers */
-    .section-header {
-        margin-bottom: 3rem;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 1rem;
-    }
-
-    .section-subtitle {
-        font-size: 1.1rem;
-        color: #666;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    /* Collections Section */
-    .collection-card {
-        position: relative;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
-
-        .collection-card:hover {
-            transform: translateY(-10px);
-        }
-
-    .collection-image {
-        position: relative;
-        height: 300px;
-        overflow: hidden;
-    }
-
-        .collection-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-    .collection-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(45deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .collection-card:hover .collection-overlay {
-        opacity: 1;
-    }
-
-    .collection-card:hover .collection-image img {
-        transform: scale(1.1);
-    }
-
-    .collection-content {
-        text-align: center;
-        color: white;
-    }
-
-        .collection-content h4 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .collection-content p {
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-
-    /* Product Cards */
-    .product-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        position: relative;
-    }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-    .product-image {
-        position: relative;
-        height: 250px;
-        overflow: hidden;
-    }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-    .product-card:hover .product-image img {
-        transform: scale(1.05);
-    }
-
-    .product-badges {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        z-index: 2;
-    }
-
-        .product-badges .badge {
-            font-size: 0.75rem;
-            padding: 5px 10px;
-        }
-
-    .product-actions {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .product-card:hover .product-actions {
-        opacity: 1;
-    }
-
-    .product-actions .btn {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        backdrop-filter: blur(10px);
-        background: rgba(255, 255, 255, 0.9);
-        border: none;
-    }
-
-    .product-info {
-        padding: 1.5rem;
-    }
-
-    .product-title {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: #333;
-    }
-
-    .product-rating {
-        display: flex;
-        align-items: center;
-        gap: 2px;
-        margin-bottom: 0.5rem;
-    }
-
-        .product-rating i {
-            color: #ffc107;
-            font-size: 0.8rem;
-        }
-
-        .product-rating span {
-            color: #666;
-            font-size: 0.8rem;
-            margin-left: 5px;
-        }
-
-    .product-price {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .current-price {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: #e74c3c;
-    }
-
-    .old-price {
-        font-size: 0.9rem;
-        color: #999;
-        text-decoration: line-through;
-    }
-
-    /* Newsletter Section */
-    .newsletter-section {
-        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    }
-
-    .newsletter-form .input-group {
-        max-width: 500px;
-        margin-left: auto;
-    }
-
-    .newsletter-form .form-control {
-        border: none;
-        border-radius: 50px 0 0 50px;
-    }
-
-    .newsletter-form .btn {
-        border-radius: 0 50px 50px 0;
-        border: none;
-    }
-
-    /* Responsive Design */
-    @@media (max-width: 768px) {
-        .hero-title {
-            font-size: 2.5rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-            .hero-buttons .btn {
-                width: 100%;
-            }
-
-        .section-title {
-            font-size: 2rem;
-        }
-
-        .feature-item {
-            padding: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .collection-image {
-            height: 200px;
-        }
-
-        .product-image {
-            height: 200px;
-        }
-    }
-
-    @@media (max-width: 576px) {
-        .hero-title {
-            font-size: 2rem;
-        }
-
-        .newsletter-form .input-group {
-            flex-direction: column;
-        }
-
-        .newsletter-form .form-control,
-        .newsletter-form .btn {
-            border-radius: 25px;
-            margin-bottom: 10px;
-        }
-    }
-
-    /* Animation */
-    @@keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .hero-content > * {
-        animation: fadeInUp 0.8s ease-out forwards;
-    }
-
-    .hero-title {
-        animation-delay: 0.2s;
-    }
-
-    .hero-subtitle {
-        animation-delay: 0.4s;
-    }
-
-    .hero-buttons {
-        animation-delay: 0.6s;
-    }
-</style>
 
 <section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="container">
-        <div class="row align-items-center min-vh-80">
-            <div class="col-lg-6">
-                <div class="hero-content">
-                    <h1 class="hero-title">Thời Trang Hiện Đại</h1>
-                    <p class="hero-subtitle">
-                        Khám phá bộ sưu tập quần áo thời trang mới nhất với phong cách hiện đại,
-                        chất lượng cao và giá cả hợp lý
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary btn-lg me-3">
-                            <i class="fas fa-shopping-bag me-2"></i>Mua sắm ngay
-                        </a>
-                        <a href="#collections" class="btn btn-outline-light btn-lg">
-                            Khám phá bộ sưu tập
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="hero-image">
-                    <img src="https://www.elle.vn/wp-content/uploads/2019/09/kualua-lumpur-fashion-week-2019-5.jpgfeatures-section py-5" alt="Fashion Hero" class="img-fluid">
-                </div>
-            </div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="row align-items-center min-vh-80">
+      <div class="col-lg-6">
+        <div class="hero-content">
+          <h1 class="hero-title">Thời Trang Hiện Đại</h1>
+          <p class="hero-subtitle">
+            Khám phá bộ sưu tập quần áo thời trang mới nhất với phong cách hiện đại,
+            chất lượng cao và giá cả hợp lý
+          </p>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary btn-lg me-3">
+              <i class="fas fa-shopping-bag me-2"></i>Mua sắm ngay
+            </a>
+            <a href="#collections" class="btn btn-outline-light btn-lg">
+              Khám phá bộ sưu tập
+            </a>
+          </div>
         </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-image">
+          <img
+            src="https://www.elle.vn/wp-content/uploads/2019/09/kualua-lumpur-fashion-week-2019-5.jpgfeatures-section py-5"
+            alt="Fashion Hero" class="img-fluid">
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- Features Section -->
 <section class="features-section py-3">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6">
-                <div class="feature-item text-center">
-                    <div class="feature-icon">
-                        <img src="~/images/freeShipping.png" style="height:30px" asp-append-version="true" />
-                    </div>
-                    <h5>Miễn phí vận chuyển</h5>
-                    <p>đơn từ 500k</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="feature-item text-center">
-                    <div class="feature-icon">
-                        <img src="~/images/refresh.png" style="height:30px" asp-append-version="true" />
-                    </div>
-                    <h5>Đổi hàng tận nhà</h5>
-                    <p>Trong vòng 15 ngày</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="feature-item text-center">
-                    <div class="feature-icon">
-                        <img src="~/images/quantity.png" style="height:30px" asp-append-version="true" />
-                    </div>
-                    <h5>Chất lượng cao</h5>
-                    <p>Sản phẩm chính hãng</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="feature-item text-center">
-                    <div class="feature-icon">
-                        <img src="~/images/support.png" style="height:30px" asp-append-version="true" />
-                    </div>
-                    <h5>Hỗ trợ 24/7</h5>
-                    <p>Tư vấn và hỗ trợ khách hàng 24/7</p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-item text-center">
+          <div class="feature-icon">
+            <img src="~/images/freeShipping.png" style="height:30px" asp-append-version="true" />
+          </div>
+          <h5>Miễn phí vận chuyển</h5>
+          <p>đơn từ 500k</p>
         </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-item text-center">
+          <div class="feature-icon">
+            <img src="~/images/refresh.png" style="height:30px" asp-append-version="true" />
+          </div>
+          <h5>Đổi hàng tận nhà</h5>
+          <p>Trong vòng 15 ngày</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-item text-center">
+          <div class="feature-icon">
+            <img src="~/images/quantity.png" style="height:30px" asp-append-version="true" />
+          </div>
+          <h5>Chất lượng cao</h5>
+          <p>Sản phẩm chính hãng</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-item text-center">
+          <div class="feature-icon">
+            <img src="~/images/support.png" style="height:30px" asp-append-version="true" />
+          </div>
+          <h5>Hỗ trợ 24/7</h5>
+          <p>Tư vấn và hỗ trợ khách hàng 24/7</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- Collections Section -->
 <section id="collections" class="collections-section py-3 bg-light">
-    <div class="container">
-        <div class="section-header text-center mb-5">
-            <h2 class="section-title">Bộ sưu tập thời trang</h2>
-            <p class="section-subtitle">Khám phá các danh mục sản phẩm đa dạng của chúng tôi</p>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6">
-                <div class="collection-card">
-                    <div class="collection-image">
-                        <img src="https://5sfashion.vn/storage/upload/images/ckeditor/yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg" alt="Thời trang nam">
-                        <div class="collection-overlay">
-                            <div class="collection-content">
-                                <h4>Thời trang nam</h4>
-                                <p>Phong cách lịch lãm, hiện đại</p>
-                                <a href="#" class="btn btn-light">Xem ngay</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="collection-card">
-                    <div class="collection-image">
-                        <img src="https://lh3.googleusercontent.com/vISKpCT-ArwYbWMbSD_AOtvPnf6W00sJjNpHa60GO_Adhh4y2Ce4qYwW9dCizgM6nz6fTkpgwcV5KPfSfGAK44rf59ES4xgo8wPPMFt5i-GLxZ74AKgw2xPo0qhF_OhOE_NpL73UCEdXrByySTMv2Q" alt="Thời trang nữ">
-                        <div class="collection-overlay">
-                            <div class="collection-content">
-                                <h4>Thời trang nữ</h4>
-                                <p>Thanh lịch, quyến rũ</p>
-                                <a href="#" class="btn btn-light">Xem ngay</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="collection-card">
-                    <div class="collection-image">
-                        <img src="https://hmkeyewear.com/wp-content/uploads/2024/10/phu-kien-thoi-trang-8.jpg" alt="Phụ kiện">
-                        <div class="collection-overlay">
-                            <div class="collection-content">
-                                <h4>Phụ kiện</h4>
-                                <p>Hoàn thiện phong cách</p>
-                                <a href="#" class="btn btn-light">Xem ngay</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title">Bộ sưu tập thời trang</h2>
+      <p class="section-subtitle">Khám phá các danh mục sản phẩm đa dạng của chúng tôi</p>
     </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="collection-card">
+          <div class="collection-image">
+            <img src="https://5sfashion.vn/storage/upload/images/ckeditor/yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg"
+              alt="Thời trang nam">
+            <div class="collection-overlay">
+              <div class="collection-content">
+                <h4>Thời trang nam</h4>
+                <p>Phong cách lịch lãm, hiện đại</p>
+                <a href="#" class="btn btn-light">Xem ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="collection-card">
+          <div class="collection-image">
+            <img
+              src="https://lh3.googleusercontent.com/vISKpCT-ArwYbWMbSD_AOtvPnf6W00sJjNpHa60GO_Adhh4y2Ce4qYwW9dCizgM6nz6fTkpgwcV5KPfSfGAK44rf59ES4xgo8wPPMFt5i-GLxZ74AKgw2xPo0qhF_OhOE_NpL73UCEdXrByySTMv2Q"
+              alt="Thời trang nữ">
+            <div class="collection-overlay">
+              <div class="collection-content">
+                <h4>Thời trang nữ</h4>
+                <p>Thanh lịch, quyến rũ</p>
+                <a href="#" class="btn btn-light">Xem ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="collection-card">
+          <div class="collection-image">
+            <img src="https://hmkeyewear.com/wp-content/uploads/2024/10/phu-kien-thoi-trang-8.jpg" alt="Phụ kiện">
+            <div class="collection-overlay">
+              <div class="collection-content">
+                <h4>Phụ kiện</h4>
+                <p>Hoàn thiện phong cách</p>
+                <a href="#" class="btn btn-light">Xem ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Featured Products -->
 <section class="featured-products py-3">
-    <div class="container">
-        <div class="section-header text-center mb-5">
-            <h2 class="section-title">Sản phẩm nổi bật</h2>
-            <p class="section-subtitle">Những sản phẩm được yêu thích nhất</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- Product 1 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://tourandtate.com/cdn/shop/files/IMG-5498.png?v=1752983516&width=800">
-                        <div class="product-badges">
-                            <span class="badge bg-danger">-20%</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-sm btn-outline-light" title="Yêu thích">
-                                <img style="height: 20px" src="~/images/heart.png" />
-                            </button>
-                            <button data-id="@item.productID" class="btn btn-sm btn-outline-light" title="Xem nhanh">
-                                <img style="height: 10px" src="~/images/view.png" />
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h6 class="product-title">Áo Sơ Mi Nam Cao Cấp</h6>
-
-                        <div class="product-price">
-                            <span class="current-price">320.000₫</span>
-                            <span class="old-price">400.000₫</span>
-                        </div>
-                        <div class="mt-2">
-                            <button class="btn btn-sm btn-primary w-100">
-                                <i class="fas fa-shopping-cart me-1"></i> Thêm vào giỏ
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="product-card">
-                    <div class="product-image">
-
-                        <img src="https://cdn.kkfashion.vn/32400-home_default/dam-xoe-dang-dai-ha-eo-tay-bi-mau-xanh-kk170-18.jpg" alt="Váy nữ">
-                        <div class="product-badges">
-                            <span class="badge bg-success">Mới</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-sm btn-outline-light" title="Yêu thích">
-                                <img style="height: 20px" src="~/images/heart.png" />
-                            </button>
-                            <button class="btn btn-sm btn-outline-light" title="Xem nhanh">
-                                <img style="height: 10px" src="~/images/view.png" />
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h6 class="product-title">Váy nữ thanh lịch</h6>
-                        <div class="product-price">
-                            <span class="current-price">450.000₫</span>
-                        </div>
-
-                        <div class="mt-2">
-                            <button class="btn btn-sm btn-primary w-100">
-                                <i class="fas fa-shopping-cart me-1"></i> Thêm vào giỏ
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://product.hstatic.net/1000324561/product/d_32487_c41c32a5a04149758bec9cba06d1d67d_master.jpg">
-                        <div class="product-actions">
-                            <button class="btn btn-sm btn-outline-light" title="Yêu thích">
-                                <img style="height: 20px" src="~/images/heart.png" />
-                            </button>
-                            <button class="btn btn-sm btn-outline-light" title="Xem nhanh">
-                                <img style="height: 10px" src="~/images/view.png" />
-                            </button>
-
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h6 class="product-title">Quần jean nam</h6>
-                        <div class="product-price">
-                            <span class="current-price">380.000₫</span>
-                        </div>
-                        <div class="mt-2">
-                            <button class="btn btn-sm btn-primary w-100">
-                                <i class="fas fa-shopping-cart me-1"></i> Thêm vào giỏ
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://image.hm.com/assets/hm/20/8a/208a45e43e32f9b292e761f198f531100067c1cc.jpg?imwidth=1260" alt="Áo khoác">
-                        <div class="product-badges">
-                            <span class="badge bg-warning">Hot</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-sm btn-outline-light" title="Yêu thích">
-                                <img style="height: 20px" src="~/images/heart.png" />
-                            </button>
-                            <button class="btn btn-sm btn-outline-light" title="Xem nhanh">
-                                <img style="height: 10px" src="~/images/view.png" />
-                            </button>
-
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h6 class="product-title">Áo khoác nữ</h6>
-                        <div class="product-price">
-                            <span class="current-price">520.000₫</span>
-                        </div>
-                        <div class="mt-2">
-                            <button class="btn btn-sm btn-primary w-100">
-                                <i class="fas fa-shopping-cart me-1"></i> Thêm vào giỏ
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center mt-5">
-            <a href="#" class="btn btn-primary btn-lg">
-                Xem tất cả sản phẩm <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-        </div>
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title">Sản phẩm nổi bật</h2>
+      <p class="section-subtitle">Những sản phẩm được yêu thích nhất</p>
     </div>
+
+    <div class="row g-4">
+      @foreach (var product in Model)
+      {
+        var primaryImage = product.ProductImages.FirstOrDefault(img => img.IsPrimary) ??
+        product.ProductImages.FirstOrDefault();
+
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="@primaryImage.ImageURL" class="img-hot" alt="@product.ProductName" />
+              <div class="product-badges">
+                <span class="badge bg-warning">Hot</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm btn-outline-light" title="Yêu thích">
+                  <img style="height: 20px" src="~/images/heart.png" />
+                </button>
+                <button class="btn btn-sm btn-outline-light" title="Xem nhanh">
+                  <img style="height: 10px" src="~/images/view.png" />
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h6 class="product-title">@product.ProductName</h6>
+
+              <div class="product-price">
+                <span class="current-price">@FormatHelper.FormatCurrency(product.Price)</span>
+                @* <span class="old-price">400.000₫</span> *@
+              </div>
+              <div class="mt-2">
+                <button class="btn btn-sm btn-primary w-100 add-to-cart-btn" data-product-id="@product.ProductID">
+                  <i class="fas fa-shopping-cart me-1"></i> Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-primary btn-lg">
+        Xem tất cả sản phẩm <i class="fas fa-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </div>
 </section>
-
-
 <!-- Newsletter Section -->
 <section class="newsletter-section py-5 bg-dark text-white">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h3 class="mb-3">Đăng ký nhận tin tức</h3>
-                <p class="mb-0">Nhận thông tin về sản phẩm mới và ưu đãi đặc biệt qua email</p>
-            </div>
-            <div class="col-lg-6">
-                <form class="newsletter-form">
-                    <div class="input-group">
-                        <input type="email" class="form-control form-control-lg" placeholder="Nhập email của bạn...">
-                        <button class="btn btn-primary btn-lg" type="submit">
-                            <i class="fas fa-paper-plane me-2"></i>Đăng ký
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h3 class="mb-3">Đăng ký nhận tin tức</h3>
+        <p class="mb-0">Nhận thông tin về sản phẩm mới và ưu đãi đặc biệt qua email</p>
+      </div>
+      <div class="col-lg-6">
+        <form class="newsletter-form">
+          <div class="input-group">
+            <input type="email" class="form-control form-control-lg" placeholder="Nhập email của bạn...">
+            <button class="btn btn-primary btn-lg" type="submit">
+              <i class="fas fa-paper-plane me-2"></i>Đăng ký
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </section>
+
+@section Scripts {
+  <script>
+    $(document).on("click", ".add-to-cart-btn", function () {
+      const productId = $(this).data("product-id");
+
+      $.ajax({
+        url: "/HomeCart/AddToCart",
+        type: "POST",
+        data: { productId },
+        success: function (res) {
+          if (res.success) {
+            $("#cart-badge").text(res.cartCount);
+          }
+        }
+      });
+    });
+  </script>
+}

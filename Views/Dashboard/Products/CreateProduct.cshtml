@@ -42,6 +42,7 @@
           <span asp-validation-for="CategoryID" class="text-danger"></span>
         </div>
 
+
         <div class="mb-3">
           <label asp-for="Status">Trạng thái</label>
           <select asp-for="Status" class="form-select">
@@ -56,6 +57,13 @@
           <label>Ảnh sản phẩm (có thể chọn nhiều)</label>
           <input type="file" name="Images" multiple class="form-control" />
         </div>
+
+        <div class="mb-3">
+          <label asp-for="IsFeatured" class="form-label">Sản Phẩm Nổi bật</label>
+          <input asp-for="IsFeatured" type="checkbox" class="form-check-input ms-2" />
+          <span asp-validation-for="IsFeatured" class="text-danger"></span>
+        </div>
+
 
         <div class="mb-3">
           <label asp-for="Description">Ghi chú</label>

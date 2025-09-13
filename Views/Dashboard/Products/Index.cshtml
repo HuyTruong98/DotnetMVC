@@ -21,6 +21,7 @@
       <th>Giá</th>
       <th>Tồn kho</th>
       <th>Trạng thái</th>
+      <th>Nổi bật</th>
       <th>Ngày tạo</th>
       <th>Thao tác</th>
     </tr>
@@ -57,12 +58,15 @@
         <td>@FormatHelper.FormatCurrency(product.Price)</td>
         <td>@product.Stock</td>
         <td><span class="badge @badgeClass">@product.Status</span></td>
+        <td>
+          @(product.IsFeatured ? "✔️" : "❌")
+        </td>
         <td>@FormatHelper.FormatDate(product.CreatedAt)</td>
         <td>
-            <a class="btn btn-sm btn-primary" href="/Dashboard/Products/Details/@product.ProductID">Chi Tiết</a>
-            <a class="btn btn-sm btn-primary" href="/Dashboard/Products/Edit/@product.ProductID">Sửa</a>
-            <a class="btn btn-sm btn-danger" href="/Dashboard/Products/Delete/@product.ProductID"
-               onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?');">Xóa</a>
+          <a class="btn btn-sm btn-primary" href="/Dashboard/Products/Details/@product.ProductID">Chi Tiết</a>
+          <a class="btn btn-sm btn-primary" href="/Dashboard/Products/Edit/@product.ProductID">Sửa</a>
+          <a class="btn btn-sm btn-danger" href="/Dashboard/Products/Delete/@product.ProductID"
+            onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?');">Xóa</a>
 
         </td>
       </tr>

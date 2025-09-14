@@ -33,7 +33,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
       <div class="container-fluid">
 
         <!-- Logo bên trái -->
@@ -51,24 +51,28 @@
         <div class="collapse navbar-collapse" id="mainNavbar">
           <ul class="navbar-nav mx-auto gap-3">
             <li class="nav-item">
-              <a class="nav-link text-dark" asp-controller="Product" asp-action="Category" asp-route-id="ao-nam">Áo
+              <a class="nav-link text-dark" asp-controller="HomeProduct" asp-action="ByCategory"
+                asp-route-categoryIds="1">Áo
                 Nam</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" asp-controller="Product" asp-action="Category" asp-route-id="quan-nam">Quần
+              <a class="nav-link text-dark" asp-controller="HomeProduct" asp-action="ByCategory"
+                asp-route-categoryIds="3">Quần
                 Nam</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" asp-controller="Product" asp-action="Category" asp-route-id="ao-nu">Áo
+              <a class="nav-link text-dark" asp-controller="HomeProduct" asp-action="ByCategory"
+                asp-route-categoryIds="2">Áo
                 Nữ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" asp-controller="Product" asp-action="Category" asp-route-id="quan-nu">Quần
+              <a class="nav-link text-dark" asp-controller="HomeProduct" asp-action="ByCategory"
+                asp-route-categoryIds="4">Quần
                 Nữ</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-danger fw-semibold" asp-controller="Product" asp-action="Category"
-                asp-route-id="outlet">OUTLET</a>
+                asp-route-categoryIds="outlet">OUTLET</a>
             </li>
           </ul>
 
@@ -94,11 +98,12 @@
     </nav>
   </header>
 
-  <div class="container-fluid">
+  <div class="container-fluid" style="margin-top: 60px;">
     <main role="main" class="pb-3">
       @RenderBody()
     </main>
   </div>
+
 
   <footer class="border-top footer text-muted mt-5">
     <div class="container">

@@ -151,7 +151,6 @@ F:\ehou\OnlineStoreMVC\obj\Debug\net9.0\OnlineStoreMVC.pdb
 F:\ehou\OnlineStoreMVC\obj\Debug\net9.0\OnlineStoreMVC.genruntimeconfig.cache
 F:\ehou\OnlineStoreMVC\obj\Debug\net9.0\ref\OnlineStoreMVC.dll
 F:\ehou\OnlineStoreMVC\bin\Debug\net9.0\Newtonsoft.Json.dll
-F:\ehou\OnlineStoreMVC\obj\Debug\net9.0\compressed\t0fio214w3-jm3hz2y1f9.gz
 D:\it15\DotnetMVC\bin\Debug\net9.0\appsettings.Development.json
 D:\it15\DotnetMVC\bin\Debug\net9.0\appsettings.json
 D:\it15\DotnetMVC\bin\Debug\net9.0\OnlineStoreMVC.staticwebassets.runtime.json
@@ -306,3 +305,4 @@ D:\it15\DotnetMVC\obj\Debug\net9.0\refint\OnlineStoreMVC.dll
 D:\it15\DotnetMVC\obj\Debug\net9.0\OnlineStoreMVC.pdb
 D:\it15\DotnetMVC\obj\Debug\net9.0\OnlineStoreMVC.genruntimeconfig.cache
 D:\it15\DotnetMVC\obj\Debug\net9.0\ref\OnlineStoreMVC.dll
+F:\ehou\OnlineStoreMVC\obj\Debug\net9.0\compressed\t0fio214w3-7kbdc1d0lt.gz

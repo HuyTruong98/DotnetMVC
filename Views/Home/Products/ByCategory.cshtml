@@ -1,0 +1,181 @@
+@model List<OnlineStoreMVC.Models.Product>
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+  ViewData["Title"] = "Sản phẩm theo danh mục";
+}
+
+<div class="container mt-4">
+  <h2 class="mb-4">
+    Sản phẩm thuộc danh mục: @(Model.Any() ? Model.First().Category?.CategoryName : "Không có")
+  </h2>
+
+  <!-- Search + Sort -->
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <input type="text" id="searchBox" class="form-control" placeholder="🔍 Tìm kiếm sản phẩm...">
+    </div>
+    <div class="col-md-6 text-end">
+      <select id="sortSelect" class="form-select w-auto d-inline-block">
+        <option value="default">-- Sắp xếp --</option>
+        <option value="asc">Giá ↑ (thấp → cao)</option>
+        <option value="desc">Giá ↓ (cao → thấp)</option>
+      </select>
+    </div>
+  </div>
+  <div class="row g-4" id="product-list">
+    @if (Model.Any())
+    {
+      var index = 0;
+      foreach (var product in Model)
+      {
+        var image = product.ProductImages?.FirstOrDefault()?.ImageURL ?? "/images/no-image.png";
+        <div class="col-lg-4 col-md-6 product-card p-2 @(index >= 6 ? "d-none" : "")"
+          data-name="@product.ProductName.ToLower()" data-price="@product.Price">
+          <div class="card h-100 d-flex flex-column" style="min-height: 500px;">
+            <img src="@image" class="card-img-top" alt="@product.ProductName" style="object-fit: contain; height: 400px;">
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">@product.ProductName</h5>
+              <p class="card-text text-muted">@product.Description</p>
+              <p class="fw-bold text-danger" style="font-size: 18px">@product.Price.ToString("N0") ₫</p>
+
+              <button type="button" class="btn btn-primary mt-auto w-100 add-to-cart-btn"
+                data-product-id="@product.ProductID">
+                🛒 Thêm vào giỏ
+              </button>
+
+            </div>
+          </div>
+        </div>
+        index++;
+      }
+    }
+    else
+    {
+      <p class="text-muted">Không có sản phẩm nào trong danh mục này.</p>
+    }
+  </div>
+
+  @if (Model.Count > 6)
+  {
+    <div class="text-center mt-3">
+      <button id="loadMoreBtn" style="width: 100%" class="btn btn-outline-primary">Xem thêm</button>
+    </div>
+  }
+</div>
+
+@section Scripts {
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let currentVisible = 6; // 👉 hiển thị 6 sản phẩm đầu tiên
+      const products = document.querySelectorAll(".product-card");
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+      const searchBox = document.getElementById("searchBox");
+      const sortSelect = document.getElementById("sortSelect");
+      const container = document.getElementById("product-list");
+
+      // 🔹 Hiển thị ban đầu
+      function applyPagination(cards) {
+        cards.forEach((c, idx) => {
+          if (idx < currentVisible) {
+            c.classList.remove("d-none");
+          } else {
+            c.classList.add("d-none");
+          }
+        });
+        if (loadMoreBtn) {
+          loadMoreBtn.style.display = currentVisible >= cards.length ? "none" : "block";
+        }
+      }
+
+      // 🔹 Hàm sort
+      function sortCardsArray(cards, mode) {
+        return cards.sort((a, b) => {
+          const pa = parseFloat(a.dataset.price);
+          const pb = parseFloat(b.dataset.price);
+          if (mode === "asc") return pa - pb;
+          if (mode === "desc") return pb - pa;
+          return 0;
+        });
+      }
+
+      // 🔹 Lấy toàn bộ cards
+      function getAllCards() {
+        return Array.from(container.querySelectorAll(".product-card"));
+      }
+
+      // Load More
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", function () {
+          currentVisible += 6; // 👉 mỗi lần load thêm 6
+          applyPagination(getAllCards());
+        });
+      }
+
+      // Search
+      searchBox.addEventListener("input", function () {
+        const kw = this.value.trim().toLowerCase();
+        const all = getAllCards();
+        if (kw.length > 0) {
+          all.forEach(c => {
+            if (c.dataset.name.includes(kw)) {
+              c.classList.remove("d-none");
+              container.appendChild(c);
+            } else {
+              c.classList.add("d-none");
+            }
+          });
+          if (loadMoreBtn) loadMoreBtn.style.display = "none";
+        } else {
+          const sorted = sortCardsArray(all, sortSelect.value);
+          sorted.forEach(c => container.appendChild(c));
+          currentVisible = 6; // reset lại
+          applyPagination(sorted);
+        }
+      });
+
+      // Sort
+      sortSelect.addEventListener("change", function () {
+        const mode = this.value;
+        const kw = searchBox.value.trim().toLowerCase();
+        const all = getAllCards();
+
+        if (kw.length > 0) {
+          const matched = all.filter(c => c.dataset.name.includes(kw));
+          const sortedMatched = sortCardsArray(matched, mode);
+          sortedMatched.forEach(c => {
+            container.appendChild(c);
+            c.classList.remove("d-none");
+          });
+          all.filter(c => !c.dataset.name.includes(kw))
+            .forEach(c => c.classList.add("d-none"));
+          if (loadMoreBtn) loadMoreBtn.style.display = "none";
+        } else {
+          const sorted = sortCardsArray(all, mode);
+          sorted.forEach(c => container.appendChild(c));
+          currentVisible = 6; // reset lại
+          applyPagination(sorted);
+        }
+      });
+
+      // 👉 Khởi tạo lần đầu
+      applyPagination(getAllCards());
+    });
+
+    // Ajax Add To Cart
+    $(document).on("click", ".add-to-cart-btn", function () {
+      const productId = $(this).data("product-id");
+
+      $.ajax({
+        url: "/HomeCart/AddToCart",
+        type: "POST",
+        data: { productId },
+        success: function (res) {
+          if (res.success) {
+            $("#cart-badge").text(res.cartCount);
+          }
+        }
+      });
+    });
+  </script>
+}

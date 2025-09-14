@@ -278,23 +278,5 @@ namespace OnlineStoreMVC.Controllers
 
       return View("~/Views/Dashboard/Products/Details.cshtml", product);
     }
-
-        [HttpGet("ByCategory/{categoryId}")]
-        public IActionResult ByCategory(int categoryId)
-        {
-            var products = _context.Products
-                .Include(p => p.ProductImages)
-                .Include(p => p.Category)
-                .Where(p => p.CategoryID == categoryId)
-                .ToList();
-
-            if (!products.Any())
-            {
-                return NotFound();
-            }
-
-            return View("~/Views/Products/ByCategory.cshtml", products);
-        }
-
-    }
+  }
 }

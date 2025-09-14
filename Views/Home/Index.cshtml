@@ -94,30 +94,59 @@
     </div>
 
     <div class="row g-4">
-        @foreach (var product in Model)
-      {
-          var primaryImage = product?.ProductImages?.FirstOrDefault(img => img.IsPrimary);
-
-        <div class="col-lg-4 col-md-6">
-            <div class="collection-card">
-                <div class="collection-image">
-                    <img src="@(primaryImage?.ImageURL ?? "/images/no-image.png")">
-                    <div class="collection-overlay">
-                        <div class="collection-content">
-                            <h4>@product.Category.CategoryName</h4>
-                            <p>@product.ProductName</p>
-                            <a asp-controller="DashboardProduct"
-                               asp-action="ByCategory"
-                               asp-route-categoryId="@product.CategoryID"
-                               class="btn btn-light">
-                                Xem ngay
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="collection-card">
+          <div class="collection-image">
+            <img src="/uploads/products/yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg" alt="Thời trang nam">
+            <div class="collection-overlay">
+              <div class="collection-content">
+                <h4>Thời trang nam</h4>
+                <p>Phong cách lịch lãm, hiện đại</p>
+                <a asp-controller="HomeProduct" asp-action="ByCategory" asp-route-categoryIds="1,3"
+                  class="btn btn-light">
+                  Xem ngay
+                </a>
+              </div>
             </div>
+          </div>
         </div>
-      }
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="collection-card">
+          <div class="collection-image">
+            <img src="/uploads/products/unnamed.png" alt="Thời trang nữ">
+            <div class="collection-overlay">
+              <div class="collection-content">
+                <h4>Thời trang nữ</h4>
+                <p>Thanh lịch, quyến rũ</p>
+                <a asp-controller="HomeProduct" asp-action="ByCategory" asp-route-categoryIds="2,4"
+                  class="btn btn-light">
+                  Xem ngay
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="collection-card">
+          <div class="collection-image">
+            <img src="/uploads/products/phu-kien-thoi-trang-8.jpg" alt="Phụ kiện">
+            <div class="collection-overlay">
+              <div class="collection-content">
+                <h4>Phụ kiện</h4>
+                <p>Hoàn thiện phong cách</p>
+                <a asp-controller="HomeProduct" asp-action="ByCategory" asp-route-categoryIds="5,6,7"
+                  class="btn btn-light">
+                  Xem ngay
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -134,7 +163,7 @@
       @foreach (var product in Model)
       {
 
-    var primaryImage = product?.ProductImages?.FirstOrDefault(img => img.IsPrimary);
+        var primaryImage = product?.ProductImages?.FirstOrDefault(img => img.IsPrimary);
 
         <div class="col-lg-3 col-md-6">
           <div class="product-card">
@@ -161,7 +190,7 @@
               </div>
               <div class="mt-2">
                 <button class="btn btn-sm btn-primary w-100 add-to-cart-btn" data-product-id="@product.ProductID">
-                  <i class="fas fa-shopping-cart me-1"></i> Thêm vào giỏ
+                  🛒 Thêm vào giỏ
                 </button>
               </div>
             </div>

@@ -6,6 +6,7 @@
   ViewData["Title"] = "Quản lý sản phẩm";
 }
 
+
 <div class="d-flex justify-content-between align-items-center mb-3">
   <h2>📦 Danh sách sản phẩm</h2>
   <a class="btn btn-success" href="/Dashboard/Products/Create">➕ Tạo mới</a>
@@ -19,6 +20,7 @@
       <th>Tên sản phẩm</th>
       <th>Loại</th>
       <th>Giá</th>
+      <th>Giá giảm</th>
       <th>Tồn kho</th>
       <th>Trạng thái</th>
       <th>Nổi bật</th>
@@ -30,6 +32,15 @@
     @for (int i = 0; i < Model.Count; i++)
     {
       var product = Model[i];
+
+      var promotions = ViewBag.Promotions as List<OnlineStoreMVC.Models.Promotion> ?? new
+      List<OnlineStoreMVC.Models.Promotion>();
+      var promo = promotions.FirstOrDefault(p => p.ProductID == product.ProductID);
+
+      var discountedPrice = promo != null
+      ? product.Price * (1 - (decimal)promo.DiscountPercent / 100)
+      : 0;
+
       var primaryImage = product.ProductImages.FirstOrDefault(img => img.IsPrimary) ??
       product.ProductImages.FirstOrDefault();
 
@@ -56,6 +67,16 @@
         <td>@product.ProductName</td>
         <td>@product.Category?.CategoryName</td>
         <td>@FormatHelper.FormatCurrency(product.Price)</td>
+        <td>
+          @if (promo != null)
+          {
+            <span class="text-success fw-bold">@FormatHelper.FormatCurrency(discountedPrice)</span>
+          }
+          else
+          {
+            <span class="text-muted">@FormatHelper.FormatCurrency(0)</span>
+          }
+        </td>
         <td>@product.Stock</td>
         <td><span class="badge @badgeClass">@product.Status</span></td>
         <td>

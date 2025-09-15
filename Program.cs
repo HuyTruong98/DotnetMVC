@@ -20,6 +20,7 @@ builder.Services.AddSession(options =>
 
 // 4. Đăng ký IHttpContextAccessor để dùng trong Razor View
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddDistributedMemoryCache();
 
 var app = builder.Build();
 

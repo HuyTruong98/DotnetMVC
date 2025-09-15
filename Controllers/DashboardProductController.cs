@@ -30,7 +30,12 @@ namespace OnlineStoreMVC.Controllers
         .Include(p => p.ProductImages)
         .ToList();
 
+      var promotions = _context.Promotions
+            .Where(p => p.StartDate <= DateTime.Now &&
+                       (p.EndDate == null || p.EndDate >= DateTime.Now))
+            .ToList();
 
+      ViewBag.Promotions = promotions;
 
       return View("~/Views/Dashboard/Products/Index.cshtml", products);
     }

@@ -12,6 +12,8 @@
     }
   }
   var cartCount = cart.Sum(c => c.Quantity);
+
+  var userName = HttpContextAccessor.HttpContext?.Session?.GetString("Username");
 }
 
 <!DOCTYPE html>
@@ -77,11 +79,36 @@
           </ul>
 
           <div class="d-flex align-items-center gap-3">
-            <!-- User icon -->
-            <a class="btn btn-outline-secondary rounded-circle" asp-controller="Account" asp-action="Profile"
-              title="Tài khoản">
-              <i class="fas fa-user"></i>
-            </a>
+            <!-- User dropdown -->
+            @if (!string.IsNullOrEmpty(userName))
+            {
+              <div class="dropdown">
+                <a class="btn btn-outline-secondary rounded-circle" href="#" role="button" id="userDropdown"
+                  data-bs-toggle="dropdown" aria-expanded="false" title="Tài khoản">
+                  <i class="fas fa-user"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                  <li>
+                    <h6 class="dropdown-header">Xin chào, @userName</h6>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" asp-controller="Account" asp-action="Profile">Thông tin tài khoản</a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-danger" href="/logout">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+            }
+            else
+            {
+              <a class="btn btn-outline-secondary rounded-circle" href="/login" title="Đăng nhập">
+                <i class="fas fa-user"></i>
+              </a>
+            }
 
             <!-- Cart icon with badge -->
             <a class="btn btn-outline-primary position-relative rounded-circle" asp-controller="Cart" asp-action="Index"

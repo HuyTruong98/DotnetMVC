@@ -16,5 +16,6 @@ namespace OnlineStoreMVC.Models
 
     public Category Category { get; set; }
     public virtual ICollection<ProductImage> ProductImages { get; set; }
+    public virtual ICollection<Promotion> Promotions { get; set; }
   }
 }

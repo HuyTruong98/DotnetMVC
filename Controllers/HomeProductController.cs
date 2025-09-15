@@ -33,5 +33,18 @@ namespace OnlineStoreMVC.Controllers
 
       return View("~/Views/Home/Products/ByCategory.cshtml", products);
     }
-  }
+    public IActionResult Detail(int id)
+        {
+            var product = _context.Products
+                .Include(p => p.Category)
+                 .Include(p => p.ProductImages)
+                .Include(p => p.ProductImages)
+                .FirstOrDefault(p => p.ProductID == id);
+
+            if (product == null)
+                return NotFound();
+
+            return View("~/Views/Home/Products/Detail.cshtml", product);
+        }
+    }
 }

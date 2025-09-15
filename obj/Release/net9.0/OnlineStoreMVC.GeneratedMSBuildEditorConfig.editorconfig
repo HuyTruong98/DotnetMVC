@@ -60,14 +60,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXE9yZGVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/it15/DotnetMVC/Views/Dashboard/Products/ByCategory.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFByb2R1Y3RzXEJ5Q2F0ZWdvcnkuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/it15/DotnetMVC/Views/Dashboard/Products/CreateProduct (2).cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFByb2R1Y3RzXENyZWF0ZVByb2R1Y3QgKDIpLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/it15/DotnetMVC/Views/Dashboard/Products/CreateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFByb2R1Y3RzXENyZWF0ZVByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -88,6 +80,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFByb2R1Y3RzXFF1aWNrVmlld1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/it15/DotnetMVC/Views/Dashboard/Promotions/CreatePromotions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFByb21vdGlvbnNcQ3JlYXRlUHJvbW90aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/it15/DotnetMVC/Views/Dashboard/Promotions/EditPromotions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFByb21vdGlvbnNcRWRpdFByb21vdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/it15/DotnetMVC/Views/Dashboard/Promotions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFByb21vdGlvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/it15/DotnetMVC/Views/Dashboard/Users/CreateUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVzZXJzXENyZWF0ZVVzZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -106,6 +110,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/it15/DotnetMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/it15/DotnetMVC/Views/Home/Products/ByCategory (2).cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0c1xCeUNhdGVnb3J5ICgyKS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/it15/DotnetMVC/Views/Home/Products/ByCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0c1xCeUNhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/it15/DotnetMVC/Views/Shared/Error.cshtml]

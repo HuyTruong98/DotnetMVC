@@ -1,0 +1,221 @@
+@model OnlineStoreMVC.Models.Product
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+<style>
+    .tab-pane {
+        display: none;
+    }
+
+    .tab-pane.active {
+        display: block;
+    }
+
+    .tab-pane.fade {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.1s ease-in-out;
+    }
+
+    .tab-pane.fade.show.active {
+        display: block;
+        opacity: 1;
+    }
+
+    .nav-tabs .nav-link.active {
+        background-color: #1717b7;
+        color: #fff !important;
+        font-weight: bold;
+        border: 2px solid #1717b7;
+        border-bottom: none;
+    }
+
+    .nav-tabs .nav-link {
+        color: #0d6efd;
+        border: 1px solid transparent;
+    }
+
+    .nav-tabs .nav-link:hover {
+        border: 1px solid #dee2e6;
+    }
+</style>
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Hình ảnh sản phẩm -->
+        <div class="col-md-6">
+            <!-- Ảnh chính -->
+            <img src="@(Model.ProductImages?.FirstOrDefault()?.ImageURL
+                ?? "/images/no-image.png")"
+                 class="img-fluid mb-3" alt="@Model.ProductName" />
+
+            <!-- Thumbnail ProductImages -->
+            <div class="d-flex flex-wrap mb-2">
+                @if (Model.ProductImages != null && Model.ProductImages.Any())
+        {
+            foreach (var img in Model.ProductImages)
+            {
+                <img src="@img.ImageURL" class="img-thumbnail me-2 mb-2" style="width: 80px;" />
+            }
+        }
+            </div>
+        </div>
+
+
+        <!-- Thông tin chi tiết -->
+        <div class="col-md-6">
+            <h3>@Model.ProductName</h3>
+            <p>Mã sản phẩm: <strong>@Model.ProductID</strong></p>
+            <h4 style="color: #001F5D">@Model.Price.ToString("N0") ₫</h4>
+
+            <div style=" padding: 10px; margin-bottom: 10px; border: 2px dashed #b00002; margin-top: 20px; position: relative;">
+                <h6 style=" margin-bottom: 8px; font-size: 0.875rem; font-weight: 600; padding: 5px 10px; color: #b00002; background: #fff; position: absolute; top: -14px;">🎁 KHUYẾN MÃI - ƯU ĐÃI</h6>
+
+                <ul>
+                    <li>Nhập mã <b>SEP9</b> giảm 9k đơn từ 0đ</li>
+                    <li>Nhập mã <b>SEP30</b> giảm 30k đơn từ 299k</li>
+                    <li>Nhập mã <b>SEP50</b> giảm 50k đơn từ 599k</li>
+                    <li>Nhập mã <b>SEP100</b> giảm 100k đơn từ 999k</li>
+                    <li>Freeship đơn hàng từ 399k</li>
+                </ul>
+            </div>
+
+            <div>
+                @*<div>
+                        <button class="btn btn-outline-dark btn-sm me-2">S</button>
+                        <button class="btn btn-outline-dark btn-sm me-2">M</button>
+                        <button class="btn btn-outline-dark btn-sm me-2">L</button>
+                        <button class="btn btn-outline-dark btn-sm me-2">XL</button>
+                    </div>*@
+            </div>
+            <div class="mt-3 d-flex align-items-center">
+                <!-- Ô số lượng -->
+                <div class="d-flex align-items-center border rounded px-2" style="width: 120px; height: 40px;">
+                    <button id="decrease" class="btn p-0 border-0" style="width: 30px;">−</button>
+                    <span id="quantity" class="flex-grow-1 text-center">1</span>
+                    <button id="increase" class="btn p-0 border-0" style="width: 30px;">+</button>
+                </div>
+                <!-- Nút thêm vào giỏ -->
+                <button class="btn btn-outline-primary ms-3 px-4 add-to-cart-btn" data-product-id="@Model.ProductID">THÊM VÀO GIỎ</button>
+            </div>
+
+            <!-- Nút mua ngay -->
+            <div class="mt-3">
+                <button class="btn w-100" style="background-color: #001f60; color: #fff;">MUA NGAY</button>
+            </div>
+            <ul class="product-policises list-unstyled d-flex justify-content-between py-sm-3 px-sm-3 m-0 mt-3 border rounded">
+                <li class="d-flex align-items-center me-3">
+                    <img class="img-fluid me-2" width="27" height="27"
+                         src="//theme.hstatic.net/1000360022/1001381352/14/policy_product_image_1.png?v=5373"
+                         alt="Freeship đơn từ 399K">
+                    <span style="font-size:14px">Freeship đơn từ 399K</span>
+                </li>
+                <li class="d-flex align-items-center me-3">
+                    <img class="img-fluid me-2" width="27" height="27"
+                         src="//theme.hstatic.net/1000360022/1001381352/14/policy_product_image_2.png?v=5373"
+                         alt="Cộng dồn Membership đến 15%">
+                    <span style="font-size:14px">Cộng dồn Membership đến 15%</span>
+                </li>
+                <li class="d-flex align-items-center me-3">
+                    <img class="img-fluid me-2" width="27" height="27"
+                         src="//theme.hstatic.net/1000360022/1001381352/14/policy_product_image_3.png?v=5373"
+                         alt="Thanh toán COD">
+                    <span style="font-size:14px">Thanh toán COD</span>
+                </li>
+                <li class="d-flex align-items-center">
+                    <img class="img-fluid me-2" width="27" height="27"
+                         src="//theme.hstatic.net/1000360022/1001381352/14/policy_product_image_4.png?v=5373"
+                         alt="Đổi trả trong 15 ngày">
+                    <span style="font-size:14px">Đổi trả trong 15 ngày</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs mt-4" id="productTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc" type="button" role="tab">
+                    VỀ CHÚNG TÔI
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button" role="tab">
+                    CHÍNH SÁCH GIAO HÀNG
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="return-tab" data-bs-toggle="tab" data-bs-target="#return" type="button" role="tab">
+                    CHÍNH SÁCH ĐỔI HÀNG
+                </button>
+            </li>
+        </ul>
+
+        <!-- Nội dung của Tabs -->
+        <div class="tab-content border-start border-end border-bottom p-3" id="productTabContent">
+            <!-- Tab Về chúng tôi -->
+            <div class="tab-pane fade show active" id="desc" role="tabpanel">
+                <h5>Về onlineStoreMVC</h5>
+                <p>
+                    Chào mừng bạn đến với <strong>onlineStoreMVC®</strong> – thương hiệu thời trang nam chính hãng,
+                    mang đến cho bạn những sản phẩm <b>chất lượng cao</b>, <b>thiết kế hiện đại</b>
+                    và luôn bắt kịp xu hướng mới nhất.
+                </p>
+                <ul>
+                    <li>✔️ <strong>Sản phẩm chính hãng</strong> – Cam kết 100% hàng chuẩn, không pha trộn, không hàng giả.</li>
+                    <li>✔️ <strong>Chất lượng vượt trội</strong> – Được sản xuất từ những chất liệu bền đẹp, thoải mái.</li>
+                    <li>✔️ <strong>Đổi trả dễ dàng</strong> – Hỗ trợ đổi trả trong vòng <b>15 ngày</b> nếu sản phẩm lỗi hoặc không vừa size.</li>
+                    <li>✔️ <strong>Giao hàng toàn quốc</strong> – Nhanh chóng, tiện lợi, freeship cho đơn từ 399K.</li>
+                    <li>✔️ <strong>Phục vụ tận tâm</strong> – Đội ngũ CSKH sẵn sàng hỗ trợ 24/7.</li>
+                </ul>
+                <p>
+                    Chúng tôi tin rằng <b>thời trang không chỉ là quần áo</b>,
+                    mà còn là <b>cách bạn thể hiện cá tính và phong cách sống</b>.
+                    Hãy để onlineStoreMVC® đồng hành cùng bạn trên mọi hành trình.
+                </p>
+            </div>
+
+            <!-- Tab Chính sách giao hàng -->
+            <div class="tab-pane fade" id="shipping" role="tabpanel">
+                <div class="d-flex justify-content-center">
+                    <img src="~/images/chinhsachgiaohang.jpg" alt="Chính sách giao hàng" />
+                </div>
+            </div>
+
+            <!-- Tab Chính sách đổi hàng -->
+            <div class="tab-pane fade" id="return" role="tabpanel">
+                <img style="width: 100%" src="~/images/chinhsach2.jpg" alt="Chính sách đổi hàng 1" />
+                <img style="width: 100%" src="~/images/chinhsach3.jpg" alt="Chính sách đổi hàng 2" />
+                <img style="width: 100%" src="~/images/chinhsach4.jpg" alt="Chính sách đổi hàng 3" />
+                <img style="width: 100%" src="~/images/chinhsach5.jpg" alt="Chính sách đổi hàng 4" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script>
+    const quantityEl = document.getElementById("quantity");
+    const decreaseBtn = document.getElementById("decrease");
+    const increaseBtn = document.getElementById("increase");
+
+    let quantity = 1;
+
+    decreaseBtn.addEventListener("click", () => {
+        if (quantity > 1) {
+            quantity--;
+            quantityEl.textContent = quantity;
+        }
+    });
+
+    increaseBtn.addEventListener("click", () => {
+        quantity++;
+        quantityEl.textContent = quantity;
+    });
+
+
+
+</script>

@@ -35,15 +35,20 @@
             <img src="@image" class="card-img-top" alt="@product.ProductName" style="object-fit: contain; height: 400px;">
 
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title">@product.ProductName</h5>
-              <p class="card-text text-muted">@product.Description</p>
-              <p class="fw-bold text-danger" style="font-size: 18px">@product.Price.ToString("N0") ₫</p>
+                <h5 class="card-title">@product.ProductName</h5>
+                <p class="card-text text-muted">@product.Description</p>
+                <p class="fw-bold text-danger" style="font-size: 18px">@product.Price.ToString("N0") ₫</p>
 
-              <button type="button" class="btn btn-primary mt-auto w-100 add-to-cart-btn"
-                data-product-id="@product.ProductID">
-                🛒 Thêm vào giỏ
-              </button>
+                <button type="button" class="btn btn-primary mt-auto w-100 add-to-cart-btn"
+                        data-product-id="@product.ProductID">
+                    🛒 Thêm vào giỏ
+                </button>
+                @*<a href="/Product/Detail/@product.ProductID" style="margin-top: 20px" >Xem chi tiết</a>*@
 
+                <a href="@Url.Action("Detail", "HomeProduct", new { id = product.ProductID })"
+                   class="btn btn-outline-info mb-2 w-100">
+                    👁️ Xem chi tiết
+                </a>
             </div>
           </div>
         </div>

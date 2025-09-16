@@ -13,13 +13,12 @@
         <div class="col-md-5">
             @if (Model.ProductImages != null && Model.ProductImages.Any())
             {
-          <img src="@Url.Content(Model.ProductImages.FirstOrDefault(img => img.IsPrimary)?.ImageURL
-                      ?? Model.ProductImages.First().ImageURL)"
-               class="img-fluid rounded border" />
-            }
+                <img src="@Url.Content(Model.ProductImages.FirstOrDefault(img => img.IsPrimary)?.ImageURL
+                                           ?? Model.ProductImages.First().ImageURL)" class="img-fluid rounded border" />
+                        }
             else
             {
-            <span class="text-muted">Không có ảnh</span>
+                <span class="text-muted">Không có ảnh</span>
             }
         </div>
 
@@ -35,7 +34,7 @@
                 <dd class="col-sm-8">@FormatHelper.FormatCurrency(Model.Price)</dd>
 
                 <dt class="col-sm-4">Tồn kho:</dt>
-                <dd class="col-sm-8">@Model.Stock</dd>
+                @* <dd class="col-sm-8">@Model.Stock</dd> *@
 
                 <dt class="col-sm-4">Trạng thái:</dt>
                 <dd class="col-sm-8"><span class="badge bg-info">@Model.Status</span></dd>
@@ -51,6 +50,7 @@
 
     <div class="mt-4">
         <a class="btn btn-secondary" asp-controller="DashboardProduct" asp-action="Index">⬅ Quay lại</a>
-        <a class="btn btn-primary" asp-controller="DashboardProduct" asp-action="Edit" asp-route-id="@Model.ProductID">✏ Sửa</a>
+        <a class="btn btn-primary" asp-controller="DashboardProduct" asp-action="Edit" asp-route-id="@Model.ProductID">✏
+            Sửa</a>
     </div>
 </div>

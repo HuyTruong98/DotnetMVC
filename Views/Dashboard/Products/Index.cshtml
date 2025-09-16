@@ -1,4 +1,4 @@
-@model List<OnlineStoreMVC.Models.Product>
+@model IEnumerable<OnlineStoreMVC.Models.Product>
 @using OnlineStoreMVC.Helpers
 
 @{
@@ -6,91 +6,156 @@
   ViewData["Title"] = "Quản lý sản phẩm";
 }
 
-
-<div class="d-flex justify-content-between align-items-center mb-3">
-  <h2>📦 Danh sách sản phẩm</h2>
-  <a class="btn btn-success" href="/Dashboard/Products/Create">➕ Tạo mới</a>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2 class="mb-0">📦 Danh sách sản phẩm</h2>
+  <a class="btn btn-success" asp-controller="DashboardProduct" asp-action="Create">➕ Tạo mới</a>
 </div>
 
-<table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover align-middle">
   <thead class="table-dark">
     <tr>
-      <th>#</th>
-      <th>Ảnh</th>
+      <th style="width:40px;">#</th>
+      <th style="width:100px;">Ảnh</th>
       <th>Tên sản phẩm</th>
       <th>Loại</th>
-      <th>Giá</th>
-      <th>Giá giảm</th>
-      <th>Tồn kho</th>
-      <th>Trạng thái</th>
-      <th>Nổi bật</th>
-      <th>Ngày tạo</th>
-      <th>Thao tác</th>
+      <th style="width:120px;">Giá</th>
+      <th style="width:120px;">Giá giảm</th>
+      <th style="width:100px;">Tổng tồn kho</th>
+      <th style="width:100px;">Trạng thái</th>
+      <th style="width:80px;">Nổi bật</th>
+      <th style="width:140px;">Ngày tạo</th>
+      <th style="width:180px;">Thao tác</th>
     </tr>
   </thead>
   <tbody>
-    @for (int i = 0; i < Model.Count; i++)
+    @if (!Model.Any())
     {
-      var product = Model[i];
-
-      var promotions = ViewBag.Promotions as List<OnlineStoreMVC.Models.Promotion> ?? new
-      List<OnlineStoreMVC.Models.Promotion>();
-      var promo = promotions.FirstOrDefault(p => p.ProductID == product.ProductID);
-
-      var discountedPrice = promo != null
-      ? product.Price * (1 - (decimal)promo.DiscountPercent / 100)
-      : 0;
-
-      var primaryImage = product.ProductImages.FirstOrDefault(img => img.IsPrimary) ??
-      product.ProductImages.FirstOrDefault();
-
-      string badgeClass = product.Status switch
-      {
-        "Available" => "bg-success",
-        "OutOfStock" => "bg-danger",
-        "Promotion" => "bg-warning text-dark",
-        _ => "bg-secondary"
-      };
-
       <tr>
-        <td>@(i + 1)</td>
-        <td>
-          @if (primaryImage != null)
-          {
-            <img src="@primaryImage.ImageURL" width="80" class="img-thumbnail" />
-          }
-          else
-          {
-            <span class="text-muted">Không có ảnh</span>
-          }
-        </td>
-        <td>@product.ProductName</td>
-        <td>@product.Category?.CategoryName</td>
-        <td>@FormatHelper.FormatCurrency(product.Price)</td>
-        <td>
-          @if (promo != null)
-          {
-            <span class="text-success fw-bold">@FormatHelper.FormatCurrency(discountedPrice)</span>
-          }
-          else
-          {
-            <span class="text-muted">@FormatHelper.FormatCurrency(0)</span>
-          }
-        </td>
-        <td>@product.Stock</td>
-        <td><span class="badge @badgeClass">@product.Status</span></td>
-        <td>
-          @(product.IsFeatured ? "✔️" : "❌")
-        </td>
-        <td>@FormatHelper.FormatDate(product.CreatedAt)</td>
-        <td>
-          <a class="btn btn-sm btn-primary" href="/Dashboard/Products/Details/@product.ProductID">Chi Tiết</a>
-          <a class="btn btn-sm btn-primary" href="/Dashboard/Products/Edit/@product.ProductID">Sửa</a>
-          <a class="btn btn-sm btn-danger" href="/Dashboard/Products/Delete/@product.ProductID"
-            onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?');">Xóa</a>
-
+        <td colspan="11" class="text-center text-muted py-4">
+          Không có sản phẩm nào
         </td>
       </tr>
+    }
+    else
+    {
+      var i = 0;
+      foreach (var product in Model)
+      {
+        // Lấy khuyến mãi, giá giảm
+        var promotions = ViewBag.Promotions as List<OnlineStoreMVC.Models.Promotion> ?? new();
+        var promo = promotions.FirstOrDefault(p => p.ProductID == product.ProductID);
+        var discountedPrice = promo != null
+        ? product.Price * (1 - (decimal)promo.DiscountPercent / 100)
+        : 0m;
+
+        // Ảnh chính
+        var primaryImage = product.ProductImages
+        .FirstOrDefault(img => img.IsPrimary)
+        ?? product.ProductImages.FirstOrDefault();
+
+        // Tổng tồn kho
+        var totalStock = product.Variants?.Sum(v => v.Stock) ?? 0;
+
+        // Badge trạng thái
+        var badgeClass = product.Status switch
+        {
+          "Available" => "bg-success",
+          "OutOfStock" => "bg-danger",
+          "Promotion" => "bg-warning text-dark",
+          _ => "bg-secondary"
+        };
+        <tr>
+          <td>@(++i)</td>
+          <td>
+            @if (primaryImage != null)
+            {
+              <img src="@primaryImage.ImageURL" width="80" class="img-thumbnail" />
+            }
+            else
+            {
+              <span class="text-muted">Không có ảnh</span>
+            }
+          </td>
+          <td>@product.ProductName</td>
+          <td>@product.Category?.CategoryName</td>
+          <td>@FormatHelper.FormatCurrency(product.Price)</td>
+          <td>
+            @if (promo != null)
+            {
+              <span class="text-success fw-bold">
+                @FormatHelper.FormatCurrency(discountedPrice)
+              </span>
+            }
+            else
+            {
+              <span class="text-muted">—</span>
+            }
+          </td>
+          <td>@totalStock</td>
+          <td><span class="badge @badgeClass">@product.Status</span></td>
+          <td class="text-center">@(product.IsFeatured ? "✔️" : "❌")</td>
+          <td>@FormatHelper.FormatDate(product.CreatedAt)</td>
+          <td>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-info" type="button" data-bs-toggle="collapse"
+                data-bs-target="#variants-@product.ProductID" aria-expanded="false"
+                aria-controls="variants-@product.ProductID">
+                Chi tiết
+              </button>
+              <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@product.ProductID">
+                Sửa
+              </a>
+              <form asp-action="Delete" asp-route-id="@product.ProductID" method="post"
+                onsubmit="return confirm('Xác nhận xóa?');" class="d-inline">
+                <button type="submit" class="btn btn-sm btn-danger">
+                  Xóa
+                </button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="11" class="p-0 bg-light">
+            <div class="collapse" id="variants-@product.ProductID">
+              <div class="p-2">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <strong>Size – Màu – Tồn kho:</strong>
+                </div>
+                <table class="table table-sm table-striped mt-2 mb-0">
+                  <thead>
+                    <tr>
+                      <th style="width:150px;">Size</th>
+                      <th style="width:150px;">Màu sắc</th>
+                      <th style="width:150px;">Tồn kho</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @if (product.Variants != null && product.Variants.Any())
+                    {
+                      foreach (var v in product.Variants)
+                      {
+                        <tr>
+                          <td>@v.Size</td>
+                          <td>@v.Color</td>
+                          <td>@v.Stock</td>
+                        </tr>
+                      }
+                    }
+                    else
+                    {
+                      <tr>
+                        <td colspan="3" class="text-center text-muted">
+                          Không có biến thể
+                        </td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      }
     }
   </tbody>
 </table>

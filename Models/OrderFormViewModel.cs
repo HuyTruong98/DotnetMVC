@@ -8,12 +8,15 @@ namespace OnlineStoreMVC.Models.ViewModels
     public int UserID { get; set; }
     public string Status { get; set; } = "Pending";
 
-    public List<OrderItemInput> Items { get; set; } = new();
+    public List<OrderItemInput> Items { get; set; } = new()
+    {
+      new OrderItemInput()
+    };
   }
 
   public class OrderItemInput
   {
-    public int ProductID { get; set; }
+    public int VariantID { get; set; }
     public int Quantity { get; set; }
   }
 }

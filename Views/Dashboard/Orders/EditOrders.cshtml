@@ -1,41 +1,55 @@
 @model OnlineStoreMVC.Models.ViewModels.OrderFormViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
   Layout = "~/Views/Shared/_DashboardLayout.cshtml";
   ViewData["Title"] = "Chỉnh sửa đơn hàng";
+  bool isLocked = Model.Status == "Shipping" || Model.Status == "Completed";
+  var disabled = isLocked ? "disabled" : null;
 }
 
 <div class="d-flex justify-content-center mt-5">
-  <div class="card shadow" style="width: 1000px;">
+  <div class="card shadow" style="width:1000px;">
     <div class="card-header bg-warning text-dark">
       <h4 class="mb-0">✏️ Chỉnh sửa đơn hàng</h4>
     </div>
     <div class="card-body">
-      @Html.ValidationSummary(true, "", new { @class = "error-message" })
-
+      @Html.ValidationSummary(true, "", new { @class = "text-danger" })
       <form asp-action="Edit" asp-route-id="@Model.OrderID" method="post">
-        <input type="hidden" asp-for="OrderID" />
+        @Html.AntiForgeryToken()
+        <input asp-for="OrderID" type="hidden" />
 
+        <!-- Người đặt hàng -->
         <div class="mb-3">
           <label asp-for="UserID" class="form-label">Người đặt hàng</label>
-          <select asp-for="UserID" class="form-select" asp-items="ViewBag.Users" required>
+          <select asp-for="UserID" class="form-select" asp-items="ViewBag.Users" disabled="@disabled">
             <option value="">-- Vui lòng chọn người dùng --</option>
           </select>
           <span asp-validation-for="UserID" class="text-danger"></span>
         </div>
 
+        <!-- Trạng thái đơn hàng -->
         <div class="mb-3">
           <label asp-for="Status" class="form-label">Trạng thái đơn hàng</label>
-          <select asp-for="Status" class="form-select" required>
-            <option value="Pending">Pending</option>
-            <option value="Confirmed">Confirmed</option>
-            <option value="Shipping">Shipping</option>
-            <option value="Completed">Completed</option>
+          <select asp-for="Status" class="form-select">
+            <option>Pending</option>
+            <option>Confirmed</option>
+            <option>Shipping</option>
+            <option>Completed</option>
+            <option>Cancelled</option>
           </select>
+          <span asp-validation-for="Status" class="text-danger"></span>
         </div>
 
+        <!-- Danh sách sản phẩm -->
         <div class="d-flex justify-content-between align-items-center mt-4 mb-2">
           <h5>🛒 Sản phẩm</h5>
-          <button type="button" class="btn btn-outline-secondary" onclick="addProductRow()">➕ Thêm sản phẩm</button>
+          @if (!isLocked)
+          {
+            <button type="button" class="btn btn-outline-secondary" onclick="addProductRow()">
+              ➕ Thêm sản phẩm
+            </button>
+          }
         </div>
 
         <div id="product-list">
@@ -43,30 +57,34 @@
           {
             <div class="row mb-2 product-row">
               <div class="col-md-6">
-                <select class="form-select product-select" required>
+                <label asp-for="Items[@i].VariantID" class="form-label">Sản phẩm</label>
+                <select asp-for="Items[@i].VariantID" class="form-select variant-select" asp-items="ViewBag.Variants"
+                  disabled="@disabled">
                   <option value="">-- Chọn sản phẩm --</option>
-                  @foreach (SelectListItem item in ViewBag.Products)
-                  {
-                    <option value="@item.Value"
-                      selected="@(item.Value == Model.Items[i].ProductID.ToString() ? "selected" : null)">
-                      @item.Text
-                    </option>
-                  }
                 </select>
+                <span asp-validation-for="Items[@i].VariantID" class="text-danger"></span>
               </div>
               <div class="col-md-4">
-                <input type="number" class="form-control quantity-input" value="@Model.Items[i].Quantity" min="1"
-                  required />
+                <label asp-for="Items[@i].Quantity" class="form-label">Số lượng</label>
+                <input asp-for="Items[@i].Quantity" type="number" min="1" class="form-control" disabled="@disabled" />
+                <span asp-validation-for="Items[@i].Quantity" class="text-danger"></span>
               </div>
-              <div class="col-md-2 d-flex align-items-center">
-                <button type="button" class="btn btn-danger" onclick="removeRow(this)">➖</button>
+              <div class="col-md-2 d-flex align-items-end">
+                @if (!isLocked)
+                {
+                  <button type="button" class="btn btn-danger mb-1" onclick="removeRow(this)">
+                    ➖
+                  </button>
+                }
               </div>
             </div>
           }
         </div>
 
-        <button type="submit" class="btn btn-primary">Cập nhật</button>
-        <a href="/Dashboard/Orders" class="btn btn-secondary ms-2">Quay lại</a>
+        <div class="mt-4">
+          <button type="submit" class="btn btn-primary">Cập nhật</button>
+          <a asp-action="Index" class="btn btn-secondary ms-2">Quay lại</a>
+        </div>
       </form>
     </div>
   </div>
@@ -75,57 +93,66 @@
 @section Scripts {
   <partial name="_ValidationScriptsPartial" />
   <script>
+    let productIndex = @Model.Items.Count;
+    const variantOptions = document.querySelector(".variant-select").innerHTML;
+
     function addProductRow() {
       const container = document.getElementById("product-list");
-      const index = document.querySelectorAll(".product-row").length;
-
-      // Lấy danh sách option từ select đầu tiên, loại bỏ selected
-      const originalSelect = document.querySelector('select[name="Items[0].ProductID"]');
-      const options = Array.from(originalSelect.options)
-        .map(opt => `<option value="${opt.value}">${opt.text}</option>`)
-        .join("");
+      const idx = productIndex++;
 
       const row = document.createElement("div");
       row.className = "row mb-2 product-row";
-
       row.innerHTML = `
-        <div class="col-md-6">
-          <select name="Items[${index}].ProductID" class="form-select product-select" required>
-            ${options}
-          </select>
-        </div>
-        <div class="col-md-4">
-          <input type="number" name="Items[${index}].Quantity" class="form-control quantity-input" placeholder="Số lượng" min="1" required />
-        </div>
-        <div class="col-md-2 d-flex align-items-center">
-          <button type="button" class="btn btn-danger" onclick="removeRow(this)">➖</button>
-        </div>
-      `;
+              <div class="col-md-6">
+                <label for="Items_${idx}__VariantID" class="form-label">Sản phẩm</label>
+                <select
+                  name="Items[${idx}].VariantID"
+                  id="Items_${idx}__VariantID"
+                  class="form-select">
+                  <option value="" selected>-- Chọn sản phẩm --</option>
+                  ${[...document.querySelectorAll(".variant-select option")]
+          .filter(option => option.value)
+          .map(option => `<option value="${option.value}">${option.textContent}</option>`)
+          .join('')}
+                </select>
+                <span
+                  class="text-danger"
+                  data-valmsg-for="Items[${idx}].VariantID"
+                  data-valmsg-replace="true">
+                </span>
+              </div>
+              <div class="col-md-4">
+                <label for="Items_${idx}__Quantity" class="form-label">Số lượng</label>
+                <input
+                  name="Items[${idx}].Quantity"
+                  id="Items_${idx}__Quantity"
+                  type="number" min="1"
+                  class="form-control" />
+                <span
+                  class="text-danger"
+                  data-valmsg-for="Items[${idx}].Quantity"
+                  data-valmsg-replace="true">
+                </span>
+              </div>
+              <div class="col-md-2 d-flex align-items-end">
+                <button
+                  type="button"
+                  class="btn btn-danger mb-1"
+                  onclick="removeRow(this)">
+                  ➖
+                </button>
+              </div>`;
 
       container.appendChild(row);
+      $.validator.unobtrusive.parse(container);
     }
-
-    function removeRow(button) {
-      const row = button.closest(".product-row");
-      if (document.querySelectorAll(".product-row").length > 1) {
-        row.remove();
-        reindexProductRows();
+    function removeRow(btn) {
+      const rows = document.querySelectorAll(".product-row");
+      if (rows.length > 1) {
+        btn.closest(".product-row").remove();
       } else {
-        alert("Phải có ít nhất một sản phẩm trong đơn hàng.");
+        alert("Phải có ít nhất một sản phẩm trong đơn.");
       }
     }
-
-    function reindexProductRows() {
-      const rows = document.querySelectorAll(".product-row");
-      rows.forEach((row, index) => {
-        const select = row.querySelector(".product-select");
-        const input = row.querySelector(".quantity-input");
-
-        select.name = `Items[${index}].ProductID`;
-        input.name = `Items[${index}].Quantity`;
-      });
-    }
-
-    reindexProductRows();
   </script>
 }

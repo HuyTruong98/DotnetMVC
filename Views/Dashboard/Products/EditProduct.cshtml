@@ -1,4 +1,5 @@
 @model OnlineStoreMVC.Models.ViewModels.ProductViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @using OnlineStoreMVC.Models
 
 @{
@@ -7,15 +8,19 @@
 }
 
 <div class="d-flex justify-content-center mt-5">
-  <div class="card shadow" style="width: 800px;">
+  <div class="card shadow" style="width:800px;">
     <div class="card-header bg-warning text-dark">
       <h4 class="mb-0">✏️ Chỉnh sửa sản phẩm</h4>
     </div>
-
     <div class="card-body">
       @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-      <form asp-action="Edit" asp-route-id="@Model.ProductID" method="post" enctype="multipart/form-data">
+      <form asp-action="Edit" asp-controller="DashboardProduct" asp-route-id="@Model.ProductID" method="post"
+        enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+
+        <input asp-for="ProductID" type="hidden" />
+
         <div class="mb-3">
           <label asp-for="ProductName" class="form-label">Tên</label>
           <input asp-for="ProductName" class="form-control" />
@@ -24,17 +29,9 @@
 
         <div class="mb-3">
           <label asp-for="Price" class="form-label">Giá</label>
-          <input class="form-control" type="text" name="Price"
-            value="@(Model.Price.HasValue? Model.Price.Value.ToString("0") : "")"
-            oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+          <input asp-for="Price" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+            value="@(Model.Price.HasValue? Model.Price.Value.ToString("0") : "")" />
           <span asp-validation-for="Price" class="text-danger"></span>
-        </div>
-
-        <div class="mb-3">
-          <label asp-for="Stock" class="form-label">Tồn kho</label>
-          <input asp-for="Stock" class="form-control" type="text"
-            oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
-          <span asp-validation-for="Stock" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
@@ -55,21 +52,28 @@
           <span asp-validation-for="Status" class="text-danger"></span>
         </div>
 
+        <div class="mb-3 form-check">
+          <input asp-for="IsFeatured" class="form-check-input" />
+          <label asp-for="IsFeatured" class="form-check-label">Sản phẩm nổi bật</label>
+        </div>
+
         <div class="mb-3">
           <label class="form-label">Ảnh hiện tại</label>
           <div class="d-flex flex-wrap gap-2">
             @{
               var images = ViewBag.ExistingImages as IEnumerable<ProductImage>;
             }
-
-            @if (images != null && images.Any())
+            @if (images?.Any() == true)
             {
               foreach (var img in images)
               {
-                <img src="@img.ImageURL" width="100" />
+                <img src="@img.ImageURL" width="100" class="img-thumbnail" />
               }
             }
-
+            else
+            {
+              <span class="text-muted">Chưa có ảnh</span>
+            }
           </div>
         </div>
 
@@ -78,21 +82,46 @@
           <input type="file" name="Images" multiple class="form-control" />
         </div>
 
-        <div class="mb-3 form-check">
-          <input asp-for="IsFeatured" class="form-check-input" type="checkbox" />
-          <label asp-for="IsFeatured" class="form-check-label">Sản Phẩm Nổi bật</label>
-          <span asp-validation-for="IsFeatured" class="text-danger"></span>
-        </div>
-
-
         <div class="mb-3">
           <label asp-for="Description" class="form-label">Ghi chú</label>
           <textarea asp-for="Description" class="form-control" rows="3"></textarea>
-          <span asp-validation-for="Description" class="text-danger"></span>
         </div>
 
-        <button type="submit" class="btn btn-warning">Cập nhật</button>
-        <a href="/Dashboard/Products" class="btn btn-secondary ms-2">Quay lại</a>
+        <hr />
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="text-primary mb-0">🧬 Size, màu, tồn kho sản phẩm</h5>
+          <button type="button" class="btn btn-outline-primary" onclick="addVariant()">➕ Thêm</button>
+        </div>
+        <div id="variant-container">
+          @for (int i = 0; i < Model.Variants.Count; i++)
+          {
+            <div class="row g-2 align-items-end mb-3 variant-item">
+              <div class="col">
+                <label asp-for="Variants[@i].Size" class="form-label">Size</label>
+                <input asp-for="Variants[@i].Size" class="form-control" />
+                <span asp-validation-for="Variants[@i].Size" class="text-danger"></span>
+              </div>
+              <div class="col">
+                <label asp-for="Variants[@i].Color" class="form-label">Màu sắc</label>
+                <input asp-for="Variants[@i].Color" class="form-control" />
+                <span asp-validation-for="Variants[@i].Color" class="text-danger"></span>
+              </div>
+              <div class="col">
+                <label asp-for="Variants[@i].Stock" class="form-label">Tồn kho</label>
+                <input asp-for="Variants[@i].Stock" class="form-control" />
+                <span asp-validation-for="Variants[@i].Stock" class="text-danger"></span>
+              </div>
+              <div class="col-auto">
+                <button type="button" class="btn btn-sm btn-danger" onclick="removeVariant(this)">➖</button>
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="mt-4">
+          <button type="submit" class="btn btn-warning">Cập nhật</button>
+          <a asp-action="Index" class="btn btn-secondary ms-2">Quay lại</a>
+        </div>
       </form>
     </div>
   </div>
@@ -100,4 +129,54 @@
 
 @section Scripts {
   <partial name="_ValidationScriptsPartial" />
+  <script>
+    // Bắt đầu index từ số variants hiện có
+    let variantIndex = @Model.Variants.Count;
+
+    // Thêm 1 row biến thể mới
+    function addVariant() {
+      const container = document.getElementById("variant-container");
+      const idx = variantIndex++;
+      const html = `
+                <div class="row g-2 align-items-end mb-3 variant-item">
+                  <div class="col">
+                    <label for="Variants_${idx}__Size" class="form-label">Size</label>
+                    <input name="Variants[${idx}].Size" 
+                           id="Variants_${idx}__Size"
+                           class="form-control" />
+                    <span class="text-danger" 
+                          data-valmsg-for="Variants[${idx}].Size"
+                          data-valmsg-replace="true"></span>
+                  </div>
+                  <div class="col">
+                    <label for="Variants_${idx}__Color" class="form-label">Màu sắc</label>
+                    <input name="Variants[${idx}].Color"
+                           id="Variants_${idx}__Color"
+                           class="form-control" />
+                    <span class="text-danger" 
+                          data-valmsg-for="Variants[${idx}].Color"
+                          data-valmsg-replace="true"></span>
+                  </div>
+                  <div class="col">
+                    <label for="Variants_${idx}__Stock" class="form-label">Tồn kho</label>
+                    <input name="Variants[${idx}].Stock" 
+                           id="Variants_${idx}__Stock"
+                           class="form-control" />
+                    <span class="text-danger" 
+                          data-valmsg-for="Variants[${idx}].Stock"
+                          data-valmsg-replace="true"></span>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn btn-sm btn-danger"
+                            onclick="removeVariant(this)">➖</button>
+                  </div>
+                </div>`;
+      container.insertAdjacentHTML("beforeend", html);
+      $.validator.unobtrusive.parse(container);
+    }
+
+    function removeVariant(btn) {
+      btn.closest(".variant-item").remove();
+    }
+  </script>
 }

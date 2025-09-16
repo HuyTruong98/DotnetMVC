@@ -18,7 +18,8 @@
       <th>Người đặt</th>
       <th>Ngày đặt</th>
       <th>Trạng thái</th>
-      <th>Tổng tiền</th>
+      <th>Tổng gốc</th>
+      <th>Tổng sau giảm</th>
       <th>Thao tác</th>
     </tr>
   </thead>
@@ -31,41 +32,57 @@
         <td>@order.UserName</td>
         <td>@order.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
         <td>@order.Status</td>
-        <td>@order.TotalAmount.ToString("N0") ₫</td>
+        <td>@FormatHelper.FormatCurrency(order.TotalAmount)</td>
+        <td>@FormatHelper.FormatCurrency(order.TotalAfterDiscount)</td>
         <td>
-            <a class="btn btn-sm btn-info" href="/Dashboard/Orders/Details/@order.OrderID">Chi tiết</a>
-            <a class="btn btn-sm btn-primary" href="/Dashboard/Orders/Edit/@order.OrderID">Sửa</a>
-            <form asp-action="Delete" asp-route-id="@order.OrderID" method="post" style="display:inline;"
-                  onsubmit="return confirm('Bạn có chắc muốn xóa đơn hàng này?');">
-                <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
-            </form>
+          <button class="btn btn-sm btn-info" type="button" data-bs-toggle="collapse"
+            data-bs-target="#details-@order.OrderID" aria-expanded="false" aria-controls="details-@order.OrderID">
+            Chi tiết
+          </button>
+          <a class="btn btn-sm btn-primary" href="/Dashboard/Orders/Edit/@order.OrderID">
+            Sửa
+          </a>
+          <form asp-action="Delete" asp-route-id="@order.OrderID" method="post" class="d-inline"
+            onsubmit="return confirm('Bạn có chắc muốn xóa?');">
+            <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+          </form>
         </td>
       </tr>
       <tr>
-        <td colspan="6">
-          <div class="bg-light p-2 rounded">
-            <strong>Chi tiết đơn hàng:</strong>
-            <table class="table table-sm table-striped mt-2">
-              <thead>
-                <tr>
-                  <th>Sản phẩm</th>
-                  <th>Số lượng</th>
-                  <th>Đơn giá</th>
-                  <th>Thành tiền</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach (var item in order.Items)
-                {
+        <td colspan="7" class="p-0 bg-light">
+          <div class="collapse" id="details-@order.OrderID">
+            <div class="p-3">
+              <strong>Chi tiết đơn hàng:</strong>
+              <table class="table table-sm table-striped mt-2 mb-0">
+                <thead>
                   <tr>
-                    <td>@item.ProductName</td>
-                    <td>@item.Quantity</td>
-                    <td>@FormatHelper.FormatCurrency(item.UnitPrice)</td>
-                    <td>@FormatHelper.FormatCurrency(item.Quantity * item.UnitPrice)</td>
+                    <th>Sản phẩm</th>
+                    <th>Size</th>
+                    <th>Màu sắc</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th>
+                    <th>% Giảm</th>
+                    <th>Thành tiền</th>
+                    <th>Tiền sau giảm</th>
                   </tr>
-                }
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  @foreach (var item in order.Items)
+                  {
+                    <tr>
+                      <td>@item.ProductName</td>
+                      <td>@item.Size</td>
+                      <td>@item.Color</td>
+                      <td>@item.Quantity</td>
+                      <td>@FormatHelper.FormatCurrency(item.UnitPrice)</td>
+                      <td>@item.SalePercent %</td>
+                      <td>@FormatHelper.FormatCurrency(item.Amount)</td>
+                      <td>@FormatHelper.FormatCurrency(item.DiscountedAmount)</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
           </div>
         </td>
       </tr>

@@ -28,13 +28,6 @@
         </div>
 
         <div class="mb-3">
-          <label asp-for="Stock">Tồn kho</label>
-          <input asp-for="Stock" class="form-control" type="number" min="1" step="1"
-            oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
-          <span asp-validation-for="Stock" class="text-danger"></span>
-        </div>
-
-        <div class="mb-3">
           <label asp-for="CategoryID">Loại</label>
           <select asp-for="CategoryID" class="form-select" asp-items="ViewBag.Categories">
             <option value="">-- Chọn danh mục --</option>
@@ -70,6 +63,38 @@
           <textarea asp-for="Description" class="form-control"></textarea>
         </div>
 
+        <hr />
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="text-primary mb-0">🧬 Size, màu, tồn kho sản phẩm</h5>
+          <button type="button" class="btn btn-outline-primary" onclick="addVariant()">➕ Thêm</button>
+        </div>
+        <div id="variant-container">
+          @for (int i = 0; i < Model.Variants.Count; i++)
+          {
+            <div class="variant-item d-flex gap-3 align-items-start mb-3" style="height: 100%;">
+              <div class="flex-fill">
+                <label>Size</label>
+                <input asp-for="Variants[@i].Size" class="form-control" />
+                <span asp-validation-for="Variants[@i].Size" class="text-danger"></span>
+              </div>
+              <div class="flex-fill">
+                <label>Màu sắc</label>
+                <input asp-for="Variants[@i].Color" class="form-control" />
+                <span asp-validation-for="Variants[@i].Color" class="text-danger"></span>
+              </div>
+              <div class="flex-fill">
+                <label>Tồn kho</label>
+                <input asp-for="Variants[@i].Stock" class="form-control" type="number" min="1"
+                  oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+                <span asp-validation-for="Variants[@i].Stock" class="text-danger"></span>
+              </div>
+              <div style="height: 100%; padding-top: 15px;">
+                <button type="button" class="btn btn-sm btn-danger mt-2" onclick="removeVariant(this)">➖</button>
+              </div>
+            </div>
+          }
+        </div>
+
         <button type="submit" class="btn btn-success">Tạo mới</button>
         <a href="/Dashboard/Products" class="btn btn-secondary ms-2">Quay lại</a>
       </form>
@@ -79,4 +104,41 @@
 
 @section Scripts {
   <partial name="_ValidationScriptsPartial" />
+  <script>
+    let variantIndex = @Model.Variants.Count;
+
+    function addVariant() {
+      const container = document.getElementById("variant-container");
+      const html = `
+                                                  <div class="variant-item d-flex gap-3 align-items-start mb-3">
+                                                    <div class="flex-fill">
+                                                      <label>Size</label>
+                                                      <input name="Variants[${variantIndex}].Size" class="form-control" maxlength="10" />
+                                                      <span asp-validation-for="Variants[${variantIndex}].Size" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="flex-fill">
+                                                      <label>Màu sắc</label>
+                                                      <input name="Variants[${variantIndex}].Color" class="form-control" maxlength="50" />
+                                                      <span asp-validation-for="Variants[${variantIndex}].Color" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="flex-fill">
+                                                      <label>Tồn kho</label>
+                                                      <input name="Variants[${variantIndex}].Stock" class="form-control" type="number" min="1" 
+                                                      oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                                                      />
+                                                      <span asp-validation-for="Variants[${variantIndex}].Stock" class="text-danger"></span>
+                                                    </div>
+                                                    <div style="height: 100%; padding-top: 15px;">
+                                                      <button type="button" class="btn btn-sm btn-danger mt-2" onclick="removeVariant(this)">➖</button>
+                                                    </div>
+                                                  </div>`;
+      container.insertAdjacentHTML("beforeend", html);
+      variantIndex++;
+    }
+
+    function removeVariant(button) {
+      const row = button.closest(".variant-item");
+      row.remove();
+    }
+  </script>
 }

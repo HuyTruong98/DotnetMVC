@@ -36,7 +36,6 @@
             <option>Confirmed</option>
             <option>Shipping</option>
             <option>Completed</option>
-            <option>Cancelled</option>
           </select>
           <span asp-validation-for="Status" class="text-danger"></span>
         </div>
@@ -103,45 +102,45 @@
       const row = document.createElement("div");
       row.className = "row mb-2 product-row";
       row.innerHTML = `
-              <div class="col-md-6">
-                <label for="Items_${idx}__VariantID" class="form-label">Sản phẩm</label>
-                <select
-                  name="Items[${idx}].VariantID"
-                  id="Items_${idx}__VariantID"
-                  class="form-select">
-                  <option value="" selected>-- Chọn sản phẩm --</option>
-                  ${[...document.querySelectorAll(".variant-select option")]
+                <div class="col-md-6">
+                  <label for="Items_${idx}__VariantID" class="form-label">Sản phẩm</label>
+                  <select
+                    name="Items[${idx}].VariantID"
+                    id="Items_${idx}__VariantID"
+                    class="form-select">
+                    <option value="" selected>-- Chọn sản phẩm --</option>
+                    ${[...document.querySelectorAll(".variant-select option")]
           .filter(option => option.value)
           .map(option => `<option value="${option.value}">${option.textContent}</option>`)
           .join('')}
-                </select>
-                <span
-                  class="text-danger"
-                  data-valmsg-for="Items[${idx}].VariantID"
-                  data-valmsg-replace="true">
-                </span>
-              </div>
-              <div class="col-md-4">
-                <label for="Items_${idx}__Quantity" class="form-label">Số lượng</label>
-                <input
-                  name="Items[${idx}].Quantity"
-                  id="Items_${idx}__Quantity"
-                  type="number" min="1"
-                  class="form-control" />
-                <span
-                  class="text-danger"
-                  data-valmsg-for="Items[${idx}].Quantity"
-                  data-valmsg-replace="true">
-                </span>
-              </div>
-              <div class="col-md-2 d-flex align-items-end">
-                <button
-                  type="button"
-                  class="btn btn-danger mb-1"
-                  onclick="removeRow(this)">
-                  ➖
-                </button>
-              </div>`;
+                  </select>
+                  <span
+                    class="text-danger"
+                    data-valmsg-for="Items[${idx}].VariantID"
+                    data-valmsg-replace="true">
+                  </span>
+                </div>
+                <div class="col-md-4">
+                  <label for="Items_${idx}__Quantity" class="form-label">Số lượng</label>
+                  <input
+                    name="Items[${idx}].Quantity"
+                    id="Items_${idx}__Quantity"
+                    type="number" min="1"
+                    class="form-control" />
+                  <span
+                    class="text-danger"
+                    data-valmsg-for="Items[${idx}].Quantity"
+                    data-valmsg-replace="true">
+                  </span>
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                  <button
+                    type="button"
+                    class="btn btn-danger mb-1"
+                    onclick="removeRow(this)">
+                    ➖
+                  </button>
+                </div>`;
 
       container.appendChild(row);
       $.validator.unobtrusive.parse(container);

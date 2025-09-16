@@ -278,6 +278,41 @@ namespace OnlineStoreMVC.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpPost("Delete/{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+      if (HttpContext.Session.GetString("Role") != "Admin")
+        return RedirectToAction("Login", "Auth");
+
+      // Load product cùng tất cả variants và order details
+      var product = await _context.Products
+          .Include(p => p.Variants)
+            .ThenInclude(v => v.OrderDetails)
+          .FirstOrDefaultAsync(p => p.ProductID == id);
+
+      if (product == null)
+      {
+        TempData["Error"] = "Không tìm thấy sản phẩm.";
+        return RedirectToAction("Index");
+      }
+
+      bool hasOrder = product.Variants
+          .SelectMany(v => v.OrderDetails)
+          .Any();
+
+      if (hasOrder)
+      {
+        TempData["Error"] = "Không thể xóa sản phẩm này vì đã có đơn hàng sử dụng.";
+        return RedirectToAction("Index");
+      }
+
+      _context.ProductVariants.RemoveRange(product.Variants);
+      _context.Products.Remove(product);
+      await _context.SaveChangesAsync();
+
+      TempData["Success"] = "Xóa sản phẩm thành công.";
+      return RedirectToAction("Index");
+    }
     // [HttpGet("Delete/{id}")]
     // public async Task<IActionResult> Delete(int id)
     // {

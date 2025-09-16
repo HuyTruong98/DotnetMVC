@@ -336,73 +336,39 @@ namespace OnlineStoreMVC.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpPost("Delete/{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+      if (HttpContext.Session.GetString("Role") != "Admin")
+        return RedirectToAction("Login", "Auth");
 
-    // [HttpPost("Delete/{id}")]
-    // public async Task<IActionResult> Delete(int id)
-    // {
-    //   var role = HttpContext.Session.GetString("Role");
-    //   if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var order = await _context.Orders
+          .Include(o => o.OrderDetails)
+          .FirstOrDefaultAsync(o => o.OrderID == id);
+      if (order == null)
+      {
+        TempData["Error"] = "Không tìm thấy đơn hàng để xóa.";
+        return RedirectToAction("Index");
+      }
 
-    //   var order = await _context.Orders
-    //       .Include(o => o.OrderDetails)
-    //       .FirstOrDefaultAsync(o => o.OrderID == id);
+      foreach (var od in order.OrderDetails)
+      {
+        var variant = await _context.ProductVariants
+            .FirstOrDefaultAsync(v => v.VariantID == od.VariantID);
+        if (variant != null)
+        {
+          variant.Stock += od.Quantity;
+          _context.ProductVariants.Update(variant);
+        }
+      }
 
-    //   if (order == null) return NotFound();
+      _context.OrderDetails.RemoveRange(order.OrderDetails);
+      _context.Orders.Remove(order);
 
-    //   foreach (var detail in order.OrderDetails)
-    //   {
-    //     var product = await _context.Products.FindAsync(detail.ProductID);
-    //     if (product != null)
-    //     {
-    //       // product.Stock += detail.Quantity;
-    //     }
-    //   }
-
-    //   _context.OrderDetails.RemoveRange(order.OrderDetails);
-    //   _context.Orders.Remove(order);
-
-    //   await _context.SaveChangesAsync();
-
-    //   TempData["Success"] = "Đã xóa đơn hàng và hoàn lại tồn kho.";
-    //   return RedirectToAction("Index");
-    // }
-
-    // [HttpGet("/Dashboard/Orders/Details/{id}")]
-    // public IActionResult Details(int id)
-    // {
-    //   var role = HttpContext.Session.GetString("Role");
-    //   if (role != "Admin")
-    //     return RedirectToAction("Login", "Auth");
-
-    //   var order = _context.Orders
-    //       .Include(o => o.User)
-    //       .Include(o => o.OrderDetails)
-    //           .ThenInclude(od => od.Product)
-    //       .Select(o => new OrderManageViewModel
-    //       {
-    //         OrderID = o.OrderID,
-    //         UserID = o.UserID,
-    //         UserName = o.User.FullName,
-    //         OrderDate = o.OrderDate,
-    //         Status = o.Status,
-    //         TotalAmount = o.TotalAmount,
-    //         Items = o.OrderDetails.Select(od => new OrderDetailItem
-    //         {
-    //           ProductID = od.ProductID,
-    //           ProductName = od.Product.ProductName,
-    //           Quantity = od.Quantity,
-    //           UnitPrice = od.UnitPrice
-    //         }).ToList()
-    //       })
-    //       .FirstOrDefault(o => o.OrderID == id);
-
-    //   if (order == null)
-    //     return NotFound();
-
-    //   return View("~/Views/Dashboard/Orders/Details.cshtml", order);
-    // }
-
-
+      await _context.SaveChangesAsync();
+      TempData["Success"] = "Xóa đơn hàng thành công.";
+      return RedirectToAction("Index");
+    }
   }
 
 }

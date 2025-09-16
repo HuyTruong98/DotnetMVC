@@ -9,20 +9,20 @@
         display: none;
     }
 
-    .tab-pane.active {
-        display: block;
-    }
+        .tab-pane.active {
+            display: block;
+        }
 
-    .tab-pane.fade {
-        display: none;
-        opacity: 0;
-        transition: opacity 0.1s ease-in-out;
-    }
+        .tab-pane.fade {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.1s ease-in-out;
+        }
 
-    .tab-pane.fade.show.active {
-        display: block;
-        opacity: 1;
-    }
+            .tab-pane.fade.show.active {
+                display: block;
+                opacity: 1;
+            }
 
     .nav-tabs .nav-link.active {
         background-color: #1717b7;
@@ -37,29 +37,33 @@
         border: 1px solid transparent;
     }
 
-    .nav-tabs .nav-link:hover {
-        border: 1px solid #dee2e6;
-    }
+        .nav-tabs .nav-link:hover {
+            border: 1px solid #dee2e6;
+        }
 </style>
 
-<div class="container mt-4">
+<div class="container mt-4" style="padding-top: 30px">
     <div class="row">
         <!-- Hình ảnh sản phẩm -->
-        <div class="col-md-6">
-            <!-- Ảnh chính -->
-            <img src="@(Model.ProductImages?.FirstOrDefault()?.ImageURL
-                ?? "/images/no-image.png")"
-                 class="img-fluid mb-3" alt="@Model.ProductName" />
-
-            <!-- Thumbnail ProductImages -->
-            <div class="d-flex flex-wrap mb-2">
+        <div class="col-md-6 d-flex">
+            <div class="d-flex flex-column me-3">
                 @if (Model.ProductImages != null && Model.ProductImages.Any())
-        {
+             {
             foreach (var img in Model.ProductImages)
             {
-                <img src="@img.ImageURL" class="img-thumbnail me-2 mb-2" style="width: 80px;" />
+                <img src="@img.ImageURL"
+                     class="img-thumbnail mb-2 thumb"
+                     style="width:80px; cursor:pointer;"
+                     onclick="changeImage('@img.ImageURL')" />
             }
         }
+            </div>
+            <div class="flex-grow-1">
+                <img id="mainImage"
+                     src="@(Model.ProductImages?.FirstOrDefault()?.ImageURL ?? "/images/no-image.png")"
+                     class="img-fluid mb-3 border"
+                     style="max-width: 100%; height: auto; width: 100%"
+                     alt="@Model.ProductName" />
             </div>
         </div>
 
@@ -84,11 +88,11 @@
 
             <div>
                 @*<div>
-                        <button class="btn btn-outline-dark btn-sm me-2">S</button>
-                        <button class="btn btn-outline-dark btn-sm me-2">M</button>
-                        <button class="btn btn-outline-dark btn-sm me-2">L</button>
-                        <button class="btn btn-outline-dark btn-sm me-2">XL</button>
-                    </div>*@
+                    <button class="btn btn-outline-dark btn-sm me-2">S</button>
+                    <button class="btn btn-outline-dark btn-sm me-2">M</button>
+                    <button class="btn btn-outline-dark btn-sm me-2">L</button>
+                    <button class="btn btn-outline-dark btn-sm me-2">XL</button>
+                </div>*@
             </div>
             <div class="mt-3 d-flex align-items-center">
                 <!-- Ô số lượng -->
@@ -191,6 +195,18 @@
                 <img style="width: 100%" src="~/images/chinhsach5.jpg" alt="Chính sách đổi hàng 4" />
             </div>
         </div>
+        <!-- Toast Container -->
+        <div class="position-fixed top-0 start-50 translate-middle-x p-6" style="z-index: 1100; width: 100%; max-width: 600px;">
+            <div id="toastMessage" class="toast w-100 text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body fs-5" id="toastBody">
+                       "Sản phẩm đã thêm vào giỏ hàng"
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
 
     </div>
 </div>
@@ -198,6 +214,10 @@
 
 
 <script>
+    function changeImage(src) {
+        document.getElementById("mainImage").src = src;
+    }
+
     const quantityEl = document.getElementById("quantity");
     const decreaseBtn = document.getElementById("decrease");
     const increaseBtn = document.getElementById("increase");
@@ -218,4 +238,82 @@
 
 
 
+
 </script>
+@*@section Scripts {
+        <script>
+            $(document).on("click", ".add-to-cart-btn", function () {
+                const productId = $(this).data("product-id");
+                const quantity = parseInt($("#quantity").text());
+
+                $.ajax({
+                    url: "/HomeCart/AddToCart",
+                    type: "POST",
+                    data: {
+                        productId: productId,
+                        quantity: quantity,
+                        __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    success: function (res) {
+                        if (res.success) {
+                            $("#cart-badge").text(res.cartCount);
+                            alert("🛒 Đã thêm sản phẩm vào giỏ!");
+                        } else {
+                            alert("❌ Thêm giỏ thất bại!");
+                        }
+                    },
+                    error: function () {
+                        alert("⚠️ Lỗi server, vui lòng thử lại!");
+                    }
+                });
+            });
+        </script>
+    }*@
+@section Scripts {
+    <script>
+        function showToast(message, isSuccess = true) {
+            const toastEl = document.getElementById("toastMessage");
+            const toastBody = document.getElementById("toastBody");
+
+            // đổi màu theo success/fail
+            if (isSuccess) {
+                toastEl.classList.remove("text-bg-danger");
+                toastEl.classList.add("text-bg-success");
+            } else {
+                toastEl.classList.remove("text-bg-success");
+                toastEl.classList.add("text-bg-danger");
+            }
+
+            toastBody.textContent = message;
+
+            const bsToast = new bootstrap.Toast(toastEl);
+            bsToast.show();
+        }
+
+        $(document).on("click", ".add-to-cart-btn", function () {
+            const productId = $(this).data("product-id");
+            const quantity = parseInt($("#quantity").text());
+
+            $.ajax({
+                url: "/HomeCart/AddToCart",
+                type: "POST",
+                data: {
+                    productId: productId,
+                    quantity: quantity,
+                    __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+                },
+                success: function (res) {
+                    if (res.success) {
+                        $("#cart-badge").text(res.cartCount);
+                        showToast("🛒 Đã thêm sản phẩm vào giỏ!", true);
+                    } else {
+                        showToast("❌ Thêm giỏ thất bại!", false);
+                    }
+                },
+                error: function () {
+                    showToast("⚠️ Lỗi server, vui lòng thử lại!", false);
+                }
+            });
+        });
+    </script>
+}

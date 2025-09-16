@@ -1,379 +1,407 @@
 {
   "Files": [
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\OnlineStoreMVC.bundle.scp.css",
+      "Id": "D:\\it15\\DotnetMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\OnlineStoreMVC.bundle.scp.css",
       "PackagePath": "staticwebassets\\OnlineStoreMVC.s0rqmofd1z.bundle.scp.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\auth.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\css\\auth.css",
       "PackagePath": "staticwebassets\\css\\auth.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\dashboard.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\css\\dashboard.css",
       "PackagePath": "staticwebassets\\css\\dashboard.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\home.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\css\\home.css",
       "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\site.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\favicon.ico",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\chinhsach2.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\chinhsach2.jpg",
       "PackagePath": "staticwebassets\\images\\chinhsach2.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\chinhsach3.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\chinhsach3.jpg",
       "PackagePath": "staticwebassets\\images\\chinhsach3.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\chinhsach4.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\chinhsach4.jpg",
       "PackagePath": "staticwebassets\\images\\chinhsach4.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\chinhsach5.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\chinhsach5.jpg",
       "PackagePath": "staticwebassets\\images\\chinhsach5.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\chinhsachgiaohang.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\chinhsachgiaohang.jpg",
       "PackagePath": "staticwebassets\\images\\chinhsachgiaohang.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\freeShipping.png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\freeShipping.png",
       "PackagePath": "staticwebassets\\images\\freeShipping.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\heart.png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\heart.png",
       "PackagePath": "staticwebassets\\images\\heart.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\new-product.png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\new-product.png",
       "PackagePath": "staticwebassets\\images\\new-product.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\products\\051333e4-eece-4ec3-8be3-1b90bd6cc227.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\products\\051333e4-eece-4ec3-8be3-1b90bd6cc227.jpg",
       "PackagePath": "staticwebassets\\images\\products\\051333e4-eece-4ec3-8be3-1b90bd6cc227.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\products\\138e1b68-928c-4292-b741-785d6b147e76.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\products\\138e1b68-928c-4292-b741-785d6b147e76.jpg",
       "PackagePath": "staticwebassets\\images\\products\\138e1b68-928c-4292-b741-785d6b147e76.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\profit.png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\profit.png",
       "PackagePath": "staticwebassets\\images\\profit.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\quantity.png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\quantity.png",
       "PackagePath": "staticwebassets\\images\\quantity.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\refresh.png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\refresh.png",
       "PackagePath": "staticwebassets\\images\\refresh.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\revenue.png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\revenue.png",
       "PackagePath": "staticwebassets\\images\\revenue.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\shoppping-bag.png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\shoppping-bag.png",
       "PackagePath": "staticwebassets\\images\\shoppping-bag.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\support.png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\support.png",
       "PackagePath": "staticwebassets\\images\\support.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\user (2).png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\images\\user (2).png",
       "PackagePath": "staticwebassets\\images\\user (2).png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\js\\site.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\305b0468-72fd-414d-92f2-5a0b8e6b7176.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\0426b53e-94e0-4bf7-aeb8-e2c43eb6ffd6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\0426b53e-94e0-4bf7-aeb8-e2c43eb6ffd6.jpg"
+    },
+    {
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\176d89a7-6de5-4308-bce0-bdde3c2ae4eb.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\176d89a7-6de5-4308-bce0-bdde3c2ae4eb.jpg"
+    },
+    {
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\305b0468-72fd-414d-92f2-5a0b8e6b7176.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\305b0468-72fd-414d-92f2-5a0b8e6b7176.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\54eff7a3-8dfe-4d8f-804c-0305cf4fd019.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\54eff7a3-8dfe-4d8f-804c-0305cf4fd019.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\54eff7a3-8dfe-4d8f-804c-0305cf4fd019.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\84ec973a-980f-4b01-8461-aec541518b2d.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\70d7a36e-fea5-454d-a46e-91487c493fa9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\70d7a36e-fea5-454d-a46e-91487c493fa9.jpg"
+    },
+    {
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\84ec973a-980f-4b01-8461-aec541518b2d.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\84ec973a-980f-4b01-8461-aec541518b2d.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\8c3065eb-a881-4bec-9765-8b17ba2cb9ed.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\8c3065eb-a881-4bec-9765-8b17ba2cb9ed.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\8c3065eb-a881-4bec-9765-8b17ba2cb9ed.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\9686b2dd-aa6b-4735-8233-43b18f69462c.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\95771681-9774-49c3-bd12-4a6f37f861b2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\95771681-9774-49c3-bd12-4a6f37f861b2.jpg"
+    },
+    {
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\9686b2dd-aa6b-4735-8233-43b18f69462c.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\9686b2dd-aa6b-4735-8233-43b18f69462c.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\jgq75kqg_1024x1024.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\99bc4b66-831a-4e3f-b92f-00e5a7d6ae0d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\99bc4b66-831a-4e3f-b92f-00e5a7d6ae0d.jpg"
+    },
+    {
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\b10620a7-118f-43dd-b4df-68106c2c958b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\b10620a7-118f-43dd-b4df-68106c2c958b.jpg"
+    },
+    {
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\ebfd6167-29aa-4f8c-b062-596816c46de9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\ebfd6167-29aa-4f8c-b062-596816c46de9.jpg"
+    },
+    {
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\jgq75kqg_1024x1024.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\jgq75kqg_1024x1024.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\phu-kien-thoi-trang-8.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\phu-kien-thoi-trang-8.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\phu-kien-thoi-trang-8.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\unnamed.png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\unnamed.png",
       "PackagePath": "staticwebassets\\uploads\\products\\unnamed.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\view.png",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\view.png",
       "PackagePath": "staticwebassets\\uploads\\products\\view.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg",
+      "Id": "D:\\it15\\DotnetMVC\\wwwroot\\uploads\\products\\yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg"
     },
     {

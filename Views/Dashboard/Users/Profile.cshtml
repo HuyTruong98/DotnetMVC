@@ -1,0 +1,91 @@
+
+@model OnlineStoreMVC.Models.User
+
+<div class="container mt-5" style="padding-top: 30px">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white py-4">
+            <div class="d-flex align-items-center">
+               
+                <div>
+                    <h2 class="mb-0">@Model?.FullName</h2>
+                    <small class="opacity-75">@Model?.Role</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-item mb-4">
+                        <i class="fas fa-user-circle me-2 text-primary"></i>
+                        <strong>Tên đăng nhập:</strong> @Model?.Username
+                    </div>
+                    <div class="info-item mb-4">
+                        <i class="fas fa-envelope me-2 text-primary"></i>
+                        <strong>Email:</strong> <a href="mailto:@Model?.Email">@Model?.Email</a>
+                    </div>
+                    <div class="info-item mb-4">
+                        <i class="fas fa-phone me-2 text-primary"></i>
+                        <strong>Số điện thoại:</strong> @Model?.Phone
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-item mb-4">
+                        <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                        <strong>Địa chỉ:</strong> @Model?.Address
+                    </div>
+                    <div class="info-item mb-4">
+                        <i class="fas fa-calendar-alt me-2 text-primary"></i>
+                        <strong>Ngày tạo:</strong> @(Model?.CreatedAt?.ToString("dd/MM/yyyy") ?? "Chưa có")
+                    </div>
+                    <div class="info-item mb-4">
+                        <i class="fas fa-id-card me-2 text-primary"></i>
+                        <strong>Vai trò:</strong> <span class="badge bg-primary">@Model?.Role</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end gap-2 mt-4">
+                <a asp-controller="DashboardUser" asp-action="ChangePassword" class="btn btn-outline-secondary">
+                    <i class="fas fa-lock me-2"></i>Đổi mật khẩu
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .avatar-circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .card-header {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+    }
+
+    .info-item {
+        padding: 12px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        .info-item:hover {
+            background-color: #f8f9fa;
+            transform: translateX(5px);
+        }
+
+    .badge {
+        font-size: 0.9em;
+        padding: 0.5em 0.75em;
+    }
+</style>
+
+<!-- Add Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

@@ -3,10 +3,10 @@
     "",
     "\\Controllers",
     "\\Models",
+    "\\obj",
     "\\Views",
-    "\\Views\\Dashboard\\Categories",
-    "\\Views\\Home",
-    "\\Views\\Home\\Products",
+    "\\Views\\Dashboard",
+    "\\Views\\Shared",
     "\\wwwroot",
     "\\wwwroot\\css",
     "\\wwwroot\\images"

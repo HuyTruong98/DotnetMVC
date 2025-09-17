@@ -4,6 +4,7 @@ using OnlineStoreMVC.Models;
 using OnlineStoreMVC.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace OnlineStoreMVC.Controllers
 {
@@ -172,7 +173,6 @@ namespace OnlineStoreMVC.Controllers
         ProtectedVariantIds = protectedVariantIds
       };
 
-
       foreach (var v in product.Variants)
       {
         model.Variants.Add(new ProductVariantViewModel
@@ -184,14 +184,8 @@ namespace OnlineStoreMVC.Controllers
         });
       }
 
-      ViewBag.Categories = _context.Categories
-          .Select(c => new SelectListItem
-          {
-            Value = c.CategoryID.ToString(),
-            Text = c.CategoryName
-          }).ToList();
-      ViewBag.ExistingImages = product.ProductImages;
 
+      PopulateViewBags(id, model);
       return View("~/Views/Dashboard/Products/EditProduct.cshtml", model);
     }
 
@@ -204,23 +198,38 @@ namespace OnlineStoreMVC.Controllers
 
       if (!ModelState.IsValid)
       {
-        ViewBag.Categories = _context.Categories
-            .Select(c => new SelectListItem
-            {
-              Value = c.CategoryID.ToString(),
-              Text = c.CategoryName
-            }).ToList();
-        ViewBag.ExistingImages = _context.ProductImages
-            .Where(img => img.ProductID == id).ToList();
+        PopulateViewBags(id, model);
         return View("~/Views/Dashboard/Products/EditProduct.cshtml", model);
       }
 
       var product = await _context.Products
-        .Include(p => p.ProductImages)
-        .Include(p => p.Variants)
-        .FirstOrDefaultAsync(p => p.ProductID == id);
+          .Include(p => p.ProductImages)
+          .Include(p => p.Variants)
+              .ThenInclude(v => v.OrderDetails)
+          .FirstOrDefaultAsync(p => p.ProductID == id);
 
       if (product == null) return NotFound();
+      var existingVariants = product.Variants.ToList();
+
+      foreach (var variant in model.Variants)
+      {
+        var existingVariant = existingVariants
+            .FirstOrDefault(v => v.Size == variant.Size && v.Color == variant.Color);
+
+        if (existingVariant != null)
+        {
+          existingVariant.Stock = variant.Stock;
+        }
+        else
+        {
+          product.Variants.Add(new ProductVariant
+          {
+            Size = variant.Size,
+            Color = variant.Color,
+            Stock = variant.Stock
+          });
+        }
+      }
 
       product.ProductName = model.ProductName;
       product.Description = model.Description;
@@ -229,26 +238,15 @@ namespace OnlineStoreMVC.Controllers
       product.Status = model.Status;
       product.IsFeatured = model.IsFeatured;
 
-      _context.ProductVariants.RemoveRange(product.Variants);
-      product.Variants.Clear();
-      foreach (var v in model.Variants)
-      {
-        product.Variants.Add(new ProductVariant
-        {
-          Size = v.Size,
-          Color = v.Color,
-          Stock = v.Stock
-        });
-      }
-
-      if (model.Images != null && model.Images.Count > 0)
+      if (model.Images?.Count > 0)
       {
         foreach (var oldImage in product.ProductImages)
         {
           var oldPath = Path.Combine(
               Directory.GetCurrentDirectory(),
               "wwwroot",
-              oldImage.ImageURL.TrimStart('/'));
+              oldImage.ImageURL.TrimStart('/')
+          );
           if (System.IO.File.Exists(oldPath))
             System.IO.File.Delete(oldPath);
         }
@@ -268,10 +266,8 @@ namespace OnlineStoreMVC.Controllers
           var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
           var fullPath = Path.Combine(uploads, fileName);
 
-          using (var stream = new FileStream(fullPath, FileMode.Create))
-          {
-            await file.CopyToAsync(stream);
-          }
+          using var stream = new FileStream(fullPath, FileMode.Create);
+          await file.CopyToAsync(stream);
 
           product.ProductImages.Add(new ProductImage
           {
@@ -320,6 +316,24 @@ namespace OnlineStoreMVC.Controllers
 
       TempData["Success"] = "Xóa sản phẩm thành công.";
       return RedirectToAction("Index");
+    }
+
+    private void PopulateViewBags(int productId, ProductViewModel model, IEnumerable<int>? protectedIds = null)
+    {
+      ViewBag.Categories = _context.Categories
+          .Select(c => new SelectListItem
+          {
+            Value = c.CategoryID.ToString(),
+            Text = c.CategoryName
+          })
+          .ToList();
+
+      ViewBag.ExistingImages = _context.ProductImages
+          .Where(img => img.ProductID == productId)
+          .ToList();
+
+      if (protectedIds != null)
+        model.ProtectedVariantIds = protectedIds.ToList();
     }
   }
 }

@@ -2,55 +2,57 @@
 @using OnlineStoreMVC.Helpers
 
 @{
-    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
-    ViewData["Title"] = "Chi tiết sản phẩm";
+  Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+  ViewData["Title"] = "Chi tiết sản phẩm";
 }
 
 <div class="card shadow p-4">
-    <h2 class="mb-4">👁 Chi tiết sản phẩm</h2>
+  <h2 class="mb-4">👁 Chi tiết sản phẩm</h2>
 
-    <div class="row">
-        <div class="col-md-5">
-            @if (Model.ProductImages != null && Model.ProductImages.Any())
-            {
-                <img src="@Url.Content(Model.ProductImages.FirstOrDefault(img => img.IsPrimary)?.ImageURL
-                                           ?? Model.ProductImages.First().ImageURL)" class="img-fluid rounded border" />
-                        }
-            else
-            {
-                <span class="text-muted">Không có ảnh</span>
+  <div class="row">
+    <div class="col-md-5">
+      @if (Model.ProductImages != null && Model.ProductImages.Any())
+      {
+        <img
+          src="@Url.Content(Model.ProductImages.FirstOrDefault(img => img.IsPrimary)?.ImageURL
+                                                                                                                          ?? Model.ProductImages.First().ImageURL)"
+        class="img-fluid rounded border" />
             }
-        </div>
-
-        <div class="col-md-7">
-            <dl class="row">
-                <dt class="col-sm-4">Tên sản phẩm:</dt>
-                <dd class="col-sm-8">@Model.ProductName</dd>
-
-                <dt class="col-sm-4">Danh mục:</dt>
-                <dd class="col-sm-8">@Model.Category?.CategoryName</dd>
-
-                <dt class="col-sm-4">Giá:</dt>
-                <dd class="col-sm-8">@FormatHelper.FormatCurrency(Model.Price)</dd>
-
-                <dt class="col-sm-4">Tồn kho:</dt>
-                @* <dd class="col-sm-8">@Model.Stock</dd> *@
-
-                <dt class="col-sm-4">Trạng thái:</dt>
-                <dd class="col-sm-8"><span class="badge bg-info">@Model.Status</span></dd>
-
-                <dt class="col-sm-4">Ngày tạo:</dt>
-                <dd class="col-sm-8">@FormatHelper.FormatDate(Model.CreatedAt)</dd>
-
-                <dt class="col-sm-4">Mô tả:</dt>
-                <dd class="col-sm-8">@Model.Description</dd>
-            </dl>
-        </div>
+      else
+      {
+        <span class="text-muted">Không có ảnh</span>
+      }
     </div>
 
-    <div class="mt-4">
-        <a class="btn btn-secondary" asp-controller="DashboardProduct" asp-action="Index">⬅ Quay lại</a>
-        <a class="btn btn-primary" asp-controller="DashboardProduct" asp-action="Edit" asp-route-id="@Model.ProductID">✏
-            Sửa</a>
+    <div class="col-md-7">
+      <dl class="row">
+        <dt class="col-sm-4">Tên sản phẩm:</dt>
+        <dd class="col-sm-8">@Model.ProductName</dd>
+
+        <dt class="col-sm-4">Danh mục:</dt>
+        <dd class="col-sm-8">@Model.Category?.CategoryName</dd>
+
+        <dt class="col-sm-4">Giá:</dt>
+        <dd class="col-sm-8">@FormatHelper.FormatCurrency(Model.Price)</dd>
+
+        <dt class="col-sm-4">Tồn kho:</dt>
+        @* <dd class="col-sm-8">@Model.Stock</dd> *@
+
+        <dt class="col-sm-4">Trạng thái:</dt>
+        <dd class="col-sm-8"><span class="badge bg-info">@Model.Status</span></dd>
+
+        <dt class="col-sm-4">Ngày tạo:</dt>
+        <dd class="col-sm-8">@FormatHelper.FormatDate(Model.CreatedAt)</dd>
+
+        <dt class="col-sm-4">Mô tả:</dt>
+        <dd class="col-sm-8">@Model.Description</dd>
+      </dl>
     </div>
+  </div>
+
+  <div class="mt-4">
+    <a class="btn btn-secondary" asp-controller="DashboardProduct" asp-action="Index">⬅ Quay lại</a>
+    <a class="btn btn-primary" asp-controller="DashboardProduct" asp-action="Edit" asp-route-id="@Model.ProductID">✏
+      Sửa</a>
+  </div>
 </div>

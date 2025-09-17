@@ -146,12 +146,18 @@ namespace OnlineStoreMVC.Controllers
         return RedirectToAction("Login", "Auth");
 
       var product = await _context.Products
-          .Include(p => p.ProductImages)
-          .Include(p => p.Variants)
-          .FirstOrDefaultAsync(p => p.ProductID == id);
+         .Include(p => p.ProductImages)
+         .Include(p => p.Variants)
+             .ThenInclude(v => v.OrderDetails)
+         .FirstOrDefaultAsync(p => p.ProductID == id);
 
       if (product == null)
         return NotFound();
+
+      var protectedVariantIds = product.Variants
+           .Where(v => v.OrderDetails.Any())
+           .Select(v => v.VariantID)
+           .ToList();
 
       var model = new ProductViewModel
       {
@@ -162,13 +168,16 @@ namespace OnlineStoreMVC.Controllers
         CategoryID = product.CategoryID,
         Status = product.Status,
         IsFeatured = product.IsFeatured,
-        CreatedAt = product.CreatedAt ?? DateTime.Now
+        CreatedAt = product.CreatedAt ?? DateTime.Now,
+        ProtectedVariantIds = protectedVariantIds
       };
+
 
       foreach (var v in product.Variants)
       {
         model.Variants.Add(new ProductVariantViewModel
         {
+          VariantID = v.VariantID,
           Size = v.Size,
           Color = v.Color,
           Stock = v.Stock
@@ -185,7 +194,6 @@ namespace OnlineStoreMVC.Controllers
 
       return View("~/Views/Dashboard/Products/EditProduct.cshtml", model);
     }
-
 
     [HttpPost("Edit/{id}")]
     public async Task<IActionResult> Edit(int id, ProductViewModel model)
@@ -313,63 +321,5 @@ namespace OnlineStoreMVC.Controllers
       TempData["Success"] = "Xóa sản phẩm thành công.";
       return RedirectToAction("Index");
     }
-    // [HttpGet("Delete/{id}")]
-    // public async Task<IActionResult> Delete(int id)
-    // {
-    //   var role = HttpContext.Session.GetString("Role");
-    //   if (role != "Admin") return RedirectToAction("Login", "Auth");
-
-    //   var product = await _context.Products
-    //       .Include(p => p.ProductImages)
-    //       .FirstOrDefaultAsync(p => p.ProductID == id);
-
-    //   if (product == null)
-    //   {
-    //     TempData["Error"] = "Không tìm thấy sản phẩm.";
-    //     return RedirectToAction("Index");
-    //   }
-
-    //   foreach (var image in product.ProductImages)
-    //   {
-    //     var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", image.ImageURL.TrimStart('/'));
-    //     if (System.IO.File.Exists(imagePath))
-    //     {
-    //       System.IO.File.Delete(imagePath);
-    //     }
-    //   }
-
-    //   _context.ProductImages.RemoveRange(product.ProductImages);
-
-    //   _context.Products.Remove(product);
-
-    //   await _context.SaveChangesAsync();
-
-    //   TempData["Success"] = "Xóa sản phẩm thành công.";
-    //   return RedirectToAction("Index");
-    // }
-
-    // [HttpGet("Details/{id}")]
-    // public IActionResult Details(int id)
-    // {
-    //   var role = HttpContext.Session.GetString("Role");
-    //   if (role != "Admin") return RedirectToAction("Login", "Auth");
-
-    //   if (id <= 0)
-    //   {
-    //     return BadRequest("ID sản phẩm không hợp lệ.");
-    //   }
-
-    //   var product = _context.Products
-    //       .Include(p => p.Category)
-    //       .Include(p => p.ProductImages)
-    //       .FirstOrDefault(p => p.ProductID == id);
-
-    //   if (product == null)
-    //   {
-    //     return NotFound("Không tìm thấy sản phẩm.");
-    //   }
-
-    //   return View("~/Views/Dashboard/Products/Details.cshtml", product);
-    // }
   }
 }

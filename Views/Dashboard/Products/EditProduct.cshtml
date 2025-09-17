@@ -95,6 +95,10 @@
         <div id="variant-container">
           @for (int i = 0; i < Model.Variants.Count; i++)
           {
+            var vm = Model.Variants[i];
+            var isProtected = vm.VariantID.HasValue
+            && Model.ProtectedVariantIds.Contains(vm.VariantID.Value);
+
             <div class="row g-2 align-items-end mb-3 variant-item">
               <div class="col">
                 <label asp-for="Variants[@i].Size" class="form-label">Size</label>
@@ -112,7 +116,18 @@
                 <span asp-validation-for="Variants[@i].Stock" class="text-danger"></span>
               </div>
               <div class="col-auto">
-                <button type="button" class="btn btn-sm btn-danger" onclick="removeVariant(this)">➖</button>
+                @if (isProtected)
+                {
+                  <button type="button" class="btn btn-sm btn-secondary" disabled title="Đã có đơn hàng, không thể xóa">
+                    🔒
+                  </button>
+                }
+                else
+                {
+                  <button type="button" class="btn btn-sm btn-danger" onclick="removeVariant(this)">
+                    ➖
+                  </button>
+                }
               </div>
             </div>
           }
@@ -138,39 +153,39 @@
       const container = document.getElementById("variant-container");
       const idx = variantIndex++;
       const html = `
-                <div class="row g-2 align-items-end mb-3 variant-item">
-                  <div class="col">
-                    <label for="Variants_${idx}__Size" class="form-label">Size</label>
-                    <input name="Variants[${idx}].Size" 
-                           id="Variants_${idx}__Size"
-                           class="form-control" />
-                    <span class="text-danger" 
-                          data-valmsg-for="Variants[${idx}].Size"
-                          data-valmsg-replace="true"></span>
-                  </div>
-                  <div class="col">
-                    <label for="Variants_${idx}__Color" class="form-label">Màu sắc</label>
-                    <input name="Variants[${idx}].Color"
-                           id="Variants_${idx}__Color"
-                           class="form-control" />
-                    <span class="text-danger" 
-                          data-valmsg-for="Variants[${idx}].Color"
-                          data-valmsg-replace="true"></span>
-                  </div>
-                  <div class="col">
-                    <label for="Variants_${idx}__Stock" class="form-label">Tồn kho</label>
-                    <input name="Variants[${idx}].Stock" 
-                           id="Variants_${idx}__Stock"
-                           class="form-control" />
-                    <span class="text-danger" 
-                          data-valmsg-for="Variants[${idx}].Stock"
-                          data-valmsg-replace="true"></span>
-                  </div>
-                  <div class="col-auto">
-                    <button type="button" class="btn btn-sm btn-danger"
-                            onclick="removeVariant(this)">➖</button>
-                  </div>
-                </div>`;
+                      <div class="row g-2 align-items-end mb-3 variant-item">
+                        <div class="col">
+                          <label for="Variants_${idx}__Size" class="form-label">Size</label>
+                          <input name="Variants[${idx}].Size" 
+                                 id="Variants_${idx}__Size"
+                                 class="form-control" />
+                          <span class="text-danger" 
+                                data-valmsg-for="Variants[${idx}].Size"
+                                data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                          <label for="Variants_${idx}__Color" class="form-label">Màu sắc</label>
+                          <input name="Variants[${idx}].Color"
+                                 id="Variants_${idx}__Color"
+                                 class="form-control" />
+                          <span class="text-danger" 
+                                data-valmsg-for="Variants[${idx}].Color"
+                                data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                          <label for="Variants_${idx}__Stock" class="form-label">Tồn kho</label>
+                          <input name="Variants[${idx}].Stock" 
+                                 id="Variants_${idx}__Stock"
+                                 class="form-control" />
+                          <span class="text-danger" 
+                                data-valmsg-for="Variants[${idx}].Stock"
+                                data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-auto">
+                          <button type="button" class="btn btn-sm btn-danger"
+                                  onclick="removeVariant(this)">➖</button>
+                        </div>
+                      </div>`;
       container.insertAdjacentHTML("beforeend", html);
       $.validator.unobtrusive.parse(container);
     }

@@ -30,10 +30,14 @@ namespace OnlineStoreMVC.Models.ViewModels
 
     [Required(ErrorMessage = "Phải có ít nhất một biến thể")]
     public List<ProductVariantViewModel> Variants { get; set; } = new();
+    public List<int> ProtectedVariantIds { get; set; } = new();
+
   }
 
   public class ProductVariantViewModel
   {
+    public int? VariantID { get; set; }
+
     [Required(ErrorMessage = "Size không được bỏ trống")]
     [MaxLength(10, ErrorMessage = "Size tối đa 10 ký tự")]
     public string? Size { get; set; }

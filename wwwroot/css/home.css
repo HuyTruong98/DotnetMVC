@@ -13,7 +13,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-  position: relative;
+  /* position: relative;
   background-image: url("https://file.hstatic.net/1000360022/file/banner_trang_ch__pc__2048x813px_-01.jpg");
   background-size: cover;
   background-position: center;
@@ -22,7 +22,7 @@ body {
   display: flex;
   align-items: center;
   color: white;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 .hero-overlay {
@@ -275,7 +275,8 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 3rem;
+  height: 2.5rem;
+  text-decoration: none !important;
 }
 
 .card-title {
@@ -314,7 +315,13 @@ body {
 .current-price {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #e74c3c;
+  color: #001F5D;
+}
+
+.current-price .price-sale {
+  color: #979797 !important;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 .old-price {
@@ -410,7 +417,7 @@ body {
   }
 }
 
-.hero-content > * {
+.hero-content>* {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
@@ -428,11 +435,98 @@ body {
 
 /* Đồng bộ chiều cao card */
 .card {
-  min-height: 400px; /* Chiều cao tối thiểu của mỗi card */
+  min-height: 400px;
+  /* Chiều cao tối thiểu của mỗi card */
 }
 
 /* Đảm bảo hình ảnh luôn đồng bộ */
 .card-img-top {
-  height: 250px; /* Chiều cao cố định cho hình ảnh */
-  object-fit: cover; /* Cắt ảnh để vừa khung */
+  height: 250px;
+  /* Chiều cao cố định cho hình ảnh */
+  object-fit: cover;
+  /* Cắt ảnh để vừa khung */
+}
+
+/* wwwroot/css/site.css or home.css */
+
+/* Container must be position: relative */
+#heroCarousel {
+  position: relative;
+}
+
+/* Base style for both buttons */
+.custom-control-btn {
+  cursor: pointer;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  transition: transform 0.1s, opacity 0.2s;
+  opacity: 0.7;
+  border: 1px solid #ebebeb;
+  background-color: #ebebeb;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* Hover effect */
+.custom-control-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  opacity: 1;
+}
+
+/* Position prev at left edge, next at right edge */
+.custom-prev {
+  left: 10px;
+}
+
+.custom-next {
+  right: 10px;
+}
+
+/* Icon styling (uses FontAwesome) */
+.custom-control-btn i {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Detail */
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.tab-pane.fade {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.tab-pane.fade.show.active {
+  display: block;
+  opacity: 1;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #1717b7;
+  color: #fff !important;
+  font-weight: bold;
+  border: 2px solid #1717b7;
+  border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+  color: #0d6efd;
+  border: 1px solid transparent;
+}
+
+.nav-tabs .nav-link:hover {
+  border: 1px solid #dee2e6;
 }

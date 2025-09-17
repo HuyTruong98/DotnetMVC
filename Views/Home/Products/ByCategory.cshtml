@@ -1,18 +1,19 @@
+@using OnlineStoreMVC.Helpers
 @model List<OnlineStoreMVC.Models.Product>
 @{
   Layout = "~/Views/Shared/_Layout.cshtml";
   ViewData["Title"] = "Sản phẩm theo danh mục";
 }
 
-<div class="container mt-4">
+<div class="container" style="margin-top: 80px">
   <h2 class="mb-4">
-    Sản phẩm thuộc danh mục: @(Model.Any() ? Model.First().Category?.CategoryName : "Không có")
+    Sản phẩm thuộc danh mục:
+    @(Model.Any() ? Model.First().Category?.CategoryName : "Không có")
   </h2>
 
-  <!-- Search + Sort -->
   <div class="row mb-3">
     <div class="col-md-6">
-      <input type="text" id="searchBox" class="form-control" placeholder="🔍 Tìm kiếm sản phẩm...">
+      <input type="text" id="searchBox" class="form-control" placeholder="🔍 Tìm kiếm sản phẩm..." />
     </div>
     <div class="col-md-6 text-end">
       <select id="sortSelect" class="form-select w-auto d-inline-block">
@@ -22,79 +23,124 @@
       </select>
     </div>
   </div>
+
   <div class="row g-4" id="product-list">
-    @if (Model.Any())
+    @for (int i = 0; i < Model.Count; i++)
     {
-      var index = 0;
-      foreach (var product in Model)
-      {
-        var image = product.ProductImages?.FirstOrDefault()?.ImageURL ?? "/images/no-image.png";
-        <div class="col-lg-4 col-md-6 product-card p-2 @(index >= 6 ? "d-none" : "")"
-          data-name="@product.ProductName.ToLower()" data-price="@product.Price">
-          <div class="card h-100 d-flex flex-column" style="min-height: 500px;">
-            <img src="@image" class="card-img-top" alt="@product.ProductName" style="object-fit: contain; height: 400px;">
+      var product = Model[i];
+      var imgUrl = product.ProductImages?
+      .FirstOrDefault()?.ImageURL
+      ?? "/images/no-image.png";
 
-            <div class="card-body d-flex flex-column">
-                <h5 class="card-title">@product.ProductName</h5>
-                <p class="card-text text-muted">@product.Description</p>
-                <p class="fw-bold text-danger" style="font-size: 18px">@product.Price.ToString("N0") ₫</p>
+      var promotions = ViewBag.Promotions as List<OnlineStoreMVC.Models.Promotion> ?? new();
+      var promo = promotions.FirstOrDefault(p => p.ProductID == product.ProductID);
+      var discountedPrice = promo != null
+      ? product.Price * (1 - (decimal)promo.DiscountPercent / 100)
+      : 0m;
 
-                <button style="margin-bottom: 20px" type="button" class="btn btn-primary mt-auto w-100 add-to-cart-btn"
-                        data-product-id="@product.ProductID">
-                    🛒 Thêm vào giỏ
+      <div class="col-lg-3 col-md-6" data-name="@product.ProductName.ToLower()" data-price="@product.Price">
+
+
+        <div class="product-card">
+          <div class="product-image">
+            <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID">
+              <img src="@Url.Content(imgUrl)" class="img-fluid w-100" alt="@product.ProductName" class="img-hot"
+                style="object-fit: contain;" />
+            </a>
+
+            <div class="product-badges">
+              @if (promo != null)
+              {
+                <span class="badge bg-warning">Sale</span>
+              }
+            </div>
+            <div class="product-actions">
+              @if (product.IsFeatured)
+              {
+                <button class="btn btn-sm btn-outline-light" title="Yêu thích">
+                  <img style="height: 20px" src="~/images/heart.png" alt="heart" />
                 </button>
-                @*<a href="/Product/Detail/@product.ProductID" style="margin-top: 20px" >Xem chi tiết</a>*@
+              }
+              <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID"
+                class="btn btn-sm btn-outline-light" title="Xem nhanh">
+                <img style="height: 10px" src="~/images/view.png" />
+              </a>
+            </div>
+          </div>
 
-                <a  href="@Url.Action("Detail", "HomeProduct", new { id = product.ProductID })"
-                   class="btn btn-outline-info mb-2 w-100">
-                    👁️ Xem chi tiết
-                </a>
+          <div class="product-info">
+            <h6 class="product-title"> <a asp-controller="HomeProduct" asp-action="Detail"
+                asp-route-id="@product.ProductID" class="text-decoration-none text-dark">
+                @product.ProductName
+              </a></h6>
+
+
+            <div class="product-price">
+              @if (promo != null)
+              {
+                <span class="current-price">
+                  <del class="price-sale">
+                    @FormatHelper.FormatCurrency(product.Price)
+                  </del>
+                </span>
+                <span class="current-price">
+                  @FormatHelper.FormatCurrency(discountedPrice)
+                </span>
+              }
+              else
+              {
+                <span class="current-price">
+                  @FormatHelper.FormatCurrency(product.Price)
+                </span>
+              }
+              @* <span class="old-price">400.000₫</span> *@
+            </div>
+            <div class="mt-2">
+              <button class="btn btn-sm btn-primary w-100 add-to-cart-btn" data-product-id="@product.ProductID">
+                🛒 Thêm vào giỏ
+              </button>
             </div>
           </div>
         </div>
-        index++;
-      }
-    }
-    else
-    {
-      <p class="text-muted">Không có sản phẩm nào trong danh mục này.</p>
+      </div>
     }
   </div>
 
-  @if (Model.Count > 6)
+  @if (Model.Count > 8)
   {
-    <div class="text-center mt-3">
-      <button id="loadMoreBtn" style="width: 100%" class="btn btn-outline-primary">Xem thêm</button>
+    <div class="text-center mt-4">
+      <button id="loadMoreBtn" class="btn btn-primary btn-lg">
+        Xem thêm
+      </button>
     </div>
   }
 </div>
 
 @section Scripts {
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let currentVisible = 6; // 👉 hiển thị 6 sản phẩm đầu tiên
-      const products = document.querySelectorAll(".product-card");
+    document.addEventListener("DOMContentLoaded", () => {
+      let currentVisible = 8; // 
+      const container = document.getElementById("product-list");
       const loadMoreBtn = document.getElementById("loadMoreBtn");
       const searchBox = document.getElementById("searchBox");
       const sortSelect = document.getElementById("sortSelect");
-      const container = document.getElementById("product-list");
 
-      // 🔹 Hiển thị ban đầu
+      function getAllCards() {
+        return Array.from(container.querySelectorAll(".product-card"));
+      }
+
       function applyPagination(cards) {
         cards.forEach((c, idx) => {
-          if (idx < currentVisible) {
-            c.classList.remove("d-none");
-          } else {
-            c.classList.add("d-none");
-          }
+          c.style.display = idx < currentVisible ? "" : "none";
         });
         if (loadMoreBtn) {
-          loadMoreBtn.style.display = currentVisible >= cards.length ? "none" : "block";
+          loadMoreBtn.style.display = currentVisible >= cards.length
+            ? "none"
+            : "";
         }
       }
 
-      // 🔹 Hàm sort
-      function sortCardsArray(cards, mode) {
+      function sortCards(cards, mode) {
         return cards.sort((a, b) => {
           const pa = parseFloat(a.dataset.price);
           const pb = parseFloat(b.dataset.price);
@@ -104,82 +150,74 @@
         });
       }
 
-      // 🔹 Lấy toàn bộ cards
-      function getAllCards() {
-        return Array.from(container.querySelectorAll(".product-card"));
-      }
-
       // Load More
       if (loadMoreBtn) {
-        loadMoreBtn.addEventListener("click", function () {
-          currentVisible += 6; // 👉 mỗi lần load thêm 6
+        loadMoreBtn.addEventListener("click", () => {
+          currentVisible += 4;
           applyPagination(getAllCards());
         });
       }
 
       // Search
-      searchBox.addEventListener("input", function () {
-        const kw = this.value.trim().toLowerCase();
-        const all = getAllCards();
-        if (kw.length > 0) {
-          all.forEach(c => {
-            if (c.dataset.name.includes(kw)) {
-              c.classList.remove("d-none");
-              container.appendChild(c);
-            } else {
-              c.classList.add("d-none");
-            }
-          });
-          if (loadMoreBtn) loadMoreBtn.style.display = "none";
-        } else {
-          const sorted = sortCardsArray(all, sortSelect.value);
-          sorted.forEach(c => container.appendChild(c));
-          currentVisible = 6; // reset lại
-          applyPagination(sorted);
-        }
-      });
+      if (searchBox) {
+        searchBox.addEventListener("input", () => {
+          const kw = searchBox.value.trim().toLowerCase();
+          const all = getAllCards();
+          if (kw) {
+            all.forEach(c =>
+              c.style.display = c.dataset.name.includes(kw) ? "" : "none"
+            );
+            if (loadMoreBtn) loadMoreBtn.style.display = "none";
+          } else {
+            const sorted = sortCards(all, sortSelect.value);
+            sorted.forEach(c => container.appendChild(c));
+            currentVisible = 8;
+            applyPagination(sorted);
+          }
+        });
+      }
 
       // Sort
-      sortSelect.addEventListener("change", function () {
-        const mode = this.value;
-        const kw = searchBox.value.trim().toLowerCase();
-        const all = getAllCards();
+      if (sortSelect) {
+        sortSelect.addEventListener("change", () => {
+          const mode = sortSelect.value;
+          const kw = searchBox.value.trim().toLowerCase();
+          const all = getAllCards();
 
-        if (kw.length > 0) {
-          const matched = all.filter(c => c.dataset.name.includes(kw));
-          const sortedMatched = sortCardsArray(matched, mode);
-          sortedMatched.forEach(c => {
-            container.appendChild(c);
-            c.classList.remove("d-none");
-          });
-          all.filter(c => !c.dataset.name.includes(kw))
-            .forEach(c => c.classList.add("d-none"));
-          if (loadMoreBtn) loadMoreBtn.style.display = "none";
-        } else {
-          const sorted = sortCardsArray(all, mode);
-          sorted.forEach(c => container.appendChild(c));
-          currentVisible = 6; // reset lại
-          applyPagination(sorted);
-        }
-      });
-
-      // 👉 Khởi tạo lần đầu
-      applyPagination(getAllCards());
-    });
-
-    // Ajax Add To Cart
-    $(document).on("click", ".add-to-cart-btn", function () {
-      const productId = $(this).data("product-id");
-
-      $.ajax({
-        url: "/HomeCart/AddToCart",
-        type: "POST",
-        data: { productId },
-        success: function (res) {
-          if (res.success) {
-            $("#cart-badge").text(res.cartCount);
+          if (kw) {
+            const matched = all.filter(c => c.dataset.name.includes(kw));
+            sortCards(matched, mode).forEach(c => {
+              c.style.display = "";
+              container.appendChild(c);
+            });
+            all.filter(c => !c.dataset.name.includes(kw))
+              .forEach(c => c.style.display = "none");
+            if (loadMoreBtn) loadMoreBtn.style.display = "none";
+          } else {
+            const sorted = sortCards(all, mode);
+            sorted.forEach(c => container.appendChild(c));
+            currentVisible = 8;
+            applyPagination(sorted);
           }
-        }
+        });
+      }
+
+      // Init
+      applyPagination(getAllCards());
+
+      // Ajax Add To Cart
+      $(document).on("click", ".add-to-cart-btn", function () {
+        const productId = $(this).data("product-id");
+        $.ajax({
+          url: "/HomeCart/AddToCart",
+          type: "POST",
+          data: { productId },
+          success: function (res) {
+            if (res.success) {
+              $("#cart-badge").text(res.cartCount);
+            }
+          }
+        });
       });
     });
   </script>

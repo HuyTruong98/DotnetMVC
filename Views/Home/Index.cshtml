@@ -9,36 +9,31 @@
   ViewData["Title"] = "Trang chủ - Cửa hàng thời trang";
 }
 
-<section class="hero-section">
-  <div class="hero-overlay"></div>
-  <div class="container">
-    <div class="row align-items-center min-vh-80">
-      <div class="col-lg-6">
-        <div class="hero-content">
-          <h1 class="hero-title">Thời Trang Hiện Đại</h1>
-          <p class="hero-subtitle">
-            Khám phá bộ sưu tập quần áo thời trang mới nhất với phong cách hiện đại,
-            chất lượng cao và giá cả hợp lý
-          </p>
-          <div class="hero-buttons">
-            <a href="#" class="btn btn-primary btn-lg me-3">
-              <i class="fas fa-shopping-bag me-2"></i>Mua sắm ngay
-            </a>
-            <a href="#collections" class="btn btn-outline-light btn-lg">
-              Khám phá bộ sưu tập
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="hero-image">
-          <img
-            src="https://www.elle.vn/wp-content/uploads/2019/09/kualua-lumpur-fashion-week-2019-5.jpgfeatures-section py-5"
-            alt="Fashion Hero" class="img-fluid">
-        </div>
-      </div>
+<!-- Views/Home/Index.cshtml -->
+<section id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="~/images/banner_trang_ch__pc__2048x813px_-01.jpg" class="d-block w-100" alt="Slide 1"
+        style="object-fit: cover; height: 80vh;" />
+    </div>
+    <div class="carousel-item">
+      <img src="~/images/banner_trang_ch__pc__2048x813px_-02.jpg" class="d-block w-100" alt="Slide 2"
+        style="object-fit: cover; height: 80vh;" />
+    </div>
+    <div class="carousel-item">
+      <img src="~/images/banner_trang_ch__pc__2048x813px_-03__1_.jpg" class="d-block w-100" alt="Slide 3"
+        style="object-fit: cover; height: 80vh;" />
     </div>
   </div>
+
+  <!-- Custom Prev/Next Buttons -->
+  <button type="button" class="custom-control-btn custom-prev" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button type="button" class="custom-control-btn custom-next" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <i class="fas fa-chevron-right"></i>
+  </button>
 </section>
 
 <!-- Features Section -->
@@ -162,13 +157,21 @@
     <div class="row g-4">
       @foreach (var product in Model)
       {
+        var promotions = ViewBag.Promotions as List<OnlineStoreMVC.Models.Promotion> ?? new();
+        var promo = promotions.FirstOrDefault(p => p.ProductID == product.ProductID);
+        var discountedPrice = promo != null
+        ? product.Price * (1 - (decimal)promo.DiscountPercent / 100)
+        : 0m;
 
         var primaryImage = product?.ProductImages?.FirstOrDefault(img => img.IsPrimary);
 
         <div class="col-lg-3 col-md-6">
           <div class="product-card">
             <div class="product-image">
-              <img src="@(primaryImage?.ImageURL ?? "/images/no-image.png")" class="img-hot" alt="@product.ProductName" />
+              <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID">
+                <img src="@(primaryImage?.ImageURL ?? "/images/no-image.png")" class="img-hot"
+                  alt="@product.ProductName" />
+              </a>
               <div class="product-badges">
                 <span class="badge bg-warning">Hot</span>
               </div>
@@ -176,16 +179,37 @@
                 <button class="btn btn-sm btn-outline-light" title="Yêu thích">
                   <img style="height: 20px" src="~/images/heart.png" />
                 </button>
-                <button class="btn btn-sm btn-outline-light" title="Xem nhanh">
+                <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID"
+                  class="btn btn-sm btn-outline-light" title="Xem nhanh">
                   <img style="height: 10px" src="~/images/view.png" />
-                </button>
+                </a>
               </div>
             </div>
             <div class="product-info">
-              <h6 class="product-title">@product.ProductName</h6>
+              <h6 class="product-title"> <a asp-controller="HomeProduct" asp-action="Detail"
+                  asp-route-id="@product.ProductID" class="text-decoration-none text-dark">
+                  @product.ProductName
+                </a></h6>
+
 
               <div class="product-price">
-                <span class="current-price">@FormatHelper.FormatCurrency(product.Price)</span>
+                @if (promo != null)
+                {
+                  <span class="current-price">
+                    <del class="price-sale">
+                      @FormatHelper.FormatCurrency(product.Price)
+                    </del>
+                  </span>
+                  <span class="current-price">
+                    @FormatHelper.FormatCurrency(discountedPrice)
+                  </span>
+                }
+                else
+                {
+                  <span class="current-price">
+                    @FormatHelper.FormatCurrency(product.Price)
+                  </span>
+                }
                 @* <span class="old-price">400.000₫</span> *@
               </div>
               <div class="mt-2">

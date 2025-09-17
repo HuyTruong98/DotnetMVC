@@ -92,7 +92,8 @@ namespace OnlineStoreMVC.Controllers
         Email = model.Email,
         Phone = model.Phone,
         Address = model.Address,
-        Role = "User"
+        Role = "User",
+        CreatedAt = DateTime.Now
       };
 
       user.PasswordHash = _hasher.HashPassword(user, model.Password);

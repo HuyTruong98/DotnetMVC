@@ -379,7 +379,6 @@ D:\Ehou\DotnetMVC\obj\Debug\net9.0\scopedcss\bundle\OnlineStoreMVC.styles.css
 D:\Ehou\DotnetMVC\obj\Debug\net9.0\scopedcss\projectbundle\OnlineStoreMVC.bundle.scp.css
 D:\Ehou\DotnetMVC\obj\Debug\net9.0\compressed\1vlghy4omz-y19cp15gke.gz
 D:\Ehou\DotnetMVC\obj\Debug\net9.0\compressed\fyvat61umt-6ymvxrkjdx.gz
-D:\Ehou\DotnetMVC\obj\Debug\net9.0\compressed\t0fio214w3-7kbdc1d0lt.gz
 D:\Ehou\DotnetMVC\obj\Debug\net9.0\compressed\3az60m4z2y-b9sayid5wm.gz
 D:\Ehou\DotnetMVC\obj\Debug\net9.0\compressed\wwwh4rqkas-61n19gt1b8.gz
 D:\Ehou\DotnetMVC\obj\Debug\net9.0\compressed\ag5wlg1i2y-xtxxf3hu2r.gz
@@ -460,3 +459,4 @@ D:\Ehou\DotnetMVC\obj\Debug\net9.0\OnlineStoreMVC.pdb
 D:\Ehou\DotnetMVC\obj\Debug\net9.0\OnlineStoreMVC.genruntimeconfig.cache
 D:\Ehou\DotnetMVC\obj\Debug\net9.0\ref\OnlineStoreMVC.dll
 D:\it15\DotnetMVC\obj\Debug\net9.0\compressed\t0fio214w3-9axhu0vxxv.gz
+D:\Ehou\DotnetMVC\obj\Debug\net9.0\compressed\t0fio214w3-gn6vb7z4nt.gz

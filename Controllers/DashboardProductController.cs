@@ -138,7 +138,6 @@ namespace OnlineStoreMVC.Controllers
       return RedirectToAction("Index");
     }
 
-
     [HttpGet("Edit/{id}")]
     public async Task<IActionResult> Edit(int id)
     {
@@ -209,25 +208,43 @@ namespace OnlineStoreMVC.Controllers
           .FirstOrDefaultAsync(p => p.ProductID == id);
 
       if (product == null) return NotFound();
-      var existingVariants = product.Variants.ToList();
 
-      foreach (var variant in model.Variants)
+      var oldVariants = product.Variants.ToList();
+      var newVariants = model.Variants ?? new List<ProductVariantViewModel>();
+
+      // 1. Update và thêm mới
+      foreach (var nv in newVariants)
       {
-        var existingVariant = existingVariants
-            .FirstOrDefault(v => v.Size == variant.Size && v.Color == variant.Color);
-
-        if (existingVariant != null)
+        if (nv.VariantID > 0)
         {
-          existingVariant.Stock = variant.Stock;
+          // Tìm trong DB
+          var existing = oldVariants.FirstOrDefault(v => v.VariantID == nv.VariantID);
+          if (existing != null)
+          {
+            // Cập nhật tồn kho
+            existing.Stock = nv.Stock;
+            existing.Size = nv.Size;
+            existing.Color = nv.Color;
+          }
         }
         else
         {
+          // Thêm mới
           product.Variants.Add(new ProductVariant
           {
-            Size = variant.Size,
-            Color = variant.Color,
-            Stock = variant.Stock
+            Size = nv.Size,
+            Color = nv.Color,
+            Stock = nv.Stock
           });
+        }
+      }
+
+      // 2. Xóa những cái không còn trong model gửi lên
+      foreach (var ov in oldVariants)
+      {
+        if (!newVariants.Any(v => v.VariantID == ov.VariantID))
+        {
+          _context.ProductVariants.Remove(ov);
         }
       }
 
@@ -238,8 +255,13 @@ namespace OnlineStoreMVC.Controllers
       product.Status = model.Status;
       product.IsFeatured = model.IsFeatured;
 
+      // ==========================
+      // ✅ Xử lý hình ảnh
+      // (nếu không cần thì bạn có thể bỏ qua cả đoạn này)
+      // ==========================
       if (model.Images?.Count > 0)
       {
+        // Xóa ảnh cũ trong thư mục
         foreach (var oldImage in product.ProductImages)
         {
           var oldPath = Path.Combine(

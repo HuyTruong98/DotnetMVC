@@ -34,6 +34,43 @@
 </head>
 
 <body>
+  @{
+    var successMsg = TempData["Success"] as string;
+    var errorMsg = TempData["Error"] as string;
+  }
+  @if (!string.IsNullOrEmpty(successMsg) || !string.IsNullOrEmpty(errorMsg))
+  {
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+      <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1055;">
+        @if (!string.IsNullOrEmpty(successMsg))
+        {
+          <div class="toast align-items-center text-bg-success border-0 show" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body">
+                @successMsg
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+            </div>
+          </div>
+        }
+        @if (!string.IsNullOrEmpty(errorMsg))
+        {
+          <div class="toast align-items-center text-bg-danger border-0 show" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body">
+                @errorMsg
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  }
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
       <div class="container-fluid">
@@ -111,7 +148,10 @@
             }
 
             <!-- Cart icon with badge -->
-            <a class="btn btn-outline-primary position-relative rounded-circle" asp-controller="Cart" asp-action="Index"
+            <a class="btn btn-outline-primary position-relative rounded-circle"
+              asp-controller="@(string.IsNullOrEmpty(userName) ? "Auth" : "HomeCart")"
+              asp-action="@(string.IsNullOrEmpty(userName) ? "Login" : "Index")"
+              asp-route-returnUrl="@(string.IsNullOrEmpty(userName) ? Url.Action("Index", "Cart") : null)"
               title="Giỏ hàng">
               <i class="fas fa-shopping-bag"></i>
               <span id="cart-badge"
@@ -119,6 +159,7 @@
                 @cartCount
               </span>
             </a>
+
           </div>
         </div>
       </div>

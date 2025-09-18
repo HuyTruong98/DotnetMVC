@@ -92,3 +92,6 @@ VALUES
 (N'Giày dép', N'Giày thể thao, giày da, sandal, dép'),
 (N'Túi xách & Balo', N'Túi xách thời trang, balo, cặp'),
 (N'Phụ kiện', N'Nón, thắt lưng, đồng hồ, trang sức');
+
+ALTER TABLE Orders
+ADD Description NVARCHAR(255);

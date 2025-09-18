@@ -26,23 +26,60 @@
 <div class="container mt-4" style="padding-top: 30px">
   <div class="row">
     <!-- Hình ảnh sản phẩm -->
-    <div class="col-md-6 d-flex">
-      <div class="d-flex flex-column me-3">
-        @if (Model.ProductImages != null && Model.ProductImages.Any())
-        {
-          foreach (var img in Model.ProductImages)
+    <div class="col-md-6">
+      <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Ảnh to -->
+        <div class="carousel-inner">
+          @if (Model.ProductImages != null && Model.ProductImages.Any())
           {
-            <img src="@img.ImageURL" class="img-thumbnail mb-2 thumb" style="width:80px; cursor:pointer;"
-              onclick="changeImage('@img.ImageURL')" />
+            var first = true;
+            foreach (var img in Model.ProductImages)
+            {
+              <div class="carousel-item @(first ? "active" : "")">
+                <img src="@img.ImageURL" class="d-block w-100" style="max-width:100%; height:612px; object-fit:contain;"
+                  alt="@Model.ProductName" />
+              </div>
+              first = false;
+            }
           }
-        }
-      </div>
-      <div class="flex-grow-1">
-        <img id="mainImage" src="@(Model.ProductImages?.FirstOrDefault()?.ImageURL ?? "/images/no-image.png")"
-          class="img-fluid mb-3 border" style="max-width: 100%; height: auto; width: 100%" alt="@Model.ProductName" />
+          else
+          {
+            <div class="carousel-item active">
+              <img src="/images/no-image.png" class="d-block w-100"
+                style="max-width:100%; height:612px; object-fit:contain;" alt="No image" />
+            </div>
+          }
+        </div>
+
+        <!-- Nút điều hướng ảnh lớn -->
+        <button type="button" class="custom-control-btn custom-prev" data-bs-target="#productCarousel"
+          data-bs-slide="prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button type="button" class="custom-control-btn custom-next" data-bs-target="#productCarousel"
+          data-bs-slide="next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Thumbnail nhỏ dưới -->
+        <div class="mt-2">
+          <div id="thumbWrapper" class="d-flex overflow-auto"
+            style="gap:8px; scroll-behavior:smooth; white-space:nowrap;">
+            @if (Model.ProductImages != null && Model.ProductImages.Any())
+            {
+              var idx = 0;
+              foreach (var img in Model.ProductImages)
+              {
+                <img src="@img.ImageURL" class="img-thumbnail thumb @(idx == 0 ? "active" : "")"
+                  style="width:70px; height:70px; object-fit:cover; cursor:pointer; border:1px solid #e5e5e5;"
+                  data-bs-target="#productCarousel" data-bs-slide-to="@idx" aria-current="@(idx == 0 ? "true" : "false")" />
+                idx++;
+              }
+            }
+          </div>
+        </div>
       </div>
     </div>
-
 
     <!-- Thông tin chi tiết -->
     <div class="col-md-6">
@@ -99,22 +136,28 @@
 
       <div class="mb-3">
         <label class="form-label me-2">Size:</label>
-        <div id="sizeOptions" class="d-flex flex-wrap">
-          <!-- JS sẽ render các nút ở đây -->
+        <div id="sizeOptions" class="d-flex flex-wrap swatch">
+          <!-- JS sẽ render các size ở đây -->
         </div>
       </div>
 
+
       <div class="mt-3 d-flex align-items-center">
         <!-- Ô số lượng -->
-        <div class="d-flex align-items-center border rounded px-2" style="width: 120px; height: 40px;">
+        <div id="quantityBox" class="d-flex align-items-center rounded px-2"
+          style="width: 120px; height: 40px; border: 1px solid #001F5D;">
           <button id="decrease" class="btn p-0 border-0" style="width: 30px;">−</button>
           <span id="quantity" class="flex-grow-1 text-center">1</span>
           <button id="increase" class="btn p-0 border-0" style="width: 30px;">+</button>
         </div>
+
         <!-- Nút thêm vào giỏ -->
-        <button class="btn btn-outline-primary ms-3 px-4 add-to-cart-btn" data-product-id="@Model.ProductID">THÊM VÀO
-          GIỎ</button>
+        <button id="addToCartBtn" class="btn ms-3 px-4 add-to-cart-btn" data-product-id="@Model.ProductID"
+          style="border: 1px solid #001F5D; color: #001F5D; background-color: #fff; width: calc(100% - 120px)">
+          THÊM VÀO GIỎ
+        </button>
       </div>
+
 
       <!-- Nút mua ngay -->
       <div class="mt-3">
@@ -211,131 +254,128 @@
         <img style="width: 100%" src="~/images/chinhsach5.jpg" alt="Chính sách đổi hàng 4" />
       </div>
     </div>
-    <!-- Toast Container -->
-    <div class="position-fixed top-0 start-50 translate-middle-x p-6"
-      style="z-index: 1100; width: 100%; max-width: 600px;">
-      <div id="toastMessage" class="toast w-100 text-bg-success border-0" role="alert" aria-live="assertive"
-        aria-atomic="true">
-        <div class="d-flex">
-          <div class="toast-body fs-5" id="toastBody">
-            "Sản phẩm đã thêm vào giỏ hàng"
-          </div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-            aria-label="Close"></button>
-        </div>
-      </div>
-    </div>
-
-
   </div>
 </div>
 
-<script>
-  function changeImage(src) {
-    document.getElementById("mainImage").src = src;
-  }
-
-  const quantityEl = document.getElementById("quantity");
-  const decreaseBtn = document.getElementById("decrease");
-  const increaseBtn = document.getElementById("increase");
-
-  let quantity = 1;
-
-  decreaseBtn.addEventListener("click", () => {
-    if (quantity > 1) {
-      quantity--;
-      quantityEl.textContent = quantity;
-    }
-  });
-
-  increaseBtn.addEventListener("click", () => {
-    quantity++;
-    quantityEl.textContent = quantity;
-  });
-</script>
-
-<script>
-  var variants = @Html.Raw(jsonVariants);
-
-  function renderSizes(color) {
-    var container = document.getElementById('sizeOptions');
-    container.innerHTML = '';
-    variants
-      .filter(v => v.color === color)
-      .forEach(v => {
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'btn btn-outline-dark btn-sm me-2 mb-2';
-        btn.textContent = v.size;
-        btn.disabled = v.stock === 0;
-        if (v.stock === 0) {
-          btn.classList.add('disabled');
-        }
-        btn.dataset.size = v.size;
-        btn.dataset.stock = v.stock;
-        container.appendChild(btn);
-      });
-  }
-
-  // Gắn sự kiện change lên mỗi radio màu
-  document.querySelectorAll('.color-radio').forEach(radio => {
-    radio.addEventListener('change', function () {
-      renderSizes(this.value);
-    });
-  });
-
-  // Auto-chọn màu đầu tiên và vẽ size lần đầu
-  var first = document.querySelector('.color-radio');
-  if (first) {
-    first.checked = true;
-    renderSizes(first.value);
-  }
-</script>
 @section Scripts {
   <script>
-    function showToast(message, isSuccess = true) {
-      const toastEl = document.getElementById("toastMessage");
-      const toastBody = document.getElementById("toastBody");
+    document.addEventListener("DOMContentLoaded", () => {
+      const thumbs = document.querySelectorAll("#thumbWrapper .thumb");
+      const carousel = document.getElementById("productCarousel");
+      const thumbWrapper = document.getElementById("thumbWrapper");
 
-      // đổi màu theo success/fail
-      if (isSuccess) {
-        toastEl.classList.remove("text-bg-danger");
-        toastEl.classList.add("text-bg-success");
-      } else {
-        toastEl.classList.remove("text-bg-success");
-        toastEl.classList.add("text-bg-danger");
-      }
+      thumbs.forEach((t) => {
+        t.addEventListener("click", () => {
+          thumbs.forEach((x) => {
+            x.classList.remove("active");
+            x.style.border = "1px solid #e5e5e5";
+          });
 
-      toastBody.textContent = message;
+          t.classList.add("active");
+          t.style.border = "1px solid #000";
+        });
+      });
 
-      const bsToast = new bootstrap.Toast(toastEl);
-      bsToast.show();
-    }
+      carousel.addEventListener("slid.bs.carousel", (e) => {
+        const index = e.to;
+        thumbs.forEach((thumb, i) => {
+          const isActive = i === index;
 
-    $(document).on("click", ".add-to-cart-btn", function () {
-      const productId = $(this).data("product-id");
-      const quantity = parseInt($("#quantity").text());
+          thumb.classList.toggle("active", isActive);
+          thumb.style.border = isActive ? "1px solid #000" : "1px solid #e5e5e5";
+        });
 
-      $.ajax({
-        url: "/HomeCart/AddToCart",
-        type: "POST",
-        data: {
-          productId: productId,
-          quantity: quantity,
-          __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
-        },
-        success: function (res) {
-          if (res.success) {
-            $("#cart-badge").text(res.cartCount);
-            showToast("🛒 Đã thêm sản phẩm vào giỏ!", true);
-          } else {
-            showToast("❌ Thêm giỏ thất bại!", false);
-          }
-        },
-        error: function () {
-          showToast("⚠️ Lỗi server, vui lòng thử lại!", false);
+        const activeThumb = thumbs[index];
+        if (activeThumb) {
+          activeThumb.scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+            block: "nearest",
+          });
         }
       });
+
+      if (thumbs.length > 0) {
+        thumbs[0].classList.add("active");
+        thumbs[0].style.border = "1px solid #000";
+      }
+    });
+
+    // Xử lý tăng/giảm số lượng
+    const quantityEl = document.getElementById("quantity");
+    const decreaseBtn = document.getElementById("decrease");
+    const increaseBtn = document.getElementById("increase");
+
+    let quantity = 1;
+
+    decreaseBtn.addEventListener("click", () => {
+      if (quantity > 1) {
+        quantity--;
+        quantityEl.textContent = quantity;
+      }
+    });
+
+    increaseBtn.addEventListener("click", () => {
+      quantity++;
+      quantityEl.textContent = quantity;
+    });
+
+    // ========== Render size theo màu ==========
+    var variants = @Html.Raw(jsonVariants);
+
+    function renderSizes(color) {
+      var container = document.getElementById('sizeOptions');
+      container.innerHTML = '';
+
+      let filtered = variants.filter(v => v.color === color);
+      let firstSelectable = null;
+
+      filtered.forEach((v, idx) => {
+        let wrap = document.createElement('div');
+        wrap.className = 'swatch-element';
+
+        let input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'option2';
+        input.id = `size_${color}_${v.size}`;
+        input.value = v.size;
+        input.disabled = v.stock === 0;
+
+        let label = document.createElement('label');
+        label.setAttribute('for', input.id);
+        label.innerHTML = `<span>${v.size}</span>`;
+
+        wrap.appendChild(input);
+        wrap.appendChild(label);
+        container.appendChild(wrap);
+
+        if (!input.disabled && !firstSelectable) {
+          firstSelectable = input;
+        }
+      });
+
+      if (firstSelectable) {
+        firstSelectable.checked = true;
+        document.getElementById('SelectedSize').value = firstSelectable.value;
+      }
+    }
+
+    document.querySelectorAll('.color-radio').forEach(radio => {
+      radio.addEventListener('change', function () {
+        renderSizes(this.value);
+      });
+    });
+
+    var first = document.querySelector('.color-radio');
+    if (first) {
+      first.checked = true;
+      renderSizes(first.value);
+    }
+
+    document.addEventListener('change', function (e) {
+      if (e.target.name === 'option2') {
+        document.getElementById('SelectedSize').value = e.target.value;
+      }
     });
   </script>
 }

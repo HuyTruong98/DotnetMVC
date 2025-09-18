@@ -100,6 +100,8 @@
             && Model.ProtectedVariantIds.Contains(vm.VariantID.Value);
 
             <div class="row g-2 align-items-end mb-3 variant-item">
+              <input asp-for="Variants[@i].VariantID" type="hidden" />
+
               <div class="col">
                 <label asp-for="Variants[@i].Size" class="form-label">Size</label>
                 <input asp-for="Variants[@i].Size" class="form-control" />
@@ -153,45 +155,88 @@
       const container = document.getElementById("variant-container");
       const idx = variantIndex++;
       const html = `
-                      <div class="row g-2 align-items-end mb-3 variant-item">
-                        <div class="col">
-                          <label for="Variants_${idx}__Size" class="form-label">Size</label>
-                          <input name="Variants[${idx}].Size" 
-                                 id="Variants_${idx}__Size"
-                                 class="form-control" />
-                          <span class="text-danger" 
-                                data-valmsg-for="Variants[${idx}].Size"
-                                data-valmsg-replace="true"></span>
-                        </div>
-                        <div class="col">
-                          <label for="Variants_${idx}__Color" class="form-label">Màu sắc</label>
-                          <input name="Variants[${idx}].Color"
-                                 id="Variants_${idx}__Color"
-                                 class="form-control" />
-                          <span class="text-danger" 
-                                data-valmsg-for="Variants[${idx}].Color"
-                                data-valmsg-replace="true"></span>
-                        </div>
-                        <div class="col">
-                          <label for="Variants_${idx}__Stock" class="form-label">Tồn kho</label>
-                          <input name="Variants[${idx}].Stock" 
-                                 id="Variants_${idx}__Stock"
-                                 class="form-control" />
-                          <span class="text-danger" 
-                                data-valmsg-for="Variants[${idx}].Stock"
-                                data-valmsg-replace="true"></span>
-                        </div>
-                        <div class="col-auto">
-                          <button type="button" class="btn btn-sm btn-danger"
-                                  onclick="removeVariant(this)">➖</button>
-                        </div>
-                      </div>`;
+              <div class="row g-2 align-items-end mb-3 variant-item">
+                <!-- Hidden VariantID = 0 khi tạo mới -->
+                <input type="hidden" name="Variants[${idx}].VariantID" value="0" />
+
+                <div class="col">
+                  <label for="Variants_${idx}__Size" class="form-label">Size</label>
+                  <input name="Variants[${idx}].Size" id="Variants_${idx}__Size" class="form-control" />
+                  <span class="text-danger" data-valmsg-for="Variants[${idx}].Size"
+                        data-valmsg-replace="true"></span>
+                </div>
+                <div class="col">
+                  <label for="Variants_${idx}__Color" class="form-label">Màu sắc</label>
+                  <input name="Variants[${idx}].Color" id="Variants_${idx}__Color" class="form-control" />
+                  <span class="text-danger" data-valmsg-for="Variants[${idx}].Color"
+                        data-valmsg-replace="true"></span>
+                </div>
+                <div class="col">
+                  <label for="Variants_${idx}__Stock" class="form-label">Tồn kho</label>
+                  <input name="Variants[${idx}].Stock" id="Variants_${idx}__Stock" class="form-control" />
+                  <span class="text-danger" data-valmsg-for="Variants[${idx}].Stock"
+                        data-valmsg-replace="true"></span>
+                </div>
+                <div class="col-auto">
+                  <button type="button" class="btn btn-sm btn-danger"
+                          onclick="removeVariant(this)">➖</button>
+                </div>
+              </div>`;
       container.insertAdjacentHTML("beforeend", html);
       $.validator.unobtrusive.parse(container);
     }
 
     function removeVariant(btn) {
-      btn.closest(".variant-item").remove();
+      // Xóa phần tử hiện tại
+      const variantItem = btn.closest(".variant-item");
+      variantItem.remove();
+
+      // Lấy tất cả các phần tử còn lại trong container
+      const container = document.getElementById("variant-container");
+      const items = container.querySelectorAll(".variant-item");
+
+      // Cập nhật lại index cho tất cả các phần tử còn lại
+      items.forEach((item, idx) => {
+        // Cập nhật giá trị của input hidden VariantID
+        const variantIdInput = item.querySelector(`input[name^="Variants["][name$="].VariantID"]`);
+        if (variantIdInput) {
+          variantIdInput.name = `Variants[${idx}].VariantID`;
+        }
+
+        // Cập nhật giá trị của input Size
+        const sizeInput = item.querySelector(`input[name^="Variants["][name$="].Size"]`);
+        const sizeLabel = item.querySelector(`label[for^="Variants_"][for$="__Size"]`);
+        if (sizeInput && sizeLabel) {
+          sizeInput.name = `Variants[${idx}].Size`;
+          sizeInput.id = `Variants_${idx}__Size`;
+          sizeLabel.setAttribute("for", `Variants_${idx}__Size`);
+        }
+
+        // Cập nhật giá trị của input Color
+        const colorInput = item.querySelector(`input[name^="Variants["][name$="].Color"]`);
+        const colorLabel = item.querySelector(`label[for^="Variants_"][for$="__Color"]`);
+        if (colorInput && colorLabel) {
+          colorInput.name = `Variants[${idx}].Color`;
+          colorInput.id = `Variants_${idx}__Color`;
+          colorLabel.setAttribute("for", `Variants_${idx}__Color`);
+        }
+
+        // Cập nhật giá trị của input Stock
+        const stockInput = item.querySelector(`input[name^="Variants["][name$="].Stock"]`);
+        const stockLabel = item.querySelector(`label[for^="Variants_"][for$="__Stock"]`);
+        if (stockInput && stockLabel) {
+          stockInput.name = `Variants[${idx}].Stock`;
+          stockInput.id = `Variants_${idx}__Stock`;
+          stockLabel.setAttribute("for", `Variants_${idx}__Stock`);
+        }
+
+        // Cập nhật span validation message
+        const spans = item.querySelectorAll(`span[data-valmsg-for^="Variants["]`);
+        spans.forEach((span) => {
+          const fieldName = span.getAttribute("data-valmsg-for").split(".")[1]; // Lấy tên trường (Size, Color, Stock)
+          span.setAttribute("data-valmsg-for", `Variants[${idx}].${fieldName}`);
+        });
+      });
     }
   </script>
 }

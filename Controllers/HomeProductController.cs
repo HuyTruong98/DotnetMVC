@@ -85,5 +85,27 @@ namespace OnlineStoreMVC.Controllers
 
       return View("~/Views/Home/Products/Detail.cshtml", product);
     }
+
+    public IActionResult PromotionProducts()
+    {
+      var now = DateTime.Now;
+
+      var products = _context.Products
+          .Include(p => p.Category)
+          .Include(p => p.ProductImages)
+          .Include(p => p.Promotions)
+          .Where(p => p.Promotions.Any(pr => pr.StartDate <= now &&
+                                             (pr.EndDate == null || pr.EndDate >= now)))
+          .ToList();
+
+      var promotions = _context.Promotions
+        .Where(p => p.StartDate <= DateTime.Now &&
+                    (p.EndDate == null || p.EndDate >= DateTime.Now))
+        .ToList();
+      ViewBag.Promotions = promotions;
+
+      return View("~/Views/Home/Products/ByCategory.cshtml", products);
+    }
+
   }
 }

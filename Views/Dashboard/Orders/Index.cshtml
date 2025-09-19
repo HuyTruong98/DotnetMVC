@@ -20,6 +20,7 @@
       <th>Trạng thái</th>
       <th>Tổng gốc</th>
       <th>Tổng sau giảm</th>
+      <th>Ghi chú</th>
       <th>Thao tác</th>
     </tr>
   </thead>
@@ -35,6 +36,7 @@
         <td>@order.Status</td>
         <td>@FormatHelper.FormatCurrency(order.TotalAmount)</td>
         <td>@FormatHelper.FormatCurrency(order.TotalAfterDiscount)</td>
+        <td>@order.Description</td>
         <td>
           <button class="btn btn-sm btn-info" type="button" data-bs-toggle="collapse"
             data-bs-target="#details-@order.OrderID" aria-expanded="false" aria-controls="details-@order.OrderID">

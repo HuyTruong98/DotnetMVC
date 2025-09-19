@@ -37,6 +37,7 @@ namespace OnlineStoreMVC.Controllers
           OrderDate = o.OrderDate,
           Status = o.Status,
           TotalAmount = o.TotalAmount,
+          Description = o.Description,
           Items = o.OrderDetails.Select(od => new OrderDetailItem
           {
             VariantID = od.VariantID,

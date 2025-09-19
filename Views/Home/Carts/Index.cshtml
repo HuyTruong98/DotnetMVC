@@ -1,68 +1,168 @@
 @model OnlineStoreMVC.Models.ViewModels.CartViewModel
-@using OnlineStoreMVC.Models.ViewModels
+@using OnlineStoreMVC.Helpers
+@using Microsoft.AspNetCore.Http
+
+@inject IHttpContextAccessor HttpContextAccessor
 
 @{
   Layout = "~/Views/Shared/_Layout.cshtml";
   ViewData["Title"] = "Giỏ hàng của bạn";
 }
 
-<h2>@ViewData["Title"]</h2>
+<div class="container my-4 pt-5">
+  <div class="row">
+    <!-- LEFT: Thông tin người dùng -->
+    <div class="col-lg-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h4 class="mb-3">Thông tin khách hàng</h4>
 
-@if (!Model.Items.Any())
-{
-  <p>Giỏ hàng trống.</p>
-}
-else
-{
-  <form asp-action="Update" method="post">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Sản phẩm</th>
-          <th>Size</th>
-          <th>Màu</th>
-          <th class="text-end">Đơn giá</th>
-          <th class="text-center">Số lượng</th>
-          <th class="text-end">Thành tiền</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (int i = 0; i < Model.Items.Count; i++)
-        {
-          var item = Model.Items[i];
-          <tr>
-            <td>
-              <img src="@item.ImageUrl" style="width:60px;height:60px" />
-              @item.ProductName
-            </td>
-            <td>@item.Size</td>
-            <td>@item.Color</td>
-            <td class="text-end">@item.UnitPrice:C0</td>
-            <td class="text-center">
-              <input type="hidden" name="items[@i].ProductID" value="@item.VariantID" />
-              <input type="number" name="items[@i].Quantity" value="@item.Quantity" min="1"
-                class="form-control text-center" />
-            </td>
-            <td class="text-end">@item.SubTotal:C0</td>
-            <td class="text-center">
-              <button type="button" class="btn btn-sm btn-outline-danger" onclick="this.closest('tr').remove()">
-                ✕
-              </button>
-            </td>
-          </tr>
-        }
-      </tbody>
-      <tfoot>
-        <tr>
-          <th colspan="5" class="text-end">Tổng cộng:</th>
-          <th class="text-end">@Model.Total:C0</th>
-          <th></th>
-        </tr>
-      </tfoot>
-    </table>
+          <div class="mb-2">
+            <label class="form-label">Tên đăng nhập:</label>
+            <input type="text" class="form-control" value="@ViewBag.User?.Username" disabled />
+          </div>
 
-    <button type="submit" class="btn btn-secondary">Cập nhật giỏ hàng</button>
-    <a asp-action="Checkout" class="btn btn-success">Tiến hành đặt hàng</a>
-  </form>
-}
+          <div class="mb-2">
+            <label class="form-label">Họ và tên:</label>
+            <input type="text" class="form-control" value="@ViewBag.User?.FullName" disabled />
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">Email:</label>
+            <input type="email" class="form-control" value="@ViewBag.User?.Email" disabled />
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">Số điện thoại:</label>
+            <input type="text" class="form-control" value="@ViewBag.User?.Phone" disabled />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Địa chỉ:</label>
+            <textarea class="form-control" rows="3" disabled>@ViewBag.User?.Address</textarea>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Giỏ hàng -->
+    <div class="col-lg-8">
+      <h3 class="mb-3">@ViewData["Title"]</h3>
+
+      @if (!Model.Items.Any())
+      {
+        <div class="alert alert-info">Giỏ hàng trống.</div>
+      }
+      else
+      {
+        <form asp-action="Update" method="post">
+          <div class="card shadow-sm mb-4">
+            <div class="card-body p-0">
+              <table class="table align-middle mb-0">
+                <thead class="table-light text-center">
+                  <tr>
+                    <th style="width:35%">Sản phẩm</th>
+                    <th style="width:8%">Size</th>
+                    <th style="width:10%">Màu</th>
+                    <th style="width:12%">Đơn giá</th>
+                    <th style="width:12%">Số lượng</th>
+                    <th style="width:15%">Thành tiền</th>
+                    <th style="width:8%"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (int i = 0; i < Model.Items.Count; i++)
+                  {
+                    var item = Model.Items[i];
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img src="@item.ImageUrl" class="rounded border me-2"
+                            style="width:60px;height:60px;object-fit:cover;" />
+                          <span class="product-name">
+                            @item.ProductName
+                          </span>
+                        </div>
+                      </td>
+                      <td class="text-center">@item.Size</td>
+                      <td class="text-center">@item.Color</td>
+                      <td class="text-end">
+                        @if (item.PromotionPrice.HasValue)
+                        {
+                          <span class="text-muted" style="text-decoration: line-through;">
+                            @FormatHelper.FormatCurrency(item.UnitPrice)
+                          </span>
+                          <br />
+                          <span class="text-danger fw-bold">
+                            @FormatHelper.FormatCurrency(item.PromotionPrice.Value)
+                          </span>
+                        }
+                        else
+                        {
+                          <span>@FormatHelper.FormatCurrency(item.UnitPrice)</span>
+                        }
+                      </td>
+
+                      <td class="text-center">
+                        <form asp-controller="HomeCart" asp-action="UpdateQuantity" method="post">
+                          <input type="hidden" name="variantId" value="@item.VariantID" class="test-hidden" />
+                          <input type="number" name="quantity" value="@item.Quantity" min="1"
+                            class="form-control text-center" style="width:80px;"
+                            onchange="this.form.action = '/HomeCart/UpdateQuantity'; this.form.submit();" />
+                        </form>
+                      </td>
+                      <td class="text-end">@FormatHelper.FormatCurrency(item.SubTotal)</td>
+                      <td class="text-center">
+                        <form asp-controller="HomeCart" asp-action="RemoveItem" method="post" style="display:inline;">
+                          <input type="hidden" name="variantId" value="@item.VariantID" />
+                          <button type="submit" class="btn btn-sm btn-outline-danger">✕</button>
+                        </form>
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Tổng kết đơn hàng -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h4 class="mb-3">Thông tin đơn hàng</h4>
+
+              <div class="mb-2 d-flex justify-content-between">
+                <span>Tạm tính</span>
+                <strong>@FormatHelper.FormatCurrency(Model.SubTotal)</strong>
+              </div>
+              <div class="mb-2 d-flex justify-content-between">
+                <span>Phí vận chuyển</span>
+                <strong>@FormatHelper.FormatCurrency(Model.ShippingFee)</strong>
+              </div>
+              <hr />
+              <div class="mb-3 d-flex justify-content-between fs-5">
+                <span>Tổng cộng</span>
+                <strong>@FormatHelper.FormatCurrency(Model.GrandTotal)</strong>
+              </div>
+
+              <form asp-controller="HomeCart" asp-action="Checkout" method="post">
+                <div class="mb-3">
+                  <label for="Description" class="form-label">Ghi chú đơn hàng</label>
+                  <textarea id="Description" name="Description" class="form-control" rows="3"
+                  placeholder="VD: Giao buổi sáng, gọi trước khi giao..."></textarea>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <a></a>
+                  <button type="submit" class="btn btn-success">
+                    Tiến hành đặt hàng
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </form>
+      }
+    </div>
+  </div>
+</div>

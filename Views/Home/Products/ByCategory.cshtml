@@ -209,21 +209,6 @@
 
       // Init
       applyPagination(getAllCards());
-
-      // Ajax Add To Cart
-      $(document).on("click", ".add-to-cart-btn", function () {
-        const productId = $(this).data("product-id");
-        $.ajax({
-          url: "/HomeCart/AddToCart",
-          type: "POST",
-          data: { productId },
-          success: function (res) {
-            if (res.success) {
-              $("#cart-badge").text(res.cartCount);
-            }
-          }
-        });
-      });
     });
   </script>
 }

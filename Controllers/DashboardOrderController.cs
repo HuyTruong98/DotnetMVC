@@ -119,6 +119,7 @@ namespace OnlineStoreMVC.Controllers
         Status = model.Status,
         OrderDate = DateTime.Now,
         TotalAmount = 0m,
+        Description = model.Description,
         OrderDetails = new List<OrderDetail>()
       };
 
@@ -185,6 +186,7 @@ namespace OnlineStoreMVC.Controllers
         OrderID = order.OrderID,
         UserID = order.UserID,
         Status = order.Status,
+        Description = order.Description,
         Items = order.OrderDetails
                             .Select(od => new OrderItemInput
                             {
@@ -328,6 +330,7 @@ namespace OnlineStoreMVC.Controllers
 
       order.UserID = model.UserID;
       order.Status = model.Status;
+      order.Description = model.Description;
       order.TotalAmount = total;
       _context.Orders.Update(order);
 
@@ -370,5 +373,4 @@ namespace OnlineStoreMVC.Controllers
       return RedirectToAction("Index");
     }
   }
-
 }

@@ -459,4 +459,4 @@ D:\Ehou\DotnetMVC\obj\Debug\net9.0\OnlineStoreMVC.genruntimeconfig.cache
 D:\Ehou\DotnetMVC\obj\Debug\net9.0\ref\OnlineStoreMVC.dll
 D:\it15\DotnetMVC\obj\Debug\net9.0\compressed\t0fio214w3-9axhu0vxxv.gz
 F:\ehou\OnlineStoreMVC\obj\Debug\net9.0\compressed\t0fio214w3-gn6vb7z4nt.gz
-D:\Ehou\DotnetMVC\obj\Debug\net9.0\compressed\t0fio214w3-nqausvt0p9.gz
+D:\Ehou\DotnetMVC\obj\Debug\net9.0\compressed\t0fio214w3-8bo1l6ft3r.gz

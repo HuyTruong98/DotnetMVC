@@ -21,6 +21,7 @@
     stock = v.Stock
   })
   );
+  bool firstSelectable = true;
 }
 
 <div class="container mt-4" style="padding-top: 30px">
@@ -118,46 +119,71 @@
         </ul>
       </div>
 
-      <div class="mb-3">
-        <label class="form-label me-2">Màu sắc:</label>
-        <div id="colorOptions" class="d-flex flex-wrap">
-          @foreach (var color in (List<string>)ViewBag.Colors)
-          {
-            <div class="form-check me-3">
-              <input class="form-check-input color-radio" type="radio" name="color" id="color_@color.Replace(" ", "_")"
-                value="@color" />
-              <label class="form-check-label" for="color_@color.Replace(" ", "_")" style="cursor:pointer;">
-                @color
-              </label>
-            </div>
-          }
+
+      <form method="get">
+        <input type="hidden" name="ProductID" value="@Model.ProductID" />
+        <!-- Màu sắc -->
+        <div class="mb-3">
+          <label class="form-label me-2">Màu sắc:</label>
+          <div id="colorOptions" class="d-flex flex-wrap">
+            @foreach (var color in (List<string>)ViewBag.Colors)
+            {
+              <div class="form-check me-3">
+                <input class="form-check-input color-radio" type="radio" name="SelectedColor"
+                  id="color_@color.Replace(" ", "_")" value="@color" @(color == (string)ViewBag.SelectedColor ? "checked":
+                                                                                     "") required onchange="this.form.submit()" />
+                <label class="form-check-label" for="color_@color.Replace(" ", "_")" style="cursor:pointer;">
+                  @color
+                </label>
+              </div>
+            }
+          </div>
         </div>
-      </div>
+      </form>
 
-      <div class="mb-3">
-        <label class="form-label me-2">Size:</label>
-        <div id="sizeOptions" class="d-flex flex-wrap swatch">
-          <!-- JS sẽ render các size ở đây -->
+      <form asp-controller="HomeCart" asp-action="AddToCart" method="post">
+        <input type="hidden" name="ProductID" value="@Model.ProductID" />
+        <!-- Size -->
+        <div class="mb-3">
+          <label class="form-label me-2">Size:</label>
+          <div id="sizeOptions" class="d-flex flex-wrap swatch">
+            @{
+              bool firstSelectable = true;
+              var selectedColor = (string)ViewBag.SelectedColor;
+              var filteredVariants = ((List<ProductVariant>)ViewBag.Sizes)
+              .Where(v => v.Color == selectedColor)
+              .ToList();
+
+              foreach (var variant in filteredVariants)
+              {
+                var disabled = variant.Stock == 0 ? "disabled" : "";
+                var isChecked = (!variant.Stock.Equals(0) && firstSelectable) ? "checked" : "";
+                if (!string.IsNullOrEmpty(isChecked)) firstSelectable = false;
+                <div class="swatch-element">
+                  <input type="radio" name="VariantID" id="size_@variant.VariantID" value="@variant.VariantID" @disabled
+                    @isChecked required />
+                  <label for="size_@variant.VariantID">@variant.Size</label>
+                </div>
+              }
+            }
+          </div>
         </div>
-      </div>
 
 
-      <div class="mt-3 d-flex align-items-center">
-        <!-- Ô số lượng -->
-        <div id="quantityBox" class="d-flex align-items-center rounded px-2"
-          style="width: 120px; height: 40px; border: 1px solid #001F5D;">
-          <button id="decrease" class="btn p-0 border-0" style="width: 30px;">−</button>
-          <span id="quantity" class="flex-grow-1 text-center">1</span>
-          <button id="increase" class="btn p-0 border-0" style="width: 30px;">+</button>
+        <!-- Quantity & button -->
+        <div class="mt-3 d-flex align-items-center" id="product-template">
+          <div class="quantity-area">
+            <input type="button" value="–" id="qtyMinus" class="qty-btn qtyminus">
+            <input type="number" id="quantity" name="Quantity" value="1" min="1" class="quantity-selector" readonly>
+            <input type="button" value="+" id="qtyPlus" class="qty-btn qtyplus">
+          </div>
+
+          <button type="submit" class="btn ms-3 px-4 add-to-cart-btn"
+            style="border: 1px solid #001F5D; color:#001F5D; background-color:#fff; width:100%">
+            THÊM VÀO GIỎ
+          </button>
         </div>
-
-        <!-- Nút thêm vào giỏ -->
-        <button id="addToCartBtn" class="btn ms-3 px-4 add-to-cart-btn" data-product-id="@Model.ProductID"
-          style="border: 1px solid #001F5D; color: #001F5D; background-color: #fff; width: calc(100% - 120px)">
-          THÊM VÀO GIỎ
-        </button>
-      </div>
-
+      </form>
 
       <!-- Nút mua ngay -->
       <div class="mt-3">
@@ -301,81 +327,17 @@
       }
     });
 
-    // Xử lý tăng/giảm số lượng
-    const quantityEl = document.getElementById("quantity");
-    const decreaseBtn = document.getElementById("decrease");
-    const increaseBtn = document.getElementById("increase");
-
-    let quantity = 1;
-
-    decreaseBtn.addEventListener("click", () => {
-      if (quantity > 1) {
-        quantity--;
-        quantityEl.textContent = quantity;
-      }
+    document.getElementById("qtyMinus").addEventListener("click", function () {
+      let qtyInput = document.getElementById("quantity");
+      let val = parseInt(qtyInput.value) || 1;
+      if (val > 1) qtyInput.value = val - 1;
     });
 
-    increaseBtn.addEventListener("click", () => {
-      quantity++;
-      quantityEl.textContent = quantity;
+    document.getElementById("qtyPlus").addEventListener("click", function () {
+      let qtyInput = document.getElementById("quantity");
+      let val = parseInt(qtyInput.value) || 1;
+      qtyInput.value = val + 1;
     });
 
-    // ========== Render size theo màu ==========
-    var variants = @Html.Raw(jsonVariants);
-
-    function renderSizes(color) {
-      var container = document.getElementById('sizeOptions');
-      container.innerHTML = '';
-
-      let filtered = variants.filter(v => v.color === color);
-      let firstSelectable = null;
-
-      filtered.forEach((v, idx) => {
-        let wrap = document.createElement('div');
-        wrap.className = 'swatch-element';
-
-        let input = document.createElement('input');
-        input.type = 'radio';
-        input.name = 'option2';
-        input.id = `size_${color}_${v.size}`;
-        input.value = v.size;
-        input.disabled = v.stock === 0;
-
-        let label = document.createElement('label');
-        label.setAttribute('for', input.id);
-        label.innerHTML = `<span>${v.size}</span>`;
-
-        wrap.appendChild(input);
-        wrap.appendChild(label);
-        container.appendChild(wrap);
-
-        if (!input.disabled && !firstSelectable) {
-          firstSelectable = input;
-        }
-      });
-
-      if (firstSelectable) {
-        firstSelectable.checked = true;
-        document.getElementById('SelectedSize').value = firstSelectable.value;
-      }
-    }
-
-    document.querySelectorAll('.color-radio').forEach(radio => {
-      radio.addEventListener('change', function () {
-        renderSizes(this.value);
-      });
-    });
-
-    var first = document.querySelector('.color-radio');
-    if (first) {
-      first.checked = true;
-      renderSizes(first.value);
-    }
-
-    document.addEventListener('change', function (e) {
-      if (e.target.name === 'option2') {
-        document.getElementById('SelectedSize').value = e.target.value;
-      }
-    });
   </script>
 }

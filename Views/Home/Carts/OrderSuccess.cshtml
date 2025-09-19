@@ -1,0 +1,11 @@
+@{
+  ViewData["Title"] = "Đặt hàng thành công";
+}
+<div class="container mt-5">
+  <div class="alert alert-success">
+    <h4>🎉 Đặt hàng thành công!</h4>
+    <p>Mã đơn hàng của bạn: <strong>@Context.Request.Query["orderId"]</strong></p>
+    <a href="/Cart" class="btn btn-primary">Quay lại giỏ hàng</a>
+    <a href="/HomeOrder/MyOrders" class="btn btn-success">Xem đơn hàng của tôi</a>
+  </div>
+</div>

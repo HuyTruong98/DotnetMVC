@@ -32,6 +32,13 @@
           <span asp-validation-for="Status" class="text-danger"></span>
         </div>
 
+        <div class="mb-3">
+          <label asp-for="Description" class="form-label">Ghi chú đơn hàng</label>
+          <textarea asp-for="Description" class="form-control" rows="3"
+            placeholder="Ví dụ: Giao trong giờ hành chính, gọi trước khi giao..."></textarea>
+          <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
         <div class="d-flex justify-content-between align-items-center mt-4 mb-2">
           <h5>🛒 Sản phẩm</h5>
           <button type="button" class="btn btn-outline-secondary" onclick="addProductRow()">➕ Thêm sản phẩm</button>
@@ -79,31 +86,31 @@
       const row = document.createElement("div");
       row.className = "row mb-2 product-row";
       row.innerHTML = `
-                  <div class="col-md-6">
-                    <label for="Items_${idx}__VariantID" class="form-label">Sản phẩm</label>
-                    <select name="Items[${idx}].VariantID"
-                            id="Items_${idx}__VariantID"
-                            class="form-select">
-                      ${variantOptions}
-                    </select>
-                    <span class="text-danger"
-                          data-valmsg-for="Items[${idx}].VariantID"
-                          data-valmsg-replace="true"></span>
-                  </div>
-                  <div class="col-md-4">
-                    <label for="Items_${idx}__Quantity" class="form-label">Số lượng</label>
-                    <input name="Items[${idx}].Quantity"
-                           id="Items_${idx}__Quantity"
-                           type="number" min="1"
-                           class="form-control" />
-                    <span class="text-danger"
-                          data-valmsg-for="Items[${idx}].Quantity"
-                          data-valmsg-replace="true"></span>
-                  </div>
-                  <div class="col-md-2 d-flex align-items-end">
-                    <button type="button" class="btn btn-danger mb-1"
-                            onclick="removeRow(this)">➖</button>
-                  </div>`;
+                    <div class="col-md-6">
+                      <label for="Items_${idx}__VariantID" class="form-label">Sản phẩm</label>
+                      <select name="Items[${idx}].VariantID"
+                              id="Items_${idx}__VariantID"
+                              class="form-select">
+                        ${variantOptions}
+                      </select>
+                      <span class="text-danger"
+                            data-valmsg-for="Items[${idx}].VariantID"
+                            data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="Items_${idx}__Quantity" class="form-label">Số lượng</label>
+                      <input name="Items[${idx}].Quantity"
+                             id="Items_${idx}__Quantity"
+                             type="number" min="1"
+                             class="form-control" />
+                      <span class="text-danger"
+                            data-valmsg-for="Items[${idx}].Quantity"
+                            data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                      <button type="button" class="btn btn-danger mb-1"
+                              onclick="removeRow(this)">➖</button>
+                    </div>`;
 
       container.appendChild(row);
       $.validator.unobtrusive.parse(container);

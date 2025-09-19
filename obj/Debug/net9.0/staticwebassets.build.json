@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "89u4veOW8Vvh7ppwFXFMLcuGqTSpA5Z5LsIAuZQxsr4=",
+  "Hash": "5Kt1kF1kzTxyf4bhD53yjQhKyHmxJvxqFWnfm6o2dRE=",
   "Source": "OnlineStoreMVC",
   "BasePath": "_content/OnlineStoreMVC",
   "Mode": "Default",
@@ -1025,12 +1025,12 @@
       "OriginalItemSpec": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-nqausvt0p9.gz",
+      "Identity": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-8bo1l6ft3r.gz",
       "SourceId": "OnlineStoreMVC",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/OnlineStoreMVC",
-      "RelativePath": "css/home#[.{fingerprint=nqausvt0p9}]?.css.gz",
+      "RelativePath": "css/home#[.{fingerprint=8bo1l6ft3r}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1039,8 +1039,8 @@
       "RelatedAsset": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\home.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "a4vech6vqu",
-      "Integrity": "9trGEG+O8W+CSsXH/WJvdYEPmRRYYu9iqi7vyw41WzI=",
+      "Fingerprint": "rn5wyufhe5",
+      "Integrity": "p65zzVVUzRBNxYOsGz1p4JRBMXXaSVCd4z75jgMSC5U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\home.css"
@@ -1522,8 +1522,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "nqausvt0p9",
-      "Integrity": "39neT5x02r8IhLWghV0fAH3VoxI5riY4iDF472orFxM=",
+      "Fingerprint": "8bo1l6ft3r",
+      "Integrity": "rJHGIJZWz0T2jPYljsiChUGVY8F5mfzh/lhXi3v6IoQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\home.css"
@@ -4731,13 +4731,13 @@
       ]
     },
     {
-      "Route": "css/home.css",
-      "AssetFile": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-nqausvt0p9.gz",
+      "Route": "css/home.8bo1l6ft3r.css",
+      "AssetFile": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-8bo1l6ft3r.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000372995151"
+          "Quality": "0.000339558574"
         }
       ],
       "ResponseHeaders": [
@@ -4747,19 +4747,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2680"
+          "Value": "2944"
         },
         {
           "Name": "ETag",
-          "Value": "\"9trGEG+O8W+CSsXH/WJvdYEPmRRYYu9iqi7vyw41WzI=\""
+          "Value": "\"p65zzVVUzRBNxYOsGz1p4JRBMXXaSVCd4z75jgMSC5U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 07:23:49 GMT"
+          "Value": "Fri, 19 Sep 2025 08:11:20 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -4775,18 +4775,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"39neT5x02r8IhLWghV0fAH3VoxI5riY4iDF472orFxM=\""
+          "Value": "W/\"rJHGIJZWz0T2jPYljsiChUGVY8F5mfzh/lhXi3v6IoQ=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "8bo1l6ft3r"
+        },
+        {
+          "Name": "label",
+          "Value": "css/home.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-39neT5x02r8IhLWghV0fAH3VoxI5riY4iDF472orFxM="
+          "Value": "sha256-rJHGIJZWz0T2jPYljsiChUGVY8F5mfzh/lhXi3v6IoQ="
         }
       ]
     },
     {
-      "Route": "css/home.css",
+      "Route": "css/home.8bo1l6ft3r.css",
       "AssetFile": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\home.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -4796,7 +4804,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10284"
+          "Value": "11717"
         },
         {
           "Name": "Content-Type",
@@ -4804,121 +4812,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"39neT5x02r8IhLWghV0fAH3VoxI5riY4iDF472orFxM=\""
+          "Value": "\"rJHGIJZWz0T2jPYljsiChUGVY8F5mfzh/lhXi3v6IoQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 07:23:49 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-39neT5x02r8IhLWghV0fAH3VoxI5riY4iDF472orFxM="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.css.gz",
-      "AssetFile": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-nqausvt0p9.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2680"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"9trGEG+O8W+CSsXH/WJvdYEPmRRYYu9iqi7vyw41WzI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 07:23:49 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-9trGEG+O8W+CSsXH/WJvdYEPmRRYYu9iqi7vyw41WzI="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.nqausvt0p9.css",
-      "AssetFile": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-nqausvt0p9.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000372995151"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2680"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"9trGEG+O8W+CSsXH/WJvdYEPmRRYYu9iqi7vyw41WzI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 07:23:49 GMT"
+          "Value": "Fri, 19 Sep 2025 08:11:20 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"39neT5x02r8IhLWghV0fAH3VoxI5riY4iDF472orFxM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "nqausvt0p9"
+          "Value": "8bo1l6ft3r"
         },
         {
           "Name": "label",
@@ -4926,13 +4834,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-39neT5x02r8IhLWghV0fAH3VoxI5riY4iDF472orFxM="
+          "Value": "sha256-rJHGIJZWz0T2jPYljsiChUGVY8F5mfzh/lhXi3v6IoQ="
         }
       ]
     },
     {
-      "Route": "css/home.nqausvt0p9.css",
-      "AssetFile": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\home.css",
+      "Route": "css/home.8bo1l6ft3r.css.gz",
+      "AssetFile": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-8bo1l6ft3r.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4941,7 +4849,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10284"
+          "Value": "2944"
         },
         {
           "Name": "Content-Type",
@@ -4949,56 +4857,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"39neT5x02r8IhLWghV0fAH3VoxI5riY4iDF472orFxM=\""
+          "Value": "\"p65zzVVUzRBNxYOsGz1p4JRBMXXaSVCd4z75jgMSC5U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 07:23:49 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "nqausvt0p9"
-        },
-        {
-          "Name": "label",
-          "Value": "css/home.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-39neT5x02r8IhLWghV0fAH3VoxI5riY4iDF472orFxM="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.nqausvt0p9.css.gz",
-      "AssetFile": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-nqausvt0p9.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2680"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"9trGEG+O8W+CSsXH/WJvdYEPmRRYYu9iqi7vyw41WzI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 07:23:49 GMT"
+          "Value": "Fri, 19 Sep 2025 08:11:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5016,7 +4879,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "nqausvt0p9"
+          "Value": "8bo1l6ft3r"
         },
         {
           "Name": "label",
@@ -5024,7 +4887,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-9trGEG+O8W+CSsXH/WJvdYEPmRRYYu9iqi7vyw41WzI="
+          "Value": "sha256-p65zzVVUzRBNxYOsGz1p4JRBMXXaSVCd4z75jgMSC5U="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.css",
+      "AssetFile": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-8bo1l6ft3r.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000339558574"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2944"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p65zzVVUzRBNxYOsGz1p4JRBMXXaSVCd4z75jgMSC5U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Sep 2025 08:11:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"rJHGIJZWz0T2jPYljsiChUGVY8F5mfzh/lhXi3v6IoQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rJHGIJZWz0T2jPYljsiChUGVY8F5mfzh/lhXi3v6IoQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.css",
+      "AssetFile": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\home.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11717"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rJHGIJZWz0T2jPYljsiChUGVY8F5mfzh/lhXi3v6IoQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Sep 2025 08:11:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rJHGIJZWz0T2jPYljsiChUGVY8F5mfzh/lhXi3v6IoQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.css.gz",
+      "AssetFile": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-8bo1l6ft3r.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2944"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p65zzVVUzRBNxYOsGz1p4JRBMXXaSVCd4z75jgMSC5U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Sep 2025 08:11:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p65zzVVUzRBNxYOsGz1p4JRBMXXaSVCd4z75jgMSC5U="
         }
       ]
     },

@@ -42,29 +42,46 @@ namespace OnlineStoreMVC.Controllers
     }
 
     [HttpGet("Details/{id}")]
-    public IActionResult Detail(int id)
+    public IActionResult Detail(int id, string? selectedColor = null)
     {
       var product = _context.Products
-        .Include(p => p.Category)
-        .Include(p => p.ProductImages)
-        .Include(p => p.Promotions)
-        .Include(p => p.Variants)
-        .FirstOrDefault(p => p.ProductID == id);
+          .Include(p => p.Category)
+          .Include(p => p.ProductImages)
+          .Include(p => p.Promotions)
+          .Include(p => p.Variants)
+          .FirstOrDefault(p => p.ProductID == id);
 
-      if (product == null)
-        return NotFound();
+      if (product == null) return NotFound();
 
-      var promo = product.Promotions
-          .FirstOrDefault(x =>
-              x.StartDate <= DateTime.Now &&
-              (x.EndDate == null || x.EndDate >= DateTime.Now));
+      var colors = product.Variants.Select(v => v.Color).Distinct().ToList();
+      ViewBag.Colors = colors;
 
-      ViewBag.ActivePromotion = promo;
+      selectedColor ??= colors.FirstOrDefault();
+      ViewBag.SelectedColor = selectedColor;
 
-      ViewBag.Colors = product.Variants
-          .Select(v => v.Color)
-          .Distinct()
-          .ToList();
+      var sizeRank = new Dictionary<string, int>
+      {
+        ["XS"] = 0,
+        ["S"] = 1,
+        ["M"] = 2,
+        ["L"] = 3,
+        ["XL"] = 4,
+        ["XXL"] = 5
+      };
+
+      ViewBag.Sizes = product.Variants
+        .Where(v => v.Color == selectedColor)
+        .ToList()
+        .OrderBy(v => sizeRank.ContainsKey(v.Size)
+            ? sizeRank[v.Size]
+            : int.MaxValue)
+        .ToList();
+
+      var activePromotion = product.Promotions
+          .FirstOrDefault(p => p.StartDate <= DateTime.Now &&
+                              (p.EndDate == null || p.EndDate >= DateTime.Now));
+
+      ViewBag.ActivePromotion = activePromotion;
 
       return View("~/Views/Home/Products/Detail.cshtml", product);
     }

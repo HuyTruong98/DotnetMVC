@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineStoreMVC.Data;
 using OnlineStoreMVC.Models;
 using Microsoft.AspNetCore.Identity;
-
+using Microsoft.EntityFrameworkCore;
 
 [Route("Dashboard/User")]
 public class DashboardUserController : Controller
@@ -140,4 +140,48 @@ public class DashboardUserController : Controller
 
     return RedirectToAction("Index");
   }
+
+   [HttpPost]
+ [ValidateAntiForgeryToken]
+ public IActionResult UpdatePhoneAddress(string Phone, string Address)
+ {
+     var sessionUser = HttpContext.Session.GetString("Username");
+     if (string.IsNullOrEmpty(sessionUser))
+         return RedirectToAction("Login", "Auth");
+
+     var user = _context.Users.FirstOrDefault(u => u.Username == sessionUser);
+     if (user == null) return NotFound();
+
+     if (string.IsNullOrWhiteSpace(Phone) || string.IsNullOrWhiteSpace(Address))
+     {
+         TempData["Error"] = "Số điện thoại và địa chỉ không được để trống.";
+         return RedirectToAction("Profile"); 
+     }
+
+     user.Phone = Phone;
+     user.Address = Address;
+     _context.SaveChanges();
+
+     TempData["Success"] = "Cập nhật số điện thoại và địa chỉ thành công.";
+     return RedirectToAction("Profile");
+ }
+ [HttpGet("MyOrders")]
+ public IActionResult MyOrders()
+ {
+     var username = HttpContext.Session.GetString("Username");
+     if (string.IsNullOrEmpty(username))
+         return RedirectToAction("Login", "Auth");
+
+     var user = _context.Users.FirstOrDefault(u => u.Username == username);
+     if (user == null) return NotFound();
+
+     var orders = _context.Orders
+         .Include(o => o.OrderDetails)
+             .ThenInclude(od => od.Variant)
+                 .ThenInclude(v => v.Product)
+         .Where(o => o.UserID == user.UserID)
+         .ToList();
+
+     return View("~/Views/Home/Users/MyOrders.cshtml", orders);
+ }
 }

@@ -7,27 +7,12 @@
   int page = ViewBag.Page;
   int pageSize = ViewBag.PageSize;
   int totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
-  var categoryIds = ViewBag.CategoryIds as List<int> ?? new List<int>();
-
-  bool isOutlet = ViewBag.IsOutlet ?? false;
-  string actionName = isOutlet ? "PromotionProducts" : "ByCategory";
 }
 
 <div class="container" style="margin-top: 80px">
-  <h2 class="mb-4">
-    @((ViewData["Title"] as string))
-  </h2>
+  <h2 class="mb-4">🛍️ Tất cả sản phẩm</h2>
 
-
-  <form method="get" asp-action="@actionName" asp-controller="HomeProduct">
-    @if (ViewBag.CategoryIds != null)
-    {
-      foreach (var cid in (List<int>)ViewBag.CategoryIds)
-      {
-        <input type="hidden" name="categoryIds" value="@cid" />
-      }
-    }
-
+  <form method="get" asp-action="All" asp-controller="HomeProduct">
     <div class="row mb-3">
       <div class="col-md-6">
         <input type="text" name="search" value="@ViewBag.Search" class="form-control" placeholder="🔍 Tìm kiếm..." />
@@ -93,22 +78,11 @@
     <ul class="pagination justify-content-center">
       @for (int i = 1; i <= totalPages; i++)
       {
-        var routeValues = new Dictionary<string, string>
-            {
-            { "page", i.ToString() },
-            { "search", ViewBag.Search ?? "" },
-            { "sort", ViewBag.Sort ?? "default" },
-            { "categoryIds", string.Join(",", (ViewBag.CategoryIds as List<int> ?? new List<int>())) }
-            };
-
         <li class="page-item @(i == page ? "active" : "")">
-          <a class="page-link" asp-controller="HomeProduct" asp-action="@actionName" asp-all-route-data="routeValues">
-            @i
-          </a>
+          <a class="page-link" asp-action="All" asp-controller="HomeProduct" asp-route-search="@ViewBag.Search"
+            asp-route-sort="@ViewBag.Sort" asp-route-page="@i">@i</a>
         </li>
       }
     </ul>
   </nav>
-
-
 </div>

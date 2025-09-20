@@ -106,12 +106,13 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark" asp-controller="HomeProduct" asp-action="ByCategory"
-                asp-route-categoryIds="4">Quần
-                Nữ</a>
+                asp-route-categoryIds="4">Quần Nữ</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link text-danger fw-semibold" asp-controller="HomeProduct" asp-action="PromotionProducts"
-                asp-route-categoryIds="outlet">OUTLET</a>
+              <a class="nav-link text-danger fw-semibold" asp-controller="HomeProduct" asp-action="PromotionProducts">
+                OUTLET
+              </a>
             </li>
           </ul>
 
@@ -170,6 +171,7 @@
     <main role="main" class="pb-3">
       @RenderBody()
     </main>
+    <button id="scrollTopBtn" class="btn btn-primary" title="Lên đầu trang">⬆</button>
   </div>
 
 
@@ -183,6 +185,19 @@
   <script src="~/lib/jquery/dist/jquery.min.js"></script>
   <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="~/js/site.js" asp-append-version="true"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("scrollTopBtn");
+
+      window.addEventListener("scroll", () => {
+        btn.style.display = window.scrollY > 200 ? "block" : "none";
+      });
+
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  </script>
   @await RenderSectionAsync("Scripts", required: false)
 
 </body>

@@ -1,5 +1,9 @@
 ﻿@using OnlineStoreMVC.Helpers
 @model List<OnlineStoreMVC.Models.Product>
+@{
+  var featuredProducts = ViewBag.FeaturedProducts as List<OnlineStoreMVC.Models.Product> ?? new();
+  var promotionProducts = ViewBag.PromotionProducts as List<OnlineStoreMVC.Models.Promotion> ?? new();
+}
 
 @{
   ViewData["Title"] = "Home Page";
@@ -105,6 +109,7 @@
             </div>
           </div>
         </div>
+
       </div>
 
       <div class="col-lg-4 col-md-6">
@@ -155,7 +160,7 @@
     </div>
 
     <div class="row g-4">
-      @foreach (var product in Model)
+      @foreach (var product in featuredProducts)
       {
         var promotions = ViewBag.Promotions as List<OnlineStoreMVC.Models.Promotion> ?? new();
         var promo = promotions.FirstOrDefault(p => p.ProductID == product.ProductID);
@@ -216,7 +221,83 @@
                 <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID"
                   class="btn btn-sm btn-primary w-100 add-to-cart-btn text-decoration-none d-flex align-items-center justify-content-center gap-2"
                   data-product-id="@product.ProductID">
+                  <i class="fas fa-eye"></i>
+                  <span>Xem Chi Tiết</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
 
+<section class="featured-products py-3 bg-light">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title">Khuyến mãi HOT</h2>
+      <p class="section-subtitle">Đừng bỏ lỡ cơ hội mua hàng giá tốt</p>
+    </div>
+
+    <div class="row g-4">
+      @foreach (var promo in promotionProducts)
+      {
+        var product = promo.Product;
+        var primaryImage = product?.ProductImages?.FirstOrDefault(img => img.IsPrimary);
+        var discountedPrice = product.Price * (1 - (decimal)promo.DiscountPercent / 100);
+
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+            <div class="product-image">
+              <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID">
+                <img src="@(primaryImage?.ImageURL ?? "/images/no-image.png")" class="img-hot"
+                  alt="@product.ProductName" />
+              </a>
+              <div class="product-badges">
+                <span class="badge bg-danger">-@promo.DiscountPercent%</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm btn-outline-light" title="Yêu thích">
+                  <img style="height: 20px" src="~/images/heart.png" />
+                </button>
+                <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID"
+                  class="btn btn-sm btn-outline-light" title="Xem nhanh">
+                  <img style="height: 10px" src="~/images/view.png" />
+                </a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h6 class="product-title"> <a asp-controller="HomeProduct" asp-action="Detail"
+                  asp-route-id="@product.ProductID" class="text-decoration-none text-dark">
+                  @product.ProductName
+                </a></h6>
+
+
+              <div class="product-price">
+                @if (promo != null)
+                {
+                  <span class="current-price">
+                    <del class="price-sale">
+                      @FormatHelper.FormatCurrency(product.Price)
+                    </del>
+                  </span>
+                  <span class="current-price">
+                    @FormatHelper.FormatCurrency(discountedPrice)
+                  </span>
+                }
+                else
+                {
+                  <span class="current-price">
+                    @FormatHelper.FormatCurrency(product.Price)
+                  </span>
+                }
+                @* <span class="old-price">400.000₫</span> *@
+              </div>
+              <div class="mt-2">
+                <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID"
+                  class="btn btn-sm btn-primary w-100 add-to-cart-btn text-decoration-none d-flex align-items-center justify-content-center gap-2"
+                  data-product-id="@product.ProductID">
                   <i class="fas fa-eye"></i>
                   <span>Xem Chi Tiết</span>
                 </a>
@@ -228,12 +309,13 @@
     </div>
 
     <div class="text-center mt-5">
-      <a href="#" class="btn btn-primary btn-lg">
+      <a asp-controller="HomeProduct" asp-action="All" class="btn btn-primary btn-lg">
         Xem tất cả sản phẩm <i class="fas fa-arrow-right ms-2"></i>
       </a>
     </div>
   </div>
 </section>
+
 <!-- Newsletter Section -->
 <section class="newsletter-section py-5 bg-dark text-white">
   <div class="container">

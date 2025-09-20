@@ -3,6 +3,8 @@
 @{
   var featuredProducts = ViewBag.FeaturedProducts as List<OnlineStoreMVC.Models.Product> ?? new();
   var promotionProducts = ViewBag.PromotionProducts as List<OnlineStoreMVC.Models.Promotion> ?? new();
+
+  var recentlyViewed = ViewBag.RecentlyViewed as List<Product> ?? new();
 }
 
 @{
@@ -307,15 +309,116 @@
         </div>
       }
     </div>
-
-    <div class="text-center mt-5">
-      <a asp-controller="HomeProduct" asp-action="All" class="btn btn-primary btn-lg">
-        Xem tất cả sản phẩm <i class="fas fa-arrow-right ms-2"></i>
-      </a>
-    </div>
   </div>
 </section>
 
+<!-- RecentlyViewed Products -->
+@if (recentlyViewed.Any())
+{
+  <section class="featured-products py-3 bg-light">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title">Sản phẩm bạn đã xem</h2>
+        <p class="section-subtitle">Những sản phẩm bạn đã xem gần đây</p>
+      </div>
+
+      <div id="multiCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          @{
+            var chunkedProducts = recentlyViewed.Chunk(4).ToList();
+          }
+
+          @for (int i = 0; i < chunkedProducts.Count; i++)
+          {
+            <div class="carousel-item @(i == 0 ? "active" : "")">
+              <div class="row g-4">
+                @foreach (var product in chunkedProducts[i])
+                {
+                  var promo = promotionProducts.FirstOrDefault(p => p.ProductID == product.ProductID);
+                  var discountedPrice = promo != null
+                  ? product.Price * (1 - (decimal)promo.DiscountPercent / 100)
+                  : product.Price;
+                  var imgUrl = product.ProductImages?.FirstOrDefault()?.ImageURL ?? "/images/no-image.png";
+
+                  <div class="col-lg-3 col-md-6 col-12">
+                    <div class="product-card">
+                      <div class="product-image">
+                        <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID">
+                          <img src="@(imgUrl ?? "/images/no-image.png")" class="img-fluid img-hot"
+                            alt="@product.ProductName" />
+                        </a>
+                        @if (promo != null)
+                        {
+                          <div class="product-badges">
+                            <span class="badge bg-danger">-@promo.DiscountPercent%</span>
+                          </div>
+                        }
+                        <div class="product-actions">
+                          <button class="btn btn-sm btn-outline-light" title="Yêu thích">
+                            <img style="height: 20px" src="~/images/heart.png" />
+                          </button>
+                          <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID"
+                            class="btn btn-sm btn-outline-light" title="Xem nhanh">
+                            <img style="height: 10px" src="~/images/view.png" />
+                          </a>
+                        </div>
+                      </div>
+                      <div class="product-info">
+                        <h6 class="product-title">
+                          <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID"
+                            class="text-decoration-none text-dark">
+                            @product.ProductName
+                          </a>
+                        </h6>
+                        <div class="product-price">
+                          @if (promo != null)
+                          {
+                            <span class="current-price">
+                              <del class="price-sale">@FormatHelper.FormatCurrency(product.Price)</del>
+                            </span>
+                            <span class="current-price">@FormatHelper.FormatCurrency(discountedPrice)</span>
+                          }
+                          else
+                          {
+                            <span class="current-price">@FormatHelper.FormatCurrency(product.Price)</span>
+                          }
+                        </div>
+                        <div class="mt-2">
+                          <a asp-controller="HomeProduct" asp-action="Detail" asp-route-id="@product.ProductID"
+                            class="btn btn-sm btn-primary w-100 d-flex align-items-center justify-content-center gap-2">
+                            <i class="fas fa-eye"></i>
+                            <span>Xem Chi Tiết</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev custom-control-btn custom-next" type="button" data-bs-target="#multiCarousel"
+          data-bs-slide="prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-control-next custom-control-btn custom-next" type="button" data-bs-target="#multiCarousel"
+          data-bs-slide="next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+}
+
+<div class="text-center pt-5 bg-light pb-5">
+  <a asp-controller="HomeProduct" asp-action="All" class="btn btn-primary btn-lg">
+    Xem tất cả sản phẩm <i class="fas fa-arrow-right ms-2"></i>
+  </a>
+</div>
 <!-- Newsletter Section -->
 <section class="newsletter-section py-5 bg-dark text-white">
   <div class="container">

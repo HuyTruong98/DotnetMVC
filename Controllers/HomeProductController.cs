@@ -143,6 +143,32 @@ namespace OnlineStoreMVC.Controllers
       Response.Cookies.Append("RecentlyViewed", string.Join(",", viewedIds),
         new CookieOptions { Expires = DateTime.Now.AddDays(7) });
 
+      var recentlyViewed = _context.Products
+     .Include(p => p.ProductImages)
+     .Include(p => p.Category)
+     .Include(p => p.Promotions)
+     .Where(p => viewedIds.Contains(p.ProductID))
+     .ToList();
+
+      // Sắp xếp đúng thứ tự cookie
+      recentlyViewed = viewedIds
+          .Select(vid => recentlyViewed.FirstOrDefault(p => p.ProductID == vid))
+          .Where(p => p != null)
+          .ToList();
+
+      ViewBag.RecentlyViewed = recentlyViewed;
+
+      var promotions = _context.Promotions
+      .Where(p => p.StartDate <= DateTime.Now &&
+                  (p.EndDate == null || p.EndDate >= DateTime.Now))
+      .Include(p => p.Product)
+          .ThenInclude(pr => pr.ProductImages)
+      .OrderByDescending(p => p.PromotionID)
+      .Take(4)
+      .ToList();
+
+      ViewBag.Promotions = promotions;
+
       return View("~/Views/Home/Products/Detail.cshtml", product);
     }
 

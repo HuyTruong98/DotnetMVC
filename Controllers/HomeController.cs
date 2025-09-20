@@ -42,13 +42,32 @@ public class HomeController : Controller
         .OrderByDescending(p => p.PromotionID)
         .ToList();
 
+    var viewedCookie = Request.Cookies["RecentlyViewed"];
+    List<Product> recentlyViewed = new();
+    if (!string.IsNullOrEmpty(viewedCookie))
+    {
+      var ids = viewedCookie.Split(',').Select(int.Parse).ToList();
+
+      recentlyViewed = _context.Products
+          .Include(p => p.ProductImages)
+          .Include(p => p.Category)
+          .Where(p => ids.Contains(p.ProductID))
+          .ToList();
+
+      // Sắp xếp lại đúng thứ tự cookie
+      recentlyViewed = ids
+          .Select(id => recentlyViewed.FirstOrDefault(p => p.ProductID == id))
+          .Where(p => p != null)
+          .ToList();
+    }
+
     ViewBag.FeaturedProducts = featuredProducts;
     ViewBag.PromotionProducts = promotions.Take(4).ToList();
     ViewBag.Promotions = promotions;
+    ViewBag.RecentlyViewed = recentlyViewed;
 
     return View();
   }
-
 
   public IActionResult Privacy()
   {

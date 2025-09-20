@@ -1,6 +1,7 @@
 {
   "Files": [
     {
+<<<<<<< Updated upstream
       "Id": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\OnlineStoreMVC.bundle.scp.css",
       "PackagePath": "staticwebassets\\OnlineStoreMVC.s0rqmofd1z.bundle.scp.css"
     },
@@ -926,6 +927,517 @@
     },
     {
       "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg",
+=======
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\OnlineStoreMVC.bundle.scp.css",
+      "PackagePath": "staticwebassets\\OnlineStoreMVC.s0rqmofd1z.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\css\\auth.css",
+      "PackagePath": "staticwebassets\\css\\auth.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\css\\dashboard.css",
+      "PackagePath": "staticwebassets\\css\\dashboard.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\banner_trang_ch__pc__2048x813px_-01.jpg",
+      "PackagePath": "staticwebassets\\images\\banner_trang_ch__pc__2048x813px_-01.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\banner_trang_ch__pc__2048x813px_-02.jpg",
+      "PackagePath": "staticwebassets\\images\\banner_trang_ch__pc__2048x813px_-02.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\banner_trang_ch__pc__2048x813px_-03__1_.jpg",
+      "PackagePath": "staticwebassets\\images\\banner_trang_ch__pc__2048x813px_-03__1_.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\chinhsach2.jpg",
+      "PackagePath": "staticwebassets\\images\\chinhsach2.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\chinhsach3.jpg",
+      "PackagePath": "staticwebassets\\images\\chinhsach3.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\chinhsach4.jpg",
+      "PackagePath": "staticwebassets\\images\\chinhsach4.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\chinhsach5.jpg",
+      "PackagePath": "staticwebassets\\images\\chinhsach5.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\chinhsachgiaohang.jpg",
+      "PackagePath": "staticwebassets\\images\\chinhsachgiaohang.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\freeShipping.png",
+      "PackagePath": "staticwebassets\\images\\freeShipping.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\heart.png",
+      "PackagePath": "staticwebassets\\images\\heart.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\new-product.png",
+      "PackagePath": "staticwebassets\\images\\new-product.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\products\\051333e4-eece-4ec3-8be3-1b90bd6cc227.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\051333e4-eece-4ec3-8be3-1b90bd6cc227.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\products\\138e1b68-928c-4292-b741-785d6b147e76.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\138e1b68-928c-4292-b741-785d6b147e76.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\profit.png",
+      "PackagePath": "staticwebassets\\images\\profit.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\quantity.png",
+      "PackagePath": "staticwebassets\\images\\quantity.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\refresh.png",
+      "PackagePath": "staticwebassets\\images\\refresh.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\revenue.png",
+      "PackagePath": "staticwebassets\\images\\revenue.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\shoppping-bag.png",
+      "PackagePath": "staticwebassets\\images\\shoppping-bag.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\support.png",
+      "PackagePath": "staticwebassets\\images\\support.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\user (2).png",
+      "PackagePath": "staticwebassets\\images\\user (2).png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\images\\view.png",
+      "PackagePath": "staticwebassets\\images\\view.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\0426b53e-94e0-4bf7-aeb8-e2c43eb6ffd6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\0426b53e-94e0-4bf7-aeb8-e2c43eb6ffd6.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\12efc14b-3096-4d73-b759-8f0df0e62974.png",
+      "PackagePath": "staticwebassets\\uploads\\products\\12efc14b-3096-4d73-b759-8f0df0e62974.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\176d89a7-6de5-4308-bce0-bdde3c2ae4eb.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\176d89a7-6de5-4308-bce0-bdde3c2ae4eb.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\183b6f4c-32fd-447f-80d7-ec439c3a095c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\183b6f4c-32fd-447f-80d7-ec439c3a095c.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\1c095fa7-5e23-4e3b-b781-bc5e4af19392.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\1c095fa7-5e23-4e3b-b781-bc5e4af19392.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\1d22dcab-fd88-4f6d-b1ee-da2c97eee6dd.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\1d22dcab-fd88-4f6d-b1ee-da2c97eee6dd.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\1d95b445-835e-44ec-ae75-72eb41b51029.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\1d95b445-835e-44ec-ae75-72eb41b51029.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\21ee5aed-5dc7-44ef-bdc9-3ec704565658.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\21ee5aed-5dc7-44ef-bdc9-3ec704565658.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\234c851e-a112-4f4c-92e0-4992e37b8260.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\234c851e-a112-4f4c-92e0-4992e37b8260.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\27a79d54-c890-44eb-9b29-ae89a7eeca32.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\27a79d54-c890-44eb-9b29-ae89a7eeca32.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\305b0468-72fd-414d-92f2-5a0b8e6b7176.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\305b0468-72fd-414d-92f2-5a0b8e6b7176.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\4db308ed-9469-4b9d-be21-860d99c4f598.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\4db308ed-9469-4b9d-be21-860d99c4f598.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\54eff7a3-8dfe-4d8f-804c-0305cf4fd019.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\54eff7a3-8dfe-4d8f-804c-0305cf4fd019.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\602ecbf1-1002-4918-9ea8-d7d592ba8389.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\602ecbf1-1002-4918-9ea8-d7d592ba8389.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\630e1050-e569-4735-8faa-33e05abbc941.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\630e1050-e569-4735-8faa-33e05abbc941.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\70d7a36e-fea5-454d-a46e-91487c493fa9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\70d7a36e-fea5-454d-a46e-91487c493fa9.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\720a45c4-68ba-47dc-9678-1889b5182a09.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\720a45c4-68ba-47dc-9678-1889b5182a09.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\795de04b-cee3-4abb-a812-8998adc6ca44.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\795de04b-cee3-4abb-a812-8998adc6ca44.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\81a764c5-85eb-49da-aff8-76d2eeb31d2d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\81a764c5-85eb-49da-aff8-76d2eeb31d2d.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\84ec973a-980f-4b01-8461-aec541518b2d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\84ec973a-980f-4b01-8461-aec541518b2d.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\8c3065eb-a881-4bec-9765-8b17ba2cb9ed.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\8c3065eb-a881-4bec-9765-8b17ba2cb9ed.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\8d77f647-cb92-4349-a720-f4535ca67e3a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\8d77f647-cb92-4349-a720-f4535ca67e3a.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\8e42983e-5ce5-41a9-bbd6-959de7087180.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\8e42983e-5ce5-41a9-bbd6-959de7087180.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\95771681-9774-49c3-bd12-4a6f37f861b2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\95771681-9774-49c3-bd12-4a6f37f861b2.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\9686b2dd-aa6b-4735-8233-43b18f69462c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\9686b2dd-aa6b-4735-8233-43b18f69462c.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\99bc4b66-831a-4e3f-b92f-00e5a7d6ae0d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\99bc4b66-831a-4e3f-b92f-00e5a7d6ae0d.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\99ed7c3c-e1ea-4bb6-bb96-a2dad0526c98.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\99ed7c3c-e1ea-4bb6-bb96-a2dad0526c98.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\b10620a7-118f-43dd-b4df-68106c2c958b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\b10620a7-118f-43dd-b4df-68106c2c958b.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\b75f1841-2f5e-42ab-9754-70b1625678a6.png",
+      "PackagePath": "staticwebassets\\uploads\\products\\b75f1841-2f5e-42ab-9754-70b1625678a6.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\b8dea8d9-e163-45bc-bd3a-ba17cec872b6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\b8dea8d9-e163-45bc-bd3a-ba17cec872b6.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\d2716533-d192-4bcc-8904-a5336bda7e5c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\d2716533-d192-4bcc-8904-a5336bda7e5c.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\db524cd1-8f7a-4ca9-be9f-09e92cba677a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\db524cd1-8f7a-4ca9-be9f-09e92cba677a.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\e8d7a4ab-d057-41d1-9ecd-bf0fc0c0c429.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\e8d7a4ab-d057-41d1-9ecd-bf0fc0c0c429.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\ebfd6167-29aa-4f8c-b062-596816c46de9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\ebfd6167-29aa-4f8c-b062-596816c46de9.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\f5c7f239-c940-4131-b203-0b2ca16574d8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\f5c7f239-c940-4131-b203-0b2ca16574d8.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\fdbb08fe-307a-497f-821e-2a134cae9f58.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\fdbb08fe-307a-497f-821e-2a134cae9f58.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\jgq75kqg_1024x1024.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\jgq75kqg_1024x1024.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\phu-kien-thoi-trang-8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\phu-kien-thoi-trang-8.jpg"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\unnamed.png",
+      "PackagePath": "staticwebassets\\uploads\\products\\unnamed.png"
+    },
+    {
+      "Id": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\wwwroot\\uploads\\products\\yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg",
+>>>>>>> Stashed changes
       "PackagePath": "staticwebassets\\uploads\\products\\yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg"
     },
     {

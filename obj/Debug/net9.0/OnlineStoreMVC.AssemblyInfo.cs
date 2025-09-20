@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineStoreMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+374e59b64eebb11ca845037f4179a4b9a26a59af")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7211b937fceb9161c4cfe4fe1bf2c661b9f8808b")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineStoreMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineStoreMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

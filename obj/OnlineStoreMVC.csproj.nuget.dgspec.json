@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "F:\\ehou\\OnlineStoreMVC\\OnlineStoreMVC.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "F:\\ehou\\OnlineStoreMVC\\OnlineStoreMVC.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
         "outputPath": "F:\\ehou\\OnlineStoreMVC\\obj\\",
+=======
+    "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\OnlineStoreMVC.csproj": {}
+  },
+  "projects": {
+    "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\OnlineStoreMVC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\OnlineStoreMVC.csproj",
+        "projectName": "OnlineStoreMVC",
+        "projectPath": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\OnlineStoreMVC.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

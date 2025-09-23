@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "Nc/W6tGWmRI=",
   "success": true,
   "projectFilePath": "F:\\ehou\\OnlineStoreMVC\\OnlineStoreMVC.csproj",
+=======
+  "dgSpecHash": "+og+6JQrmeY=",
+  "success": true,
+  "projectFilePath": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\OnlineStoreMVC.csproj",
+>>>>>>> Stashed changes
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -3878,11 +3878,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
       "projectUniqueName": "F:\\ehou\\OnlineStoreMVC\\OnlineStoreMVC.csproj",
       "projectName": "OnlineStoreMVC",
       "projectPath": "F:\\ehou\\OnlineStoreMVC\\OnlineStoreMVC.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
       "outputPath": "F:\\ehou\\OnlineStoreMVC\\obj\\",
+=======
+      "projectUniqueName": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\OnlineStoreMVC.csproj",
+      "projectName": "OnlineStoreMVC",
+      "projectPath": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\OnlineStoreMVC.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "D:\\MVC_MonLapTrinhWeb\\DotnetMVC\\obj\\",
+>>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

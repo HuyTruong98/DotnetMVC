@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ehou\\DotnetMVC\\OnlineStoreMVC.csproj": {}
+    "F:\\ehou\\OnlineStoreMVC\\OnlineStoreMVC.csproj": {}
   },
   "projects": {
-    "D:\\Ehou\\DotnetMVC\\OnlineStoreMVC.csproj": {
+    "F:\\ehou\\OnlineStoreMVC\\OnlineStoreMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ehou\\DotnetMVC\\OnlineStoreMVC.csproj",
+        "projectUniqueName": "F:\\ehou\\OnlineStoreMVC\\OnlineStoreMVC.csproj",
         "projectName": "OnlineStoreMVC",
-        "projectPath": "D:\\Ehou\\DotnetMVC\\OnlineStoreMVC.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Ehou\\DotnetMVC\\obj\\",
+        "projectPath": "F:\\ehou\\OnlineStoreMVC\\OnlineStoreMVC.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "F:\\ehou\\OnlineStoreMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -1,931 +1,931 @@
 {
   "Files": [
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\OnlineStoreMVC.bundle.scp.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\OnlineStoreMVC.bundle.scp.css",
       "PackagePath": "staticwebassets\\OnlineStoreMVC.s0rqmofd1z.bundle.scp.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\auth.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\css\\auth.css",
       "PackagePath": "staticwebassets\\css\\auth.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\dashboard.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\css\\dashboard.css",
       "PackagePath": "staticwebassets\\css\\dashboard.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\home.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\css\\home.css",
       "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\css\\site.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\favicon.ico",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\banner_trang_ch__pc__2048x813px_-01.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\banner_trang_ch__pc__2048x813px_-01.jpg",
       "PackagePath": "staticwebassets\\images\\banner_trang_ch__pc__2048x813px_-01.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\banner_trang_ch__pc__2048x813px_-02.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\banner_trang_ch__pc__2048x813px_-02.jpg",
       "PackagePath": "staticwebassets\\images\\banner_trang_ch__pc__2048x813px_-02.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\banner_trang_ch__pc__2048x813px_-03__1_.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\banner_trang_ch__pc__2048x813px_-03__1_.jpg",
       "PackagePath": "staticwebassets\\images\\banner_trang_ch__pc__2048x813px_-03__1_.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\chinhsach2.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\chinhsach2.jpg",
       "PackagePath": "staticwebassets\\images\\chinhsach2.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\chinhsach3.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\chinhsach3.jpg",
       "PackagePath": "staticwebassets\\images\\chinhsach3.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\chinhsach4.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\chinhsach4.jpg",
       "PackagePath": "staticwebassets\\images\\chinhsach4.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\chinhsach5.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\chinhsach5.jpg",
       "PackagePath": "staticwebassets\\images\\chinhsach5.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\chinhsachgiaohang.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\chinhsachgiaohang.jpg",
       "PackagePath": "staticwebassets\\images\\chinhsachgiaohang.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\freeShipping.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\freeShipping.png",
       "PackagePath": "staticwebassets\\images\\freeShipping.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\heart.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\heart.png",
       "PackagePath": "staticwebassets\\images\\heart.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\new-product.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\new-product.png",
       "PackagePath": "staticwebassets\\images\\new-product.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\products\\051333e4-eece-4ec3-8be3-1b90bd6cc227.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\products\\051333e4-eece-4ec3-8be3-1b90bd6cc227.jpg",
       "PackagePath": "staticwebassets\\images\\products\\051333e4-eece-4ec3-8be3-1b90bd6cc227.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\products\\138e1b68-928c-4292-b741-785d6b147e76.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\products\\138e1b68-928c-4292-b741-785d6b147e76.jpg",
       "PackagePath": "staticwebassets\\images\\products\\138e1b68-928c-4292-b741-785d6b147e76.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\profit.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\profit.png",
       "PackagePath": "staticwebassets\\images\\profit.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\quantity.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\quantity.png",
       "PackagePath": "staticwebassets\\images\\quantity.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\refresh.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\refresh.png",
       "PackagePath": "staticwebassets\\images\\refresh.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\revenue.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\revenue.png",
       "PackagePath": "staticwebassets\\images\\revenue.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\shoppping-bag.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\shoppping-bag.png",
       "PackagePath": "staticwebassets\\images\\shoppping-bag.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\support.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\support.png",
       "PackagePath": "staticwebassets\\images\\support.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\user (2).png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\user (2).png",
       "PackagePath": "staticwebassets\\images\\user (2).png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\images\\view.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\images\\view.png",
       "PackagePath": "staticwebassets\\images\\view.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\js\\site.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\0252be04-59db-41d6-b76c-c3a489aebf6a.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\0252be04-59db-41d6-b76c-c3a489aebf6a.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\0252be04-59db-41d6-b76c-c3a489aebf6a.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\0426b53e-94e0-4bf7-aeb8-e2c43eb6ffd6.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\0426b53e-94e0-4bf7-aeb8-e2c43eb6ffd6.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\0426b53e-94e0-4bf7-aeb8-e2c43eb6ffd6.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\061bb918-1f42-4a51-a041-36257ee6c981.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\061bb918-1f42-4a51-a041-36257ee6c981.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\061bb918-1f42-4a51-a041-36257ee6c981.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\07ea4fae-3b42-4f10-b945-926d66a09c7e.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\07ea4fae-3b42-4f10-b945-926d66a09c7e.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\07ea4fae-3b42-4f10-b945-926d66a09c7e.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\08c1ec7a-4c02-4e9e-98a3-7ba1fd083a10.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\08c1ec7a-4c02-4e9e-98a3-7ba1fd083a10.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\08c1ec7a-4c02-4e9e-98a3-7ba1fd083a10.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\0953c68c-afe4-47d0-999d-eeece18f4fbf.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\0953c68c-afe4-47d0-999d-eeece18f4fbf.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\0953c68c-afe4-47d0-999d-eeece18f4fbf.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\0ad7d690-e8a2-4808-8e01-616e10b08a5d.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\0ad7d690-e8a2-4808-8e01-616e10b08a5d.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\0ad7d690-e8a2-4808-8e01-616e10b08a5d.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\12efc14b-3096-4d73-b759-8f0df0e62974.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\12efc14b-3096-4d73-b759-8f0df0e62974.png",
       "PackagePath": "staticwebassets\\uploads\\products\\12efc14b-3096-4d73-b759-8f0df0e62974.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\16d5b8a8-35a6-41e5-99af-9cf49c1873d1.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\16d5b8a8-35a6-41e5-99af-9cf49c1873d1.png",
       "PackagePath": "staticwebassets\\uploads\\products\\16d5b8a8-35a6-41e5-99af-9cf49c1873d1.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\176d89a7-6de5-4308-bce0-bdde3c2ae4eb.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\176d89a7-6de5-4308-bce0-bdde3c2ae4eb.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\176d89a7-6de5-4308-bce0-bdde3c2ae4eb.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\183b6f4c-32fd-447f-80d7-ec439c3a095c.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\183b6f4c-32fd-447f-80d7-ec439c3a095c.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\183b6f4c-32fd-447f-80d7-ec439c3a095c.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\18c6b0bd-b62e-4e05-82a1-9235883abba1.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\18c6b0bd-b62e-4e05-82a1-9235883abba1.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\18c6b0bd-b62e-4e05-82a1-9235883abba1.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\18e9319e-84f2-42cd-af06-2b3a4f0a8d1b.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\18e9319e-84f2-42cd-af06-2b3a4f0a8d1b.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\18e9319e-84f2-42cd-af06-2b3a4f0a8d1b.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\19eb91b1-f9ec-45e3-8051-8a7f0b17b2ca.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\19eb91b1-f9ec-45e3-8051-8a7f0b17b2ca.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\19eb91b1-f9ec-45e3-8051-8a7f0b17b2ca.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\1c095fa7-5e23-4e3b-b781-bc5e4af19392.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\1c095fa7-5e23-4e3b-b781-bc5e4af19392.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\1c095fa7-5e23-4e3b-b781-bc5e4af19392.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\1d22dcab-fd88-4f6d-b1ee-da2c97eee6dd.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\1d22dcab-fd88-4f6d-b1ee-da2c97eee6dd.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\1d22dcab-fd88-4f6d-b1ee-da2c97eee6dd.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\1d728b5b-df08-4b3b-afba-f64c82a610b4.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\1d728b5b-df08-4b3b-afba-f64c82a610b4.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\1d728b5b-df08-4b3b-afba-f64c82a610b4.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\1d95b445-835e-44ec-ae75-72eb41b51029.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\1d95b445-835e-44ec-ae75-72eb41b51029.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\1d95b445-835e-44ec-ae75-72eb41b51029.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\20612ded-d31e-44a6-8eeb-d62611c73de9.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\20612ded-d31e-44a6-8eeb-d62611c73de9.png",
       "PackagePath": "staticwebassets\\uploads\\products\\20612ded-d31e-44a6-8eeb-d62611c73de9.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\21ee5aed-5dc7-44ef-bdc9-3ec704565658.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\21ee5aed-5dc7-44ef-bdc9-3ec704565658.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\21ee5aed-5dc7-44ef-bdc9-3ec704565658.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\234c851e-a112-4f4c-92e0-4992e37b8260.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\234c851e-a112-4f4c-92e0-4992e37b8260.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\234c851e-a112-4f4c-92e0-4992e37b8260.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\23c335de-d76e-4c58-a74d-ae927b6fbdd3.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\23c335de-d76e-4c58-a74d-ae927b6fbdd3.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\23c335de-d76e-4c58-a74d-ae927b6fbdd3.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\250d46f8-4357-4416-b07f-80654447410d.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\250d46f8-4357-4416-b07f-80654447410d.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\250d46f8-4357-4416-b07f-80654447410d.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\27a79d54-c890-44eb-9b29-ae89a7eeca32.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\27a79d54-c890-44eb-9b29-ae89a7eeca32.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\27a79d54-c890-44eb-9b29-ae89a7eeca32.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\282f2c7d-15af-402c-bcb5-c35e7e8c044a.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\282f2c7d-15af-402c-bcb5-c35e7e8c044a.png",
       "PackagePath": "staticwebassets\\uploads\\products\\282f2c7d-15af-402c-bcb5-c35e7e8c044a.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\305b0468-72fd-414d-92f2-5a0b8e6b7176.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\305b0468-72fd-414d-92f2-5a0b8e6b7176.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\305b0468-72fd-414d-92f2-5a0b8e6b7176.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\30fa2e63-6200-4056-adbe-29cbd8b98e1a.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\30fa2e63-6200-4056-adbe-29cbd8b98e1a.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\30fa2e63-6200-4056-adbe-29cbd8b98e1a.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\320753b4-eea3-4880-973d-7d813087f195.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\320753b4-eea3-4880-973d-7d813087f195.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\320753b4-eea3-4880-973d-7d813087f195.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\38fe8485-7547-4b2a-9d5d-6752c071d57e.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\38fe8485-7547-4b2a-9d5d-6752c071d57e.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\38fe8485-7547-4b2a-9d5d-6752c071d57e.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\3a04b94f-04ac-47eb-9f5d-aee3215ba8a1.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\3a04b94f-04ac-47eb-9f5d-aee3215ba8a1.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\3a04b94f-04ac-47eb-9f5d-aee3215ba8a1.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\3a8b0d52-965e-4632-9bcf-2fb951f29ad6.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\3a8b0d52-965e-4632-9bcf-2fb951f29ad6.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\3a8b0d52-965e-4632-9bcf-2fb951f29ad6.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\3bffb24c-2925-4528-be5c-621cdeb5498a.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\3bffb24c-2925-4528-be5c-621cdeb5498a.png",
       "PackagePath": "staticwebassets\\uploads\\products\\3bffb24c-2925-4528-be5c-621cdeb5498a.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\3c95e1ef-74f7-4e70-a489-17e7b1dc91e1.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\3c95e1ef-74f7-4e70-a489-17e7b1dc91e1.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\3c95e1ef-74f7-4e70-a489-17e7b1dc91e1.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\3cd53380-f45e-4284-9baf-2bf346af9f53.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\3cd53380-f45e-4284-9baf-2bf346af9f53.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\3cd53380-f45e-4284-9baf-2bf346af9f53.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\3d02664d-edac-41ff-af39-dc680ff8f33a.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\3d02664d-edac-41ff-af39-dc680ff8f33a.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\3d02664d-edac-41ff-af39-dc680ff8f33a.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\3fbf7b10-ee73-4c2f-8d9e-c32de9f84fd5.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\3fbf7b10-ee73-4c2f-8d9e-c32de9f84fd5.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\3fbf7b10-ee73-4c2f-8d9e-c32de9f84fd5.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\41d025d5-5a25-4f84-b31d-725a47299a8f.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\41d025d5-5a25-4f84-b31d-725a47299a8f.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\41d025d5-5a25-4f84-b31d-725a47299a8f.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\433ed3e4-19a5-49cb-9b8a-2d7a612be34a.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\433ed3e4-19a5-49cb-9b8a-2d7a612be34a.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\433ed3e4-19a5-49cb-9b8a-2d7a612be34a.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\4bd9b74d-2e95-49b2-b856-43e0abc33da1.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\4bd9b74d-2e95-49b2-b856-43e0abc33da1.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\4bd9b74d-2e95-49b2-b856-43e0abc33da1.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\4db308ed-9469-4b9d-be21-860d99c4f598.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\4db308ed-9469-4b9d-be21-860d99c4f598.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\4db308ed-9469-4b9d-be21-860d99c4f598.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\4f92e137-1a57-4ca9-b0f9-174302b90c0d.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\4f92e137-1a57-4ca9-b0f9-174302b90c0d.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\4f92e137-1a57-4ca9-b0f9-174302b90c0d.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\508dcc5b-5092-4ccb-87f5-07268d74d656.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\508dcc5b-5092-4ccb-87f5-07268d74d656.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\508dcc5b-5092-4ccb-87f5-07268d74d656.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\541ac324-386c-4b64-9c2b-b189fd0bab51.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\541ac324-386c-4b64-9c2b-b189fd0bab51.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\541ac324-386c-4b64-9c2b-b189fd0bab51.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\54eff7a3-8dfe-4d8f-804c-0305cf4fd019.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\54eff7a3-8dfe-4d8f-804c-0305cf4fd019.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\54eff7a3-8dfe-4d8f-804c-0305cf4fd019.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\54f7bdb4-60b2-4b40-acbd-58541627747a.jpeg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\54f7bdb4-60b2-4b40-acbd-58541627747a.jpeg",
       "PackagePath": "staticwebassets\\uploads\\products\\54f7bdb4-60b2-4b40-acbd-58541627747a.jpeg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\56574537-f90d-4ae5-acec-5d4c2f13edc4.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\56574537-f90d-4ae5-acec-5d4c2f13edc4.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\56574537-f90d-4ae5-acec-5d4c2f13edc4.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\57b5b924-87d6-4409-85aa-0f659412a4f9.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\57b5b924-87d6-4409-85aa-0f659412a4f9.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\57b5b924-87d6-4409-85aa-0f659412a4f9.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\57fdc62c-9ad2-4288-8aa5-96c80ceff706.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\57fdc62c-9ad2-4288-8aa5-96c80ceff706.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\57fdc62c-9ad2-4288-8aa5-96c80ceff706.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\58687e47-23dd-4721-bedf-898324650cee.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\58687e47-23dd-4721-bedf-898324650cee.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\58687e47-23dd-4721-bedf-898324650cee.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\58f8608d-78fd-429d-8816-aca7ccb797cb.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\58f8608d-78fd-429d-8816-aca7ccb797cb.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\58f8608d-78fd-429d-8816-aca7ccb797cb.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\59ccfe25-e3af-42cc-9e8f-0cd468d752b8.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\59ccfe25-e3af-42cc-9e8f-0cd468d752b8.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\59ccfe25-e3af-42cc-9e8f-0cd468d752b8.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\602ecbf1-1002-4918-9ea8-d7d592ba8389.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\602ecbf1-1002-4918-9ea8-d7d592ba8389.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\602ecbf1-1002-4918-9ea8-d7d592ba8389.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\61adff94-e50e-4663-a963-5559f2c9058d.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\61adff94-e50e-4663-a963-5559f2c9058d.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\61adff94-e50e-4663-a963-5559f2c9058d.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\630e1050-e569-4735-8faa-33e05abbc941.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\630e1050-e569-4735-8faa-33e05abbc941.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\630e1050-e569-4735-8faa-33e05abbc941.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\6615c233-33ca-476f-a3fe-88ce1ce0d830.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\6615c233-33ca-476f-a3fe-88ce1ce0d830.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\6615c233-33ca-476f-a3fe-88ce1ce0d830.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\66ff9302-a986-4913-aafd-6f2209ab4800.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\66ff9302-a986-4913-aafd-6f2209ab4800.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\66ff9302-a986-4913-aafd-6f2209ab4800.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\6812b61e-1b9b-466a-b188-c70c070b239b.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\6812b61e-1b9b-466a-b188-c70c070b239b.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\6812b61e-1b9b-466a-b188-c70c070b239b.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\68a95562-99b5-4c53-acdc-926534357a11.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\68a95562-99b5-4c53-acdc-926534357a11.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\68a95562-99b5-4c53-acdc-926534357a11.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\69fe130c-dbd2-440a-957d-114d05b959d3.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\69fe130c-dbd2-440a-957d-114d05b959d3.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\69fe130c-dbd2-440a-957d-114d05b959d3.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\6d2ce892-49d9-4d4b-b11f-e355f1e96202.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\6d2ce892-49d9-4d4b-b11f-e355f1e96202.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\6d2ce892-49d9-4d4b-b11f-e355f1e96202.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\70d7a36e-fea5-454d-a46e-91487c493fa9.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\70d7a36e-fea5-454d-a46e-91487c493fa9.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\70d7a36e-fea5-454d-a46e-91487c493fa9.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\720a45c4-68ba-47dc-9678-1889b5182a09.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\720a45c4-68ba-47dc-9678-1889b5182a09.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\720a45c4-68ba-47dc-9678-1889b5182a09.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\795de04b-cee3-4abb-a812-8998adc6ca44.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\795de04b-cee3-4abb-a812-8998adc6ca44.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\795de04b-cee3-4abb-a812-8998adc6ca44.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\7afbff5d-25ce-4e12-acf7-3b1916ff9930.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\7afbff5d-25ce-4e12-acf7-3b1916ff9930.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\7afbff5d-25ce-4e12-acf7-3b1916ff9930.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\7c6b7eea-08f1-49b1-849b-ec61fd47b1de.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\7c6b7eea-08f1-49b1-849b-ec61fd47b1de.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\7c6b7eea-08f1-49b1-849b-ec61fd47b1de.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\7ca4f998-af95-43cf-a6b6-4de5f78ef3a2.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\7ca4f998-af95-43cf-a6b6-4de5f78ef3a2.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\7ca4f998-af95-43cf-a6b6-4de5f78ef3a2.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\803ddfcd-ad0d-429f-ab9a-9cab88fefb53.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\803ddfcd-ad0d-429f-ab9a-9cab88fefb53.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\803ddfcd-ad0d-429f-ab9a-9cab88fefb53.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\81a764c5-85eb-49da-aff8-76d2eeb31d2d.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\81a764c5-85eb-49da-aff8-76d2eeb31d2d.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\81a764c5-85eb-49da-aff8-76d2eeb31d2d.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\8218d588-7fab-4e3d-b3a7-ad19e1fe5f70.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\8218d588-7fab-4e3d-b3a7-ad19e1fe5f70.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\8218d588-7fab-4e3d-b3a7-ad19e1fe5f70.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\849b6cae-54a0-4e3c-b114-c69ed7815aa6.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\849b6cae-54a0-4e3c-b114-c69ed7815aa6.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\849b6cae-54a0-4e3c-b114-c69ed7815aa6.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\84ec973a-980f-4b01-8461-aec541518b2d.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\84ec973a-980f-4b01-8461-aec541518b2d.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\84ec973a-980f-4b01-8461-aec541518b2d.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\85206873-606e-4daa-8499-d900f9466d47.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\85206873-606e-4daa-8499-d900f9466d47.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\85206873-606e-4daa-8499-d900f9466d47.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\856baf83-0470-44f6-8e0e-d55fb1b60bab.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\856baf83-0470-44f6-8e0e-d55fb1b60bab.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\856baf83-0470-44f6-8e0e-d55fb1b60bab.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\886518cc-78b2-4a0b-88cb-ee491fb28756.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\886518cc-78b2-4a0b-88cb-ee491fb28756.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\886518cc-78b2-4a0b-88cb-ee491fb28756.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\8a9a6b51-a0dd-4101-98f7-a79a5dd100ae.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\8a9a6b51-a0dd-4101-98f7-a79a5dd100ae.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\8a9a6b51-a0dd-4101-98f7-a79a5dd100ae.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\8c3065eb-a881-4bec-9765-8b17ba2cb9ed.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\8c3065eb-a881-4bec-9765-8b17ba2cb9ed.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\8c3065eb-a881-4bec-9765-8b17ba2cb9ed.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\8d77f647-cb92-4349-a720-f4535ca67e3a.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\8d77f647-cb92-4349-a720-f4535ca67e3a.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\8d77f647-cb92-4349-a720-f4535ca67e3a.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\8e42983e-5ce5-41a9-bbd6-959de7087180.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\8e42983e-5ce5-41a9-bbd6-959de7087180.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\8e42983e-5ce5-41a9-bbd6-959de7087180.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\8e56403c-3316-4414-b5c2-8ecb6788f708.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\8e56403c-3316-4414-b5c2-8ecb6788f708.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\8e56403c-3316-4414-b5c2-8ecb6788f708.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\8e60ceb0-93a5-480c-b281-d58b3dc1d337.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\8e60ceb0-93a5-480c-b281-d58b3dc1d337.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\8e60ceb0-93a5-480c-b281-d58b3dc1d337.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\90f71bc8-768a-4eda-9c83-6b34b0bce519.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\90f71bc8-768a-4eda-9c83-6b34b0bce519.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\90f71bc8-768a-4eda-9c83-6b34b0bce519.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\920bad43-9d9c-42a3-ae40-917154d73b19.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\920bad43-9d9c-42a3-ae40-917154d73b19.png",
       "PackagePath": "staticwebassets\\uploads\\products\\920bad43-9d9c-42a3-ae40-917154d73b19.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\9232739f-3795-4136-92de-ea1bcdaf6533.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\9232739f-3795-4136-92de-ea1bcdaf6533.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\9232739f-3795-4136-92de-ea1bcdaf6533.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\92b6170e-0a4a-4f60-b97d-ef117bb0d3b4.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\92b6170e-0a4a-4f60-b97d-ef117bb0d3b4.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\92b6170e-0a4a-4f60-b97d-ef117bb0d3b4.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\948e2414-e956-4117-8e5c-a300b46bf90c.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\948e2414-e956-4117-8e5c-a300b46bf90c.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\948e2414-e956-4117-8e5c-a300b46bf90c.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\94b203dd-6d3e-4ea2-9eaf-d634cf108bd9.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\94b203dd-6d3e-4ea2-9eaf-d634cf108bd9.png",
       "PackagePath": "staticwebassets\\uploads\\products\\94b203dd-6d3e-4ea2-9eaf-d634cf108bd9.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\95771681-9774-49c3-bd12-4a6f37f861b2.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\95771681-9774-49c3-bd12-4a6f37f861b2.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\95771681-9774-49c3-bd12-4a6f37f861b2.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\96103173-8616-40a9-bb57-b581841ab60d.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\96103173-8616-40a9-bb57-b581841ab60d.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\96103173-8616-40a9-bb57-b581841ab60d.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\9686b2dd-aa6b-4735-8233-43b18f69462c.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\9686b2dd-aa6b-4735-8233-43b18f69462c.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\9686b2dd-aa6b-4735-8233-43b18f69462c.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\96c2fdae-b931-4e64-bdb9-8c7b70b3d52a.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\96c2fdae-b931-4e64-bdb9-8c7b70b3d52a.png",
       "PackagePath": "staticwebassets\\uploads\\products\\96c2fdae-b931-4e64-bdb9-8c7b70b3d52a.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\96f9156a-12ad-4645-b3bb-8c3583bc53e5.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\96f9156a-12ad-4645-b3bb-8c3583bc53e5.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\96f9156a-12ad-4645-b3bb-8c3583bc53e5.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\97145695-14ed-4817-9d24-da9fe7da7f9b.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\97145695-14ed-4817-9d24-da9fe7da7f9b.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\97145695-14ed-4817-9d24-da9fe7da7f9b.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\99bc4b66-831a-4e3f-b92f-00e5a7d6ae0d.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\99bc4b66-831a-4e3f-b92f-00e5a7d6ae0d.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\99bc4b66-831a-4e3f-b92f-00e5a7d6ae0d.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\99de2bf1-9d3f-430b-b6a2-d2662add4a24.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\99de2bf1-9d3f-430b-b6a2-d2662add4a24.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\99de2bf1-9d3f-430b-b6a2-d2662add4a24.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\99ed7c3c-e1ea-4bb6-bb96-a2dad0526c98.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\99ed7c3c-e1ea-4bb6-bb96-a2dad0526c98.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\99ed7c3c-e1ea-4bb6-bb96-a2dad0526c98.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\9c0bcb77-329c-4411-9974-9e8ca4c1c251.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\9c0bcb77-329c-4411-9974-9e8ca4c1c251.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\9c0bcb77-329c-4411-9974-9e8ca4c1c251.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\9d1a3da5-53f7-4e7a-938d-d3a47aa51b79.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\9d1a3da5-53f7-4e7a-938d-d3a47aa51b79.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\9d1a3da5-53f7-4e7a-938d-d3a47aa51b79.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\9e2c93f4-2e34-42b5-8d85-c135a2bd0bf3.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\9e2c93f4-2e34-42b5-8d85-c135a2bd0bf3.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\9e2c93f4-2e34-42b5-8d85-c135a2bd0bf3.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\9f7592ff-89d5-4f67-9d0e-5fc238f62b0a.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\9f7592ff-89d5-4f67-9d0e-5fc238f62b0a.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\9f7592ff-89d5-4f67-9d0e-5fc238f62b0a.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\a212d597-f138-4c34-afad-3d094683a58d.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\a212d597-f138-4c34-afad-3d094683a58d.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\a212d597-f138-4c34-afad-3d094683a58d.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\a5d8fa7f-183a-4480-88d7-fb421911fd7d.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\a5d8fa7f-183a-4480-88d7-fb421911fd7d.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\a5d8fa7f-183a-4480-88d7-fb421911fd7d.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\aa28cac7-457e-4a3c-b851-fde8120343c7.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\aa28cac7-457e-4a3c-b851-fde8120343c7.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\aa28cac7-457e-4a3c-b851-fde8120343c7.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\aae73a81-8281-44b6-b8cb-ed303959e493.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\aae73a81-8281-44b6-b8cb-ed303959e493.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\aae73a81-8281-44b6-b8cb-ed303959e493.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\ad5fd5d9-946a-4c66-b148-0003b29b7496.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\ad5fd5d9-946a-4c66-b148-0003b29b7496.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\ad5fd5d9-946a-4c66-b148-0003b29b7496.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\af4310ba-f781-4c1f-a576-f78eefccc85e.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\af4310ba-f781-4c1f-a576-f78eefccc85e.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\af4310ba-f781-4c1f-a576-f78eefccc85e.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\b10620a7-118f-43dd-b4df-68106c2c958b.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\b10620a7-118f-43dd-b4df-68106c2c958b.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\b10620a7-118f-43dd-b4df-68106c2c958b.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\b1769d53-2889-451f-b39c-cabeec0fbd48.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\b1769d53-2889-451f-b39c-cabeec0fbd48.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\b1769d53-2889-451f-b39c-cabeec0fbd48.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\b75f1841-2f5e-42ab-9754-70b1625678a6.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\b75f1841-2f5e-42ab-9754-70b1625678a6.png",
       "PackagePath": "staticwebassets\\uploads\\products\\b75f1841-2f5e-42ab-9754-70b1625678a6.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\b79dce63-c8ff-4a5c-92ff-f8f1d2b5c160.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\b79dce63-c8ff-4a5c-92ff-f8f1d2b5c160.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\b79dce63-c8ff-4a5c-92ff-f8f1d2b5c160.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\b8dea8d9-e163-45bc-bd3a-ba17cec872b6.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\b8dea8d9-e163-45bc-bd3a-ba17cec872b6.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\b8dea8d9-e163-45bc-bd3a-ba17cec872b6.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\b9af1689-23bb-4fc8-b94f-165a450ee52c.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\b9af1689-23bb-4fc8-b94f-165a450ee52c.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\b9af1689-23bb-4fc8-b94f-165a450ee52c.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\be59e34d-6efb-401a-a16e-7788ab24cec7.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\be59e34d-6efb-401a-a16e-7788ab24cec7.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\be59e34d-6efb-401a-a16e-7788ab24cec7.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\c02dd99f-aeb5-4a74-a2c5-f628cdaccf01.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\c02dd99f-aeb5-4a74-a2c5-f628cdaccf01.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\c02dd99f-aeb5-4a74-a2c5-f628cdaccf01.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\c0c5dbf9-b799-43e0-a3a3-59edfa42b1db.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\c0c5dbf9-b799-43e0-a3a3-59edfa42b1db.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\c0c5dbf9-b799-43e0-a3a3-59edfa42b1db.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\c34a8f75-ccde-414f-9b53-df2478a859ee.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\c34a8f75-ccde-414f-9b53-df2478a859ee.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\c34a8f75-ccde-414f-9b53-df2478a859ee.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\c384add0-5e02-480c-b4ad-2375a2158679.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\c384add0-5e02-480c-b4ad-2375a2158679.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\c384add0-5e02-480c-b4ad-2375a2158679.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\c93fa2bc-c70a-4b1f-ae8e-06cd6ce70518.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\c93fa2bc-c70a-4b1f-ae8e-06cd6ce70518.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\c93fa2bc-c70a-4b1f-ae8e-06cd6ce70518.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\ce67ef45-3649-43bb-a8b0-792944474842.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\ce67ef45-3649-43bb-a8b0-792944474842.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\ce67ef45-3649-43bb-a8b0-792944474842.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\cef0e3be-9f5e-4989-a48a-be01d5bb7dfc.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\cef0e3be-9f5e-4989-a48a-be01d5bb7dfc.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\cef0e3be-9f5e-4989-a48a-be01d5bb7dfc.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\cf16d9a2-cb1e-4e2c-8a9f-17deaa257829.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\cf16d9a2-cb1e-4e2c-8a9f-17deaa257829.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\cf16d9a2-cb1e-4e2c-8a9f-17deaa257829.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\d2716533-d192-4bcc-8904-a5336bda7e5c.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\d2716533-d192-4bcc-8904-a5336bda7e5c.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\d2716533-d192-4bcc-8904-a5336bda7e5c.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\d6b6b710-6189-43d4-bf20-3cfd4f166200.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\d6b6b710-6189-43d4-bf20-3cfd4f166200.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\d6b6b710-6189-43d4-bf20-3cfd4f166200.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\d6c5cc82-0e78-40b1-b089-d8bf92aa63f4.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\d6c5cc82-0e78-40b1-b089-d8bf92aa63f4.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\d6c5cc82-0e78-40b1-b089-d8bf92aa63f4.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\d99fae66-919a-4090-a7ed-295676e37f35.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\d99fae66-919a-4090-a7ed-295676e37f35.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\d99fae66-919a-4090-a7ed-295676e37f35.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\d9da40a6-bf6f-416d-a65e-601b695f555f.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\d9da40a6-bf6f-416d-a65e-601b695f555f.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\d9da40a6-bf6f-416d-a65e-601b695f555f.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\da72144c-2507-4d6f-80f4-b9fa83831c64.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\da72144c-2507-4d6f-80f4-b9fa83831c64.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\da72144c-2507-4d6f-80f4-b9fa83831c64.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\db3517b7-0256-48be-adff-d4dfb27cc2ac.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\db3517b7-0256-48be-adff-d4dfb27cc2ac.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\db3517b7-0256-48be-adff-d4dfb27cc2ac.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\db524cd1-8f7a-4ca9-be9f-09e92cba677a.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\db524cd1-8f7a-4ca9-be9f-09e92cba677a.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\db524cd1-8f7a-4ca9-be9f-09e92cba677a.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\dff61a0c-bbfe-47dd-9282-5e6e99e76c5c.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\dff61a0c-bbfe-47dd-9282-5e6e99e76c5c.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\dff61a0c-bbfe-47dd-9282-5e6e99e76c5c.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\e8d7a4ab-d057-41d1-9ecd-bf0fc0c0c429.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\e8d7a4ab-d057-41d1-9ecd-bf0fc0c0c429.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\e8d7a4ab-d057-41d1-9ecd-bf0fc0c0c429.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\ebfd6167-29aa-4f8c-b062-596816c46de9.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\ebfd6167-29aa-4f8c-b062-596816c46de9.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\ebfd6167-29aa-4f8c-b062-596816c46de9.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\ec49efbc-58bd-4618-8118-015bc75719ba.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\ec49efbc-58bd-4618-8118-015bc75719ba.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\ec49efbc-58bd-4618-8118-015bc75719ba.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\ed23a59e-9e2a-4371-b6fe-b92dd33acf55.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\ed23a59e-9e2a-4371-b6fe-b92dd33acf55.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\ed23a59e-9e2a-4371-b6fe-b92dd33acf55.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\efa51d05-fa3c-4455-a0c5-c01b7b6092ee.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\efa51d05-fa3c-4455-a0c5-c01b7b6092ee.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\efa51d05-fa3c-4455-a0c5-c01b7b6092ee.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\f3554b11-fe9b-4549-8c55-77f009cc83d7.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\f3554b11-fe9b-4549-8c55-77f009cc83d7.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\f3554b11-fe9b-4549-8c55-77f009cc83d7.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\f5c7f239-c940-4131-b203-0b2ca16574d8.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\f5c7f239-c940-4131-b203-0b2ca16574d8.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\f5c7f239-c940-4131-b203-0b2ca16574d8.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\fce2569a-5515-453e-b5c6-d0a12a5f21df.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\fce2569a-5515-453e-b5c6-d0a12a5f21df.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\fce2569a-5515-453e-b5c6-d0a12a5f21df.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\fdbb08fe-307a-497f-821e-2a134cae9f58.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\fdbb08fe-307a-497f-821e-2a134cae9f58.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\fdbb08fe-307a-497f-821e-2a134cae9f58.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\fde61291-4d64-482f-82d7-0106600b98b6.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\fde61291-4d64-482f-82d7-0106600b98b6.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\fde61291-4d64-482f-82d7-0106600b98b6.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\fed17708-573a-4b67-9b35-90d960440a01.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\fed17708-573a-4b67-9b35-90d960440a01.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\fed17708-573a-4b67-9b35-90d960440a01.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\jgq75kqg_1024x1024.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\jgq75kqg_1024x1024.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\jgq75kqg_1024x1024.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\phu-kien-thoi-trang-8.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\phu-kien-thoi-trang-8.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\phu-kien-thoi-trang-8.jpg"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\unnamed.png",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\unnamed.png",
       "PackagePath": "staticwebassets\\uploads\\products\\unnamed.png"
     },
     {
-      "Id": "D:\\Ehou\\DotnetMVC\\wwwroot\\uploads\\products\\yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg",
+      "Id": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\uploads\\products\\yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\yVOv85MEGoLxrAmUTh0xdetVyzNggkm8OjZQqb0c.jpg"
     },
     {

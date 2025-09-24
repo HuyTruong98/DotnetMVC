@@ -11,93 +11,95 @@
   <a class="btn btn-success" href="/Dashboard/Orders/Create">➕ Tạo mới</a>
 </div>
 
-<table class="table table-bordered table-hover">
-  <thead class="table-dark">
-    <tr>
-      <th>#</th>
-      <th>Người đặt</th>
-      <th>Ngày đặt</th>
-      <th>Trạng thái</th>
-      <th>Tổng gốc</th>
-      <th>Tổng sau giảm</th>
-      <th>Ghi chú</th>
-      <th>Thao tác</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (int i = 0; i < Model.Count; i++)
-    {
-      var order = Model[i];
-      bool locked = order.Status == "Shipping" || order.Status == "Completed";
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
       <tr>
-        <td>@(i + 1)</td>
-        <td>@order.UserName</td>
-        <td>@order.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
-        <td>@order.Status</td>
-        <td>@FormatHelper.FormatCurrency(order.TotalAmount)</td>
-        <td>@FormatHelper.FormatCurrency(order.TotalAfterDiscount)</td>
-        <td>@order.Description</td>
-        <td>
-          <button class="btn btn-sm btn-info" type="button" data-bs-toggle="collapse"
-            data-bs-target="#details-@order.OrderID" aria-expanded="false" aria-controls="details-@order.OrderID">
-            Chi tiết
-          </button>
-          <a class="btn btn-sm btn-primary" href="/Dashboard/Orders/Edit/@order.OrderID">
-            Sửa
-          </a>
-          @if (!locked)
-          {
-            <form asp-action="Delete" asp-route-id="@order.OrderID" method="post" class="d-inline"
-              onsubmit="return confirm('Bạn có chắc muốn xóa?');">
-              <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
-            </form>
-          }
-          else
-          {
-            <button class="btn btn-sm btn-danger disabled" title="Không thể xóa khi đơn đang giao hoặc đã hoàn thành">
-              Xóa
+        <th>#</th>
+        <th>Người đặt</th>
+        <th>Ngày đặt</th>
+        <th>Trạng thái</th>
+        <th>Tổng gốc</th>
+        <th>Tổng sau giảm</th>
+        <th>Ghi chú</th>
+        <th>Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (int i = 0; i < Model.Count; i++)
+      {
+        var order = Model[i];
+        bool locked = order.Status == "Shipping" || order.Status == "Completed";
+        <tr>
+          <td>@(i + 1)</td>
+          <td>@order.UserName</td>
+          <td>@order.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
+          <td>@order.Status</td>
+          <td>@FormatHelper.FormatCurrency(order.TotalAmount)</td>
+          <td>@FormatHelper.FormatCurrency(order.TotalAfterDiscount)</td>
+          <td>@order.Description</td>
+          <td>
+            <button class="btn btn-sm btn-info" type="button" data-bs-toggle="collapse"
+              data-bs-target="#details-@order.OrderID" aria-expanded="false" aria-controls="details-@order.OrderID">
+              Chi tiết
             </button>
-          }
-        </td>
-      </tr>
-      <tr>
-        <td colspan="8" class="p-0 bg-light">
-          <div class="collapse" id="details-@order.OrderID">
-            <div class="p-3">
-              <strong>Chi tiết đơn hàng:</strong>
-              <table class="table table-sm table-striped mt-2 mb-0">
-                <thead>
-                  <tr>
-                    <th>Sản phẩm</th>
-                    <th>Size</th>
-                    <th>Màu sắc</th>
-                    <th>Số lượng</th>
-                    <th>Đơn giá</th>
-                    <th>% Giảm</th>
-                    <th>Thành tiền</th>
-                    <th>Tiền sau giảm</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach (var item in order.Items)
-                  {
+            <a class="btn btn-sm btn-primary" href="/Dashboard/Orders/Edit/@order.OrderID">
+              Sửa
+            </a>
+            @if (!locked)
+            {
+              <form asp-action="Delete" asp-route-id="@order.OrderID" method="post" class="d-inline"
+                onsubmit="return confirm('Bạn có chắc muốn xóa?');">
+                <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+              </form>
+            }
+            else
+            {
+              <button class="btn btn-sm btn-danger disabled" title="Không thể xóa khi đơn đang giao hoặc đã hoàn thành">
+                Xóa
+              </button>
+            }
+          </td>
+        </tr>
+        <tr>
+          <td colspan="8" class="p-0 bg-light">
+            <div class="collapse" id="details-@order.OrderID">
+              <div class="p-3">
+                <strong>Chi tiết đơn hàng:</strong>
+                <table class="table table-sm table-striped mt-2 mb-0">
+                  <thead>
                     <tr>
-                      <td>@item.ProductName</td>
-                      <td>@item.Size</td>
-                      <td>@item.Color</td>
-                      <td>@item.Quantity</td>
-                      <td>@FormatHelper.FormatCurrency(item.UnitPrice)</td>
-                      <td>@item.SalePercent %</td>
-                      <td>@FormatHelper.FormatCurrency(item.Amount)</td>
-                      <td>@FormatHelper.FormatCurrency(item.DiscountedAmount)</td>
+                      <th>Sản phẩm</th>
+                      <th>Size</th>
+                      <th>Màu sắc</th>
+                      <th>Số lượng</th>
+                      <th>Đơn giá</th>
+                      <th>% Giảm</th>
+                      <th>Thành tiền</th>
+                      <th>Tiền sau giảm</th>
                     </tr>
-                  }
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    @foreach (var item in order.Items)
+                    {
+                      <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.Size</td>
+                        <td>@item.Color</td>
+                        <td>@item.Quantity</td>
+                        <td>@FormatHelper.FormatCurrency(item.UnitPrice)</td>
+                        <td>@item.SalePercent %</td>
+                        <td>@FormatHelper.FormatCurrency(item.Amount)</td>
+                        <td>@FormatHelper.FormatCurrency(item.DiscountedAmount)</td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        </td>
-      </tr>
-    }
-  </tbody>
-</table>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -11,56 +11,58 @@
   <a class="btn btn-success" href="/Dashboard/Promotions/Create">➕ Tạo mới</a>
 </div>
 
-<table class="table table-bordered table-hover">
-  <thead class="table-dark">
-    <tr>
-      <th>#</th>
-      <th>Sản phẩm</th>
-      <th>Giảm (%)</th>
-      <th>Bắt đầu</th>
-      <th>Kết thúc</th>
-      <th>Trạng thái</th>
-      <th>Thao tác</th>
-    </tr>
-  </thead>
-  <tbody>
-    @if (Model.Any())
-    {
-      for (int i = 0; i < Model.Count; i++)
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Sản phẩm</th>
+        <th>Giảm (%)</th>
+        <th>Bắt đầu</th>
+        <th>Kết thúc</th>
+        <th>Trạng thái</th>
+        <th>Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (Model.Any())
       {
-        var promo = Model[i];
-        var now = DateTime.Now;
-        string status = (promo.EndDate == null || promo.EndDate >= now) && promo.StartDate <= now
-        ? "Đang áp dụng"
-        : "Hết hạn";
-
-        string badgeClass = status switch
+        for (int i = 0; i < Model.Count; i++)
         {
-          "Đang áp dụng" => "bg-success",
-          "Hết hạn" => "bg-danger",
-          _ => "bg-secondary"
-        };
+          var promo = Model[i];
+          var now = DateTime.Now;
+          string status = (promo.EndDate == null || promo.EndDate >= now) && promo.StartDate <= now
+          ? "Đang áp dụng"
+          : "Hết hạn";
 
+          string badgeClass = status switch
+          {
+            "Đang áp dụng" => "bg-success",
+            "Hết hạn" => "bg-danger",
+            _ => "bg-secondary"
+          };
+
+          <tr>
+            <td>@(i + 1)</td>
+            <td>@promo.Product?.ProductName</td>
+            <td>@promo.DiscountPercent%</td>
+            <td>@FormatHelper.FormatDate(promo.StartDate)</td>
+            <td>@(promo.EndDate.HasValue? FormatHelper.FormatDate(promo.EndDate.Value) : "Không giới hạn")</td>
+            <td><span class="badge @badgeClass">@status</span></td>
+            <td>
+              <a class="btn btn-sm btn-primary" href="/Dashboard/Promotions/Edit/@promo.PromotionID">Sửa</a>
+              <a class="btn btn-sm btn-danger" href="/Dashboard/Promotions/Delete/@promo.PromotionID"
+                onclick="return confirm('Bạn có chắc muốn xóa khuyến mãi này?');">Xóa</a>
+            </td>
+          </tr>
+        }
+      }
+      else
+      {
         <tr>
-          <td>@(i + 1)</td>
-          <td>@promo.Product?.ProductName</td>
-          <td>@promo.DiscountPercent%</td>
-          <td>@FormatHelper.FormatDate(promo.StartDate)</td>
-          <td>@(promo.EndDate.HasValue? FormatHelper.FormatDate(promo.EndDate.Value) : "Không giới hạn")</td>
-          <td><span class="badge @badgeClass">@status</span></td>
-          <td>
-            <a class="btn btn-sm btn-primary" href="/Dashboard/Promotions/Edit/@promo.PromotionID">Sửa</a>
-            <a class="btn btn-sm btn-danger" href="/Dashboard/Promotions/Delete/@promo.PromotionID"
-              onclick="return confirm('Bạn có chắc muốn xóa khuyến mãi này?');">Xóa</a>
-          </td>
+          <td colspan="7" class="text-center text-muted">Chưa có khuyến mãi nào.</td>
         </tr>
       }
-    }
-    else
-    {
-      <tr>
-        <td colspan="7" class="text-center text-muted">Chưa có khuyến mãi nào.</td>
-      </tr>
-    }
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>

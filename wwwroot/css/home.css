@@ -394,7 +394,8 @@ body {
   }
 
   .newsletter-form .input-group {
-    flex-direction: column;
+        flex-direction: row;
+        padding-top: 20px;
   }
 
   .newsletter-form .form-control,

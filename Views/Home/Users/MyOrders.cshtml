@@ -1,90 +1,92 @@
 @model List<OnlineStoreMVC.Models.Order>
 
-    <style>
-        body {
-            background: #f4f6f9;
-            font-family: Arial, sans-serif;
-        }
+<style>
+  body {
+    background: #f4f6f9;
+    font-family: Arial, sans-serif;
+  }
 
-        .orders-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; 
-            min-height: 50vh; 
-            padding: 20px;
-        }
+  .orders-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    padding: 20px;
+  }
 
-        .order-card {
-            background: #fff;
-            padding: 20px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            width: 100%;
-        }
+  .order-card {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    width: 100%;
+  }
 
-            .order-card h4 {
-                margin-bottom: 10px;
-                color: #333;
+  .order-card h4 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .order-card p {
+    margin: 3px 0;
+    color: #666;
+  }
+
+  .order-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+
+  .order-card table th,
+  .order-card table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .order-card table th {
+    background: #f1f1f1;
+  }
+</style>
+
+<div class="orders-container">
+  <h2>Đơn hàng của tôi</h2>
+
+  @foreach (var order in Model)
+  {
+    <div class="order-card">
+      <h4>Đơn hàng #@order.OrderID</h4>
+      <p><strong>Ngày đặt:</strong> @order.OrderDate.ToString("dd/MM/yyyy")</p>
+      <p><strong>Trạng thái:</strong> @order.Status</p>
+
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Màu</th>
+              <th>Size</th>
+              <th>Số lượng</th>
+              <th>Đơn giá</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach (var detail in order.OrderDetails)
+            {
+              <tr>
+                <td>@detail.Variant.Product.ProductName</td>
+                <td>@detail.Variant.Color</td>
+                <td>@detail.Variant.Size</td>
+                <td>@detail.Quantity</td>
+                <td>@detail.UnitPrice.ToString("N0") đ</td>
+              </tr>
             }
-
-            .order-card p {
-                margin: 3px 0;
-                color: #666;
-            }
-
-            .order-card table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-top: 15px;
-            }
-
-                .order-card table th,
-                .order-card table td {
-                    border: 1px solid #ddd;
-                    padding: 10px;
-                    text-align: center;
-                }
-
-                .order-card table th {
-                    background: #f1f1f1;
-                }
-    </style>
-
-    <div class="orders-container">
-        <h2>Đơn hàng của tôi</h2>
-
-        @foreach (var order in Model)
-    {
-        <div class="order-card">
-            <h4>Đơn hàng #@order.OrderID</h4>
-            <p><strong>Ngày đặt:</strong> @order.OrderDate.ToString("dd/MM/yyyy")</p>
-            <p><strong>Trạng thái:</strong> @order.Status</p>
-
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Sản phẩm</th>
-                        <th>Màu</th>
-                        <th>Size</th>
-                        <th>Số lượng</th>
-                        <th>Đơn giá</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var detail in order.OrderDetails)
-                    {
-                    <tr>
-                        <td>@detail.Variant.Product.ProductName</td>
-                        <td>@detail.Variant.Color</td>
-                        <td>@detail.Variant.Size</td>
-                        <td>@detail.Quantity</td>
-                        <td>@detail.UnitPrice.ToString("N0") đ</td>
-                    </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    }
+          </tbody>
+        </table>
+      </div>
     </div>
+  }
+</div>

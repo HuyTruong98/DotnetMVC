@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineStoreMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0850dcb254b14eeadb470c76483723079a9501d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b51cb4d5e146dc749189a6ce3102402b622d701d")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineStoreMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineStoreMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

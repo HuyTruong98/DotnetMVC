@@ -1,3 +1,5 @@
+@model OnlineStoreMVC.Models.DashboardViewModel
+
 @{
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
     ViewData["Title"] = "Trang quản trị";
@@ -15,7 +17,7 @@
                 <img style="height: 40px" src="~/images/user (2).png" />
             </div>
             <div class="stat-info">
-                <h3>1,254</h3>
+                <h3>@Model.UserCount</h3>
                 <p>Người dùng</p>
             </div>
         </div>
@@ -25,7 +27,7 @@
                 <img style="height: 40px" src="~/images/new-product.png" />
             </div>
             <div class="stat-info">
-                <h3>542</h3>
+                <h3>@Model.ProductCount</h3>
                 <p>Sản phẩm</p>
             </div>
         </div>
@@ -35,7 +37,7 @@
                 <img style="height: 40px" src="~/images/shoppping-bag.png" />
             </div>
             <div class="stat-info">
-                <h3>189</h3>
+                <h3>@Model.OrderCount</h3>
                 <p>Đơn hàng</p>
             </div>
         </div>
@@ -45,7 +47,7 @@
                 <img style="height: 40px" src="~/images/revenue.png" />
             </div>
             <div class="stat-info">
-                <h3>$12,541</h3>
+                <h3>@Model.TotalRevenue.ToString("C0")</h3>
                 <p>Doanh thu</p>
             </div>
         </div>
@@ -54,20 +56,16 @@
     <div class="recent-activities">
         <h3>Hoạt động gần đây</h3>
         <div class="activity-list">
-            <div class="activity-item">
-                <i class="fas fa-user-plus"></i>
-                <div class="activity-content">
-                    <p>Người dùng mới đã đăng ký</p>
-                    <span>2 phút trước</span>
+            @foreach (var act in Model.RecentActivities)
+            {
+                <div class="activity-item">
+                    <i class="@act.IconClass"></i>
+                    <div class="activity-content">
+                        <p>@act.Message</p>
+                        <span>@act.Timestamp.ToString("g")</span>
+                    </div>
                 </div>
-            </div>
-            <div class="activity-item">
-                <i class="fas fa-shopping-cart"></i>
-                <div class="activity-content">
-                    <p>Đơn hàng mới #123</p>
-                    <span>5 phút trước</span>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>

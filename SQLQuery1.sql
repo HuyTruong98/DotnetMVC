@@ -33,7 +33,7 @@ CREATE TABLE Products (
     Description NVARCHAR(MAX),
     Price DECIMAL(18,2) NOT NULL,
     Status NVARCHAR(50) CHECK (Status IN ('Available','OutOfStock','Promotion')) DEFAULT 'Available',
-    CreatedAt DATETIME DEFAULT GETDATE()
+    CreatedAt DATETIME DEFAULT GETDATE(),
     IsFeatured BIT NOT NULL DEFAULT 0
 );
 
@@ -95,7 +95,6 @@ VALUES
 
 ALTER TABLE Orders
 ADD Description NVARCHAR(255);
-
 
 -----------------------------------------------------
 -- Áo nam

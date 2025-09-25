@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jA+2clczy9avjI72y/TFXS366VL2TBx1wNOHgHtTalQ=",
+  "Hash": "jJ+MDHJySJhHbOEsjn1R0uNJWnbEYTCfJcX0D0XqPeM=",
   "Source": "OnlineStoreMVC",
   "BasePath": "_content/OnlineStoreMVC",
   "Mode": "Default",
@@ -1025,12 +1025,12 @@
       "OriginalItemSpec": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-48dvsaa64r.gz",
+      "Identity": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-75y89a7a54.gz",
       "SourceId": "OnlineStoreMVC",
       "SourceType": "Discovered",
       "ContentRoot": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/OnlineStoreMVC",
-      "RelativePath": "css/home#[.{fingerprint=48dvsaa64r}]?.css.gz",
+      "RelativePath": "css/home#[.{fingerprint=75y89a7a54}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1039,8 +1039,8 @@
       "RelatedAsset": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\css\\home.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "h8p7i9dk7s",
-      "Integrity": "f56FZv4nQQPSJ543t5xhj8u2J/SFAdM9DTbuTcSBDcg=",
+      "Fingerprint": "nsveg6dt9v",
+      "Integrity": "d5CKk01gjHIL60eK3K8/x1RgOGF9OQR1tL2J0opUf6w=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\css\\home.css"
@@ -1522,8 +1522,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "48dvsaa64r",
-      "Integrity": "TIeVjU/exT6XKUYhnrGcfpBRT1PtrF12W1B8aNz4kOY=",
+      "Fingerprint": "75y89a7a54",
+      "Integrity": "21/Uf1Vibv5wdo21OsHOOxSCILCMFhVFC/BzfPOJqmw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\home.css"
@@ -6915,13 +6915,13 @@
       ]
     },
     {
-      "Route": "css/home.48dvsaa64r.css",
-      "AssetFile": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-48dvsaa64r.gz",
+      "Route": "css/home.75y89a7a54.css",
+      "AssetFile": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-75y89a7a54.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000334001336"
+          "Quality": "0.000332225914"
         }
       ],
       "ResponseHeaders": [
@@ -6931,15 +6931,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2993"
+          "Value": "3009"
         },
         {
           "Name": "ETag",
-          "Value": "\"f56FZv4nQQPSJ543t5xhj8u2J/SFAdM9DTbuTcSBDcg=\""
+          "Value": "\"d5CKk01gjHIL60eK3K8/x1RgOGF9OQR1tL2J0opUf6w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 06:00:50 GMT"
+          "Value": "Wed, 24 Sep 2025 17:11:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6959,13 +6959,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"TIeVjU/exT6XKUYhnrGcfpBRT1PtrF12W1B8aNz4kOY=\""
+          "Value": "W/\"21/Uf1Vibv5wdo21OsHOOxSCILCMFhVFC/BzfPOJqmw=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "48dvsaa64r"
+          "Value": "75y89a7a54"
         },
         {
           "Name": "label",
@@ -6973,12 +6973,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-TIeVjU/exT6XKUYhnrGcfpBRT1PtrF12W1B8aNz4kOY="
+          "Value": "sha256-21/Uf1Vibv5wdo21OsHOOxSCILCMFhVFC/BzfPOJqmw="
         }
       ]
     },
     {
-      "Route": "css/home.48dvsaa64r.css",
+      "Route": "css/home.75y89a7a54.css",
       "AssetFile": "F:\\ehou\\OnlineStoreMVC\\wwwroot\\css\\home.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -6988,7 +6988,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11901"
+          "Value": "11930"
         },
         {
           "Name": "Content-Type",
@@ -6996,11 +6996,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"TIeVjU/exT6XKUYhnrGcfpBRT1PtrF12W1B8aNz4kOY=\""
+          "Value": "\"21/Uf1Vibv5wdo21OsHOOxSCILCMFhVFC/BzfPOJqmw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 06:00:50 GMT"
+          "Value": "Wed, 24 Sep 2025 17:11:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7010,7 +7010,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "48dvsaa64r"
+          "Value": "75y89a7a54"
         },
         {
           "Name": "label",
@@ -7018,13 +7018,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-TIeVjU/exT6XKUYhnrGcfpBRT1PtrF12W1B8aNz4kOY="
+          "Value": "sha256-21/Uf1Vibv5wdo21OsHOOxSCILCMFhVFC/BzfPOJqmw="
         }
       ]
     },
     {
-      "Route": "css/home.48dvsaa64r.css.gz",
-      "AssetFile": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-48dvsaa64r.gz",
+      "Route": "css/home.75y89a7a54.css.gz",
+      "AssetFile": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-75y89a7a54.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7033,7 +7033,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2993"
+          "Value": "3009"
         },
         {
           "Name": "Content-Type",
@@ -7041,11 +7041,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"f56FZv4nQQPSJ543t5xhj8u2J/SFAdM9DTbuTcSBDcg=\""
+          "Value": "\"d5CKk01gjHIL60eK3K8/x1RgOGF9OQR1tL2J0opUf6w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 06:00:50 GMT"
+          "Value": "Wed, 24 Sep 2025 17:11:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7063,7 +7063,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "48dvsaa64r"
+          "Value": "75y89a7a54"
         },
         {
           "Name": "label",
@@ -7071,18 +7071,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-f56FZv4nQQPSJ543t5xhj8u2J/SFAdM9DTbuTcSBDcg="
+          "Value": "sha256-d5CKk01gjHIL60eK3K8/x1RgOGF9OQR1tL2J0opUf6w="
         }
       ]
     },
     {
       "Route": "css/home.css",
-      "AssetFile": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-48dvsaa64r.gz",
+      "AssetFile": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-75y89a7a54.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000334001336"
+          "Quality": "0.000332225914"
         }
       ],
       "ResponseHeaders": [
@@ -7092,15 +7092,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2993"
+          "Value": "3009"
         },
         {
           "Name": "ETag",
-          "Value": "\"f56FZv4nQQPSJ543t5xhj8u2J/SFAdM9DTbuTcSBDcg=\""
+          "Value": "\"d5CKk01gjHIL60eK3K8/x1RgOGF9OQR1tL2J0opUf6w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 06:00:50 GMT"
+          "Value": "Wed, 24 Sep 2025 17:11:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7120,13 +7120,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"TIeVjU/exT6XKUYhnrGcfpBRT1PtrF12W1B8aNz4kOY=\""
+          "Value": "W/\"21/Uf1Vibv5wdo21OsHOOxSCILCMFhVFC/BzfPOJqmw=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-TIeVjU/exT6XKUYhnrGcfpBRT1PtrF12W1B8aNz4kOY="
+          "Value": "sha256-21/Uf1Vibv5wdo21OsHOOxSCILCMFhVFC/BzfPOJqmw="
         }
       ]
     },
@@ -7141,7 +7141,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11901"
+          "Value": "11930"
         },
         {
           "Name": "Content-Type",
@@ -7149,11 +7149,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"TIeVjU/exT6XKUYhnrGcfpBRT1PtrF12W1B8aNz4kOY=\""
+          "Value": "\"21/Uf1Vibv5wdo21OsHOOxSCILCMFhVFC/BzfPOJqmw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 06:00:50 GMT"
+          "Value": "Wed, 24 Sep 2025 17:11:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7163,13 +7163,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-TIeVjU/exT6XKUYhnrGcfpBRT1PtrF12W1B8aNz4kOY="
+          "Value": "sha256-21/Uf1Vibv5wdo21OsHOOxSCILCMFhVFC/BzfPOJqmw="
         }
       ]
     },
     {
       "Route": "css/home.css.gz",
-      "AssetFile": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-48dvsaa64r.gz",
+      "AssetFile": "F:\\ehou\\OnlineStoreMVC\\obj\\Debug\\net9.0\\compressed\\t0fio214w3-75y89a7a54.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7178,7 +7178,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2993"
+          "Value": "3009"
         },
         {
           "Name": "Content-Type",
@@ -7186,11 +7186,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"f56FZv4nQQPSJ543t5xhj8u2J/SFAdM9DTbuTcSBDcg=\""
+          "Value": "\"d5CKk01gjHIL60eK3K8/x1RgOGF9OQR1tL2J0opUf6w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 06:00:50 GMT"
+          "Value": "Wed, 24 Sep 2025 17:11:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7208,7 +7208,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-f56FZv4nQQPSJ543t5xhj8u2J/SFAdM9DTbuTcSBDcg="
+          "Value": "sha256-d5CKk01gjHIL60eK3K8/x1RgOGF9OQR1tL2J0opUf6w="
         }
       ]
     },

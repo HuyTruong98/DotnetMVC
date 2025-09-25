@@ -79,6 +79,12 @@ namespace OnlineStoreMVC.Controllers
         return View(model);
       }
 
+      if (_context.Users.Any(u => u.Username == model.Username || u.Email == model.Email))
+      {
+        TempData["Error"] = "Tên đăng nhập hoặc Email trùng!";
+        return View(model);
+      }
+
       if (_context.Users.Any(u => u.Username == model.Username))
       {
         ModelState.AddModelError("Username", "Tên đăng nhập đã tồn tại");

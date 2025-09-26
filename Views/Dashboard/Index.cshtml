@@ -1,71 +1,71 @@
 @model OnlineStoreMVC.Models.DashboardViewModel
 
 @{
-    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
-    ViewData["Title"] = "Trang quản trị";
+  Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+  ViewData["Title"] = "Trang quản trị";
 }
 
 <div class="dashboard">
-    <div class="dashboard-header">
-        <h1><i class="fas fa-tachometer-alt"></i> Chào mừng đến với trang quản trị</h1>
-        <p>Quản lý cửa hàng trực tuyến của bạn một cách hiệu quả</p>
+  <div class="dashboard-header">
+    <h1><i class="fas fa-tachometer-alt"></i> Chào mừng đến với trang quản trị</h1>
+    <p>Quản lý cửa hàng trực tuyến của bạn một cách hiệu quả</p>
+  </div>
+
+  <div class="dashboard-stats">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <img style="height: 40px" src="~/images/user (2).png" />
+      </div>
+      <div class="stat-info">
+        <h3>@Model.UserCount</h3>
+        <p>Người dùng</p>
+      </div>
     </div>
 
-    <div class="dashboard-stats">
-        <div class="stat-card">
-            <div class="stat-icon">
-                <img style="height: 40px" src="~/images/user (2).png" />
-            </div>
-            <div class="stat-info">
-                <h3>@Model.UserCount</h3>
-                <p>Người dùng</p>
-            </div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-icon">
-                <img style="height: 40px" src="~/images/new-product.png" />
-            </div>
-            <div class="stat-info">
-                <h3>@Model.ProductCount</h3>
-                <p>Sản phẩm</p>
-            </div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-icon">
-                <img style="height: 40px" src="~/images/shoppping-bag.png" />
-            </div>
-            <div class="stat-info">
-                <h3>@Model.OrderCount</h3>
-                <p>Đơn hàng</p>
-            </div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-icon">
-                <img style="height: 40px" src="~/images/revenue.png" />
-            </div>
-            <div class="stat-info">
-                <h3>@Model.TotalRevenue.ToString("C0")</h3>
-                <p>Doanh thu</p>
-            </div>
-        </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <img style="height: 40px" src="~/images/new-product.png" />
+      </div>
+      <div class="stat-info">
+        <h3>@Model.ProductCount</h3>
+        <p>Sản phẩm</p>
+      </div>
     </div>
 
-    <div class="recent-activities">
-        <h3>Hoạt động gần đây</h3>
-        <div class="activity-list">
-            @foreach (var act in Model.RecentActivities)
-            {
-                <div class="activity-item">
-                    <i class="@act.IconClass"></i>
-                    <div class="activity-content">
-                        <p>@act.Message</p>
-                        <span>@act.Timestamp.ToString("g")</span>
-                    </div>
-                </div>
-            }
-        </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <img style="height: 40px" src="~/images/shoppping-bag.png" />
+      </div>
+      <div class="stat-info">
+        <h3>@Model.OrderCount</h3>
+        <p>Đơn hàng</p>
+      </div>
     </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <img style="height: 40px" src="~/images/revenue.png" />
+      </div>
+      <div class="stat-info">
+        <h3>@Model.TotalRevenue.ToString("C0")</h3>
+        <p>Doanh thu</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="recent-activities">
+    <h3>Hoạt động gần đây</h3>
+    <div class="activity-list">
+      @foreach (var act in Model.RecentActivities)
+      {
+        <div class="activity-item">
+          <i class="@act.IconClass"></i>
+          <div class="activity-content">
+            <p>@act.Message</p>
+            <span>@act.Timestamp.ToString("g")</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
 </div>

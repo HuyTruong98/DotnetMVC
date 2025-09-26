@@ -23,8 +23,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("")]
     public IActionResult Index()
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin")
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin")
         return RedirectToAction("Login", "Auth");
 
       var products = _context.Products
@@ -45,8 +45,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("Create")]
     public IActionResult Create()
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin")
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin")
         return RedirectToAction("Login", "Auth");
 
       ViewBag.Categories = _context.Categories
@@ -65,8 +65,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpPost("Create")]
     public async Task<IActionResult> Create(ProductViewModel model)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin")
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin")
         return RedirectToAction("Login", "Auth");
 
       ViewBag.Categories = _context.Categories
@@ -141,8 +141,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("Edit/{id}")]
     public async Task<IActionResult> Edit(int id)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin")
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin")
         return RedirectToAction("Login", "Auth");
 
       var product = await _context.Products
@@ -191,8 +191,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpPost("Edit/{id}")]
     public async Task<IActionResult> Edit(int id, ProductViewModel model)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin")
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin")
         return RedirectToAction("Login", "Auth");
 
       if (!ModelState.IsValid)
@@ -307,7 +307,7 @@ namespace OnlineStoreMVC.Controllers
     [HttpPost("Delete/{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-      if (HttpContext.Session.GetString("Role") != "Admin")
+      if (HttpContext.Session.GetString("Role")?.ToLower() != "admin")
         return RedirectToAction("Login", "Auth");
 
       // Load product cùng tất cả variants và order details

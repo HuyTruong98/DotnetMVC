@@ -20,8 +20,8 @@ public class DashboardUserController : Controller
   [HttpGet("")]
   public IActionResult Index()
   {
-    var role = HttpContext.Session.GetString("Role");
-    if (role != "Admin") return RedirectToAction("Login", "Auth");
+    var role = HttpContext.Session.GetString("Role")?.ToLower();
+    if (role != "admin") return RedirectToAction("Login", "Auth");
 
     var users = _context.Users.ToList();
 
@@ -32,8 +32,8 @@ public class DashboardUserController : Controller
   [HttpGet("Create")]
   public IActionResult Create()
   {
-    var role = HttpContext.Session.GetString("Role");
-    if (role != "Admin") return RedirectToAction("Login", "Auth");
+    var role = HttpContext.Session.GetString("Role")?.ToLower();
+    if (role != "admin") return RedirectToAction("Login", "Auth");
 
     return View("~/Views/Dashboard/Users/CreateUsers.cshtml");
   }
@@ -41,8 +41,8 @@ public class DashboardUserController : Controller
   [HttpPost("Create")]
   public IActionResult Create(RegisterViewModel model)
   {
-    var role = HttpContext.Session.GetString("Role");
-    if (role != "Admin") return RedirectToAction("Login", "Auth");
+    var role = HttpContext.Session.GetString("Role")?.ToLower();
+    if (role != "admin") return RedirectToAction("Login", "Auth");
 
     if (!ModelState.IsValid)
     {
@@ -77,8 +77,8 @@ public class DashboardUserController : Controller
   [HttpGet("Edit/{id}")]
   public IActionResult Edit(int id)
   {
-    var role = HttpContext.Session.GetString("Role");
-    if (role != "Admin") return RedirectToAction("Login", "Auth");
+    var role = HttpContext.Session.GetString("Role")?.ToLower();
+    if (role != "admin") return RedirectToAction("Login", "Auth");
 
     var user = _context.Users.FirstOrDefault(u => u.UserID == id);
     if (user == null) return NotFound();
@@ -98,8 +98,8 @@ public class DashboardUserController : Controller
   [HttpPost("Edit/{id}")]
   public IActionResult Edit(int id, RegisterViewModel model)
   {
-    var role = HttpContext.Session.GetString("Role");
-    if (role != "Admin") return RedirectToAction("Login", "Auth");
+    var role = HttpContext.Session.GetString("Role")?.ToLower();
+    if (role != "admin") return RedirectToAction("Login", "Auth");
 
     if (!ModelState.IsValid)
     {
@@ -127,8 +127,8 @@ public class DashboardUserController : Controller
   [HttpGet("Delete/{id}")]
   public IActionResult Delete(int id)
   {
-    var role = HttpContext.Session.GetString("Role");
-    if (role != "Admin") return RedirectToAction("Login", "Auth");
+    var role = HttpContext.Session.GetString("Role")?.ToLower();
+    if (role != "admin") return RedirectToAction("Login", "Auth");
 
     var user = _context.Users.FirstOrDefault(u => u.UserID == id);
     if (user == null) return NotFound();

@@ -17,8 +17,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("")]
     public IActionResult Index()
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       var categories = _context.Categories.ToList();
       return View("~/Views/Dashboard/Categories/Index.cshtml", categories);
@@ -27,8 +27,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("Create")]
     public IActionResult Create()
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       return View("~/Views/Dashboard/Categories/CreateCategory.cshtml");
     }
@@ -36,8 +36,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpPost("Create")]
     public IActionResult Create(CategoryViewModel model)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       if (!ModelState.IsValid)
       {
@@ -67,8 +67,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("Edit/{id}")]
     public IActionResult Edit(int id)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       var category = _context.Categories.FirstOrDefault(c => c.CategoryID == id);
       if (category == null)
@@ -89,8 +89,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpPost("Edit/{id}")]
     public IActionResult Edit(int id, CategoryViewModel model)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       if (!ModelState.IsValid)
       {
@@ -128,8 +128,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("Delete/{id}")]
     public IActionResult Delete(int id)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       var category = _context.Categories.FirstOrDefault(c => c.CategoryID == id);
       if (category == null)

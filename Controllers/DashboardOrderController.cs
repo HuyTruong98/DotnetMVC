@@ -20,8 +20,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("")]
     public async Task<IActionResult> Index()
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       var now = DateTime.Now;
 
@@ -65,8 +65,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("Create")]
     public IActionResult Create()
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       ViewBag.Users = _context.Users
      .Select(u => new SelectListItem
@@ -89,8 +89,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpPost("Create")]
     public async Task<IActionResult> Create(OrderFormViewModel model)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin")
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin")
         return RedirectToAction("Login", "Auth");
 
       ViewBag.Users = _context.Users
@@ -171,7 +171,7 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("Edit/{id}")]
     public async Task<IActionResult> Edit(int id)
     {
-      if (HttpContext.Session.GetString("Role") != "Admin")
+      if (HttpContext.Session.GetString("Role")?.ToLower() != "admin")
         return RedirectToAction("Login", "Auth");
 
       var order = await _context.Orders
@@ -219,7 +219,7 @@ namespace OnlineStoreMVC.Controllers
     public async Task<IActionResult> Edit(int id, OrderFormViewModel model)
     {
       if (id != model.OrderID) return BadRequest();
-      if (HttpContext.Session.GetString("Role") != "Admin")
+      if (HttpContext.Session.GetString("Role")?.ToLower() != "admin")
         return RedirectToAction("Login", "Auth");
 
       // Reload dropdown
@@ -343,7 +343,7 @@ namespace OnlineStoreMVC.Controllers
     [HttpPost("Delete/{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-      if (HttpContext.Session.GetString("Role") != "Admin")
+      if (HttpContext.Session.GetString("Role")?.ToLower() != "admin")
         return RedirectToAction("Login", "Auth");
 
       var order = await _context.Orders

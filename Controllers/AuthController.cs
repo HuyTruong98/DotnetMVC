@@ -21,8 +21,8 @@ namespace OnlineStoreMVC.Controllers
     {
       if (HttpContext.Session.GetString("Username") != null)
       {
-        var role = HttpContext.Session.GetString("Role");
-        if (role == "Admin")
+        var role = HttpContext.Session.GetString("Role")?.ToLower();
+        if (role == "admin")
           return RedirectToAction("Index", "Dashboard");
         else
           return RedirectToAction("Index", "Home");
@@ -53,7 +53,7 @@ namespace OnlineStoreMVC.Controllers
       HttpContext.Session.SetString("Username", user.Username);
       HttpContext.Session.SetString("Role", user.Role);
 
-      if (user.Role == "Admin")
+      if (user.Role?.ToLower() == "admin")
         return RedirectToAction("Index", "Dashboard");
       else
         return RedirectToAction("Index", "Home");

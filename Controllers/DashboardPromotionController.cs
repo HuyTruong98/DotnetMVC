@@ -19,8 +19,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("")]
     public IActionResult Index()
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       var promotions = _context.Promotions
           .Include(p => p.Product)
@@ -32,8 +32,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("Create")]
     public IActionResult Create()
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       ViewBag.ProductList = new SelectList(_context.Products, "ProductID", "ProductName");
 
@@ -49,8 +49,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpPost("Create")]
     public IActionResult Create(PromotionViewModel model)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       if (model.StartDate >= model.EndDate)
       {
@@ -81,8 +81,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("Edit/{id}")]
     public IActionResult Edit(int id)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       var promo = _context.Promotions.Include(p => p.Product).FirstOrDefault(p => p.PromotionID == id);
       if (promo == null) return NotFound();
@@ -103,8 +103,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpPost("Edit/{id}")]
     public IActionResult Edit(int id, PromotionViewModel model)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       if (model.StartDate >= model.EndDate)
       {
@@ -133,8 +133,8 @@ namespace OnlineStoreMVC.Controllers
     [HttpGet("Delete/{id}")]
     public IActionResult Delete(int id)
     {
-      var role = HttpContext.Session.GetString("Role");
-      if (role != "Admin") return RedirectToAction("Login", "Auth");
+      var role = HttpContext.Session.GetString("Role")?.ToLower();
+      if (role != "admin") return RedirectToAction("Login", "Auth");
 
       var promo = _context.Promotions.FirstOrDefault(p => p.PromotionID == id);
       if (promo == null) return NotFound();

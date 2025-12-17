@@ -20,18 +20,31 @@ namespace OnlineStoreMVC.Controllers
       _logger = logger;
     }
 
-    [HttpGet("")]
-    public IActionResult Index()
+    [HttpGet("Index")]
+    public IActionResult Index(int page = 1, int pageSize = 10)
     {
       var role = HttpContext.Session.GetString("Role")?.ToLower();
       if (role != "admin")
         return RedirectToAction("Login", "Auth");
 
-      var products = _context.Products
+      var query = _context.Products
           .Include(p => p.Category)
           .Include(p => p.ProductImages)
           .Include(p => p.Variants)
+          .OrderByDescending(p => p.ProductID);
+
+
+      int totalItems = query.Count();
+
+      var products = query
+          .Skip((page - 1) * pageSize)
+          .Take(pageSize)
           .ToList();
+
+      ViewBag.CurrentPage = page;
+      ViewBag.PageSize = pageSize;
+      ViewBag.TotalItems = totalItems;
+      ViewBag.TotalPages = (int)Math.Ceiling((double)totalItems / pageSize);
 
       var promotions = _context.Promotions
           .Where(p => p.StartDate <= DateTime.Now &&

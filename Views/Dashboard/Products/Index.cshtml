@@ -39,7 +39,7 @@
       }
       else
       {
-        var i = 0;
+        var  i = (ViewBag.CurrentPage - 1) * ViewBag.PageSize;
         foreach (var product in Model)
         {
           // Lấy khuyến mãi, giá giảm
@@ -161,3 +161,41 @@
     </tbody>
   </table>
 </div>
+
+@if (ViewBag.TotalPages > 1)
+{
+  <nav class="mt-4">
+    <ul class="pagination justify-content-center">
+
+      <!-- Previous -->
+      <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+        <a class="page-link"
+           asp-action="Index"
+           asp-route-page="@(ViewBag.CurrentPage - 1)">
+          &laquo;
+        </a>
+      </li>
+
+      @for (int p = 1; p <= ViewBag.TotalPages; p++)
+      {
+        <li class="page-item @(p == ViewBag.CurrentPage ? "active" : "")">
+          <a class="page-link"
+             asp-action="Index"
+             asp-route-page="@p">
+            @p
+          </a>
+        </li>
+      }
+
+      <!-- Next -->
+      <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+        <a class="page-link"
+           asp-action="Index"
+           asp-route-page="@(ViewBag.CurrentPage + 1)">
+          &raquo;
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+}

@@ -310,10 +310,12 @@ namespace OnlineStoreMVC.Controllers
       if (HttpContext.Session.GetString("Role")?.ToLower() != "admin")
         return RedirectToAction("Login", "Auth");
 
-      // Load product cùng tất cả variants và order details
+      // Load product with all variants, order details, images, promotions
       var product = await _context.Products
           .Include(p => p.Variants)
             .ThenInclude(v => v.OrderDetails)
+          .Include(p => p.ProductImages)
+          .Include(p => p.Promotions)
           .FirstOrDefaultAsync(p => p.ProductID == id);
 
       if (product == null)
@@ -321,6 +323,8 @@ namespace OnlineStoreMVC.Controllers
         TempData["Error"] = "Không tìm thấy sản phẩm.";
         return RedirectToAction("Index");
       }
+
+      _logger.LogInformation("abc", product);
 
       bool hasOrder = product.Variants
           .SelectMany(v => v.OrderDetails)
@@ -331,6 +335,7 @@ namespace OnlineStoreMVC.Controllers
         TempData["Error"] = "Không thể xóa sản phẩm này vì đã có đơn hàng sử dụng.";
         return RedirectToAction("Index");
       }
+
 
       _context.ProductVariants.RemoveRange(product.Variants);
       _context.Products.Remove(product);

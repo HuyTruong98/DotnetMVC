@@ -21,7 +21,8 @@ obj/
 # ASP.NET Core
 ####################################
 
-# User-specific secrets
+# App settings (chứa connection string / secrets)
+appsettings.json
 appsettings.Development.json
 appsettings.Local.json
 

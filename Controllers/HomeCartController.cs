@@ -97,17 +97,31 @@ namespace OnlineStoreMVC.Controllers
     }
 
     [HttpPost]
-    public IActionResult AddToCart(int ProductID, int VariantID, int Quantity = 1, string SelectedColor = null)
+    public IActionResult ProcessCart(int ProductID, int VariantID, int Quantity, string action, string SelectedColor)
     {
       var cart = HttpContext.Session.GetObject<List<CartItem>>("Cart") ?? new List<CartItem>();
 
       var existing = cart.FirstOrDefault(c => c.VariantID == VariantID);
-      if (existing != null) existing.Quantity += Quantity;
-      else cart.Add(new CartItem { VariantID = VariantID, Quantity = Quantity });
+      if (existing != null)
+      {
+        existing.Quantity += Quantity;
+      }
+      else
+      {
+        cart.Add(new CartItem { VariantID = VariantID, Quantity = Quantity });
+      }
 
       HttpContext.Session.SetObject("Cart", cart);
 
-      TempData["Success"] = "Thêm vào giỏ hàng thành công.";
+      if (action == "addToCart")
+      {
+        TempData["Success"] = "Thêm vào giỏ hàng thành công.";
+        return RedirectToAction("Detail", "HomeProduct", new { id = ProductID, selectedColor = SelectedColor });
+      }
+      else if (action == "buyNow")
+      {
+        return RedirectToAction("Index", "Cart");
+      }
 
       return RedirectToAction("Detail", "HomeProduct", new { id = ProductID, selectedColor = SelectedColor });
     }

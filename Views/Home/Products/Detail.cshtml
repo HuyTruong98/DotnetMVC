@@ -145,12 +145,13 @@
         </div>
       </form>
 
-      <form asp-controller="HomeCart" asp-action="AddToCart" method="post">
+      <form asp-controller="HomeCart" asp-action="ProcessCart" method="post">
         <input type="hidden" name="ProductID" value="@Model.ProductID" />
-        <!-- Size -->
+        <input type="hidden" name="SelectedColor" value="@ViewBag.SelectedColor" />
+
         <div class="mb-3">
           <label class="form-label me-2">Size:</label>
-          <div id="sizeOptions" class="d-flex flex-wrap swatch">
+          <div class="d-flex flex-wrap swatch">
             @{
               bool firstSelectable = true;
               var selectedColor = (string)ViewBag.SelectedColor;
@@ -173,26 +174,26 @@
           </div>
         </div>
 
-
-        <!-- Quantity & button -->
-        <div class="mt-3 d-flex align-items-center" id="product-template">
+        <div class="mt-3 d-flex align-items-center">
           <div class="quantity-area">
             <input type="button" value="–" id="qtyMinus" class="qty-btn qtyminus">
             <input type="number" id="quantity" name="Quantity" value="1" min="1" class="quantity-selector" readonly>
             <input type="button" value="+" id="qtyPlus" class="qty-btn qtyplus">
           </div>
 
-          <button type="submit" class="btn ms-3 px-4 add-to-cart-btn"
+          <!-- Hai nút submit với tên khác nhau -->
+          <button type="submit" name="action" value="addToCart" class="btn ms-3 px-4 add-to-cart-btn"
             style="border: 1px solid #001F5D; color:#001F5D; background-color:#fff; width:100%">
             THÊM VÀO GIỎ
           </button>
+
         </div>
+        <button type="submit" name="action" value="buyNow" class="btn btn-primary w-100 mt-3"
+          style="background-color: #001f60; border: none;">
+          MUA NGAY
+        </button>
       </form>
 
-      <!-- Nút mua ngay -->
-      <div class="mt-3">
-        <button class="btn w-100" style="background-color: #001f60; color: #fff;">MUA NGAY</button>
-      </div>
       <ul
         class="product-policises list-unstyled d-flex justify-content-between py-sm-3 px-sm-3 m-0 mt-3 border rounded">
         <li class="d-flex align-items-center me-3">
